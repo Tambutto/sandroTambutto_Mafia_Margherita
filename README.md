@@ -67,6 +67,14 @@ Redes Sociales: Campañas dirigidas a diferentes grupos de audiencia con conteni
 
 Email Marketing: Ofertas personalizadas y promociones enviadas a clientes recurrentes.
 
+Sitios de referencia:
+
+1 - https://www.kpizza.us/gallery - Sitio elegido primeramente para ver de que se trataba y para sacar idea orientativa del formato de la pagina.
+2 - Pinterest - Sitio utilizado para orientacion sobre diseños, colores y tipografias.
+3 - https://www.templatemonster.com/es/categoria/pizzeria-plantillas-web/?page=3 - Sitio elegido para tener una idea sobre diferentes productos ofrecidos
+4 - https://edit.org/es/blog/plantillas-menu-pizza-online - Sitio visitado para tener orientacion sobre plantillas de menues. 
+5 - https://www.flaticon.es/resultados?word=pizzas - Sitio visitado para utilizar diferentes iconos.
+
 Facilidad de Uso:
 
 Sitio Web y App: Interfaz intuitiva y fácil de usar, con opciones claras para personalizar pedidos y realizar pagos seguros.
