@@ -7,72 +7,93 @@
 ## Clásicas: 
    - Margherita
    - Pepperoni
-   -  Napolitana
-   -  Cuatro Quesos.
+   - Napolitana
+   - Cuatro Quesos
 
-### Especiales: 
-    - Pizza BBQ, Hawaiana, Vegetariana, Gourmet con ingredientes premium.
+## Especiales: 
+    - Pizza BBQ
+    - Hawaiana
+    - Vegetariana
+    - Gourmet con ingredientes premium
 
-Personalizadas: Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
+## Personalizadas: Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
 
-Complementos:
+## Complementos:
 
-Ensaladas: Ensalada César, ensalada mixta.
+## Ensaladas: 
+1 Ensalada César 
+2 Ensalada mixta
 
-Bebidas: Refrescos, cervezas artesanales, vinos, agua.
+## Bebidas: 
+- Refrescos
+- Cervezas artesanales
+- Vino
+- Agua
 
 
-¿Quién será nuestra audiencia objetivo?
+## ¿Quién será nuestra audiencia objetivo?
 
-Audiencia Objetivo
+## Audiencia Objetivo
 
-Familias:
+## Familias:
 
-Perfil: Padres con hijos que buscan opciones para cenas familiares y eventos.
+## Perfil: 
+1 Padres con hijos que buscan opciones para cenas familiares y eventos
 
-Necesidades: Opciones de menús variados que gusten a todos, promociones familiares.
+## Necesidades: 
+- Opciones de menús variados que gusten a todos, promociones familiares.
 
-Jóvenes y Estudiantes:
+## Jóvenes y Estudiantes:
 
-Perfil: Adolescentes y jóvenes adultos que buscan una opción rápida y asequible.
+## Perfil: 
+2 Adolescentes y jóvenes adultos que buscan una opción rápida y asequible.
 
-Necesidades: Ofertas económicas, promociones especiales para estudiantes, opciones personalizables.
+## Necesidades: 
+ - Ofertas económicas, promociones especiales para estudiantes, opciones personalizables.
 
-Profesionales y Oficinistas:
+## Profesionales y Oficinistas:
 
-Perfil: Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas.
+## Perfil: 
+3 Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas.
 
-Necesidades: Entrega rápida, opciones de combos para llevar, ofertas especiales durante la semana laboral.
+## Necesidades: 
+- Entrega rápida, opciones de combos para llevar, ofertas especiales durante la semana laboral.
 
-Amantes de la Comida Gourmet:
+## Amantes de la Comida Gourmet:
 
-Perfil: Personas que buscan ingredientes de alta calidad y opciones gourmet.
+## Perfil: 
+4 Personas que buscan ingredientes de alta calidad y opciones gourmet.
 
-Necesidades: Ingredientes premium, opciones de maridaje con vinos y cervezas artesanales.
+## Necesidades: 
+- Ingredientes premium, opciones de maridaje con vinos y cervezas artesanales.
 
-¿Cómo ajustaremos nuestra oferta a ese público?
+## ¿Cómo ajustaremos nuestra oferta a ese público?
 
-Ajuste de la Oferta al Público
+## Ajuste de la Oferta al Público
 
-Menús Personalizados:
+## Menús Personalizados:
 
-Familias: Ofertas de combos familiares y menús infantiles.
+## Familias: 
+- Ofertas de combos familiares y menús infantiles.
 
-Estudiantes: Descuentos y menús económicos.
+## Estudiantes: 
+- Descuentos y menús económicos.
 
-Promociones y Programas de Fidelización:
+## Promociones y Programas de Fidelización:
 
-Oficinistas: Ofertas especiales durante la semana laboral, programas de fidelización para pedidos recurrentes.
+## Oficinistas: 
+- Ofertas especiales durante la semana laboral, programas de fidelización para pedidos recurrentes.
 
-Amantes de la Gourmet: Promociones en ingredientes premium, degustaciones especiales.
+## Amantes de la Gourmet: 
+- Promociones en ingredientes premium, degustaciones especiales.
 
-Marketing y Publicidad:
+## Marketing y Publicidad:
 
-Redes Sociales: Campañas dirigidas a diferentes grupos de audiencia con contenido atractivo.
+1 Redes Sociales: Campañas dirigidas a diferentes grupos de audiencia con contenido atractivo.
 
-Email Marketing: Ofertas personalizadas y promociones enviadas a clientes recurrentes.
+2 Email Marketing: Ofertas personalizadas y promociones enviadas a clientes recurrentes.
 
-Sitios de referencia:
+## Sitios de referencia:
 
 1 - https://www.kpizza.us/gallery - Sitio elegido primeramente para ver de que se trataba y para sacar idea orientativa del formato de la pagina.
 2 - Pinterest - Sitio utilizado para orientacion sobre diseños, colores y tipografias.
