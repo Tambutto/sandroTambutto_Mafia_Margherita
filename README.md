@@ -15,7 +15,7 @@
    - _Napolitana_
    - _Cuatro Quesos_
 
-## Especiales: 
+## Especiales: :pinched_fingers:
    - _Pizza BBQ_
    - _Hawaiana_
    - _Vegetariana_
@@ -25,11 +25,11 @@
 
 ## Complementos:
 
-## Ensaladas: 
+## Ensaladas: :green_salad:
 - _Ensalada César_ 
 - _Ensalada mixta_
 
-## Bebidas: 
+## Bebidas: :beer: :wine_glass:
 - _Refrescos_
 - _Cervezas artesanales_
 - _Vino_
@@ -40,34 +40,34 @@
 
 ## Audiencia Objetivo
 
-## Familias:
+## Familias: :family_man_woman_girl_boy:
 
 ## Perfil: 
-1. _Padres con hijos que buscan opciones para cenas familiares y eventos_
+:one: _Padres con hijos que buscan opciones para cenas familiares y eventos_
 
 ## Necesidades: 
 - _Opciones de menús variados que gusten a todos, promociones familiares_
 
-## Jóvenes y Estudiantes:
+## Jóvenes y Estudiantes: :student:
 
 ## Perfil: 
-2. _Adolescentes y jóvenes adultos que buscan una opción rápida y asequible_
+:two: _Adolescentes y jóvenes adultos que buscan una opción rápida y asequible_
 
 ## Necesidades: 
  - Ofertas económicas, promociones especiales para estudiantes, opciones personalizables.
 
-## Profesionales y Oficinistas:
+## Profesionales y Oficinistas: :man_office_worker::woman_office_worker:
 
 ## Perfil: 
-3. _Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas_
+:three: _Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas_
 
 ## Necesidades: 
 - _Entrega rápida, opciones de combos para llevar, ofertas especiales durante la semana laboral_
 
-## Amantes de la Comida Gourmet:
+## Amantes de la Comida Gourmet: :bearded_person: :red_haired_woman:
 
 ## Perfil: 
-4. _Personas que buscan ingredientes de alta calidad y opciones gourmet_
+:four: _Personas que buscan ingredientes de alta calidad y opciones gourmet_
 
 ## Necesidades: 
 - Ingredientes premium, opciones de maridaje con vinos y cervezas artesanales.
@@ -92,13 +92,13 @@
 ## Amantes de la Gourmet: 
 - _Promociones en ingredientes premium, degustaciones especiales_
 
-## Marketing y Publicidad:
+## Marketing y Publicidad: :mega:
 
 1 Redes Sociales: Campañas dirigidas a diferentes grupos de audiencia con contenido atractivo.
 
 2 Email Marketing: Ofertas personalizadas y promociones enviadas a clientes recurrentes.
 
-## Sitios de referencia:
+## Sitios de referencia: :white_check_mark:
 
 1. https://www.kpizza.us/gallery - Sitio elegido primeramente para ver de que se trataba y para sacar idea orientativa del formato de la pagina.
 2. Pinterest - Sitio utilizado para orientacion sobre diseños, colores y tipografias.
@@ -111,3 +111,5 @@
 - Sitio Web y App: Interfaz intuitiva y fácil de usar, con opciones claras para personalizar pedidos y realizar pagos seguros.
 
 - Atención al Cliente: Soporte accesible y amable para resolver cualquier duda o inconveniente.
+
+:copyright: Tambutto Sandro derechos reservados
