@@ -107,7 +107,7 @@
 4. https://edit.org/es/blog/plantillas-menu-pizza-online - Sitio visitado para tener orientacion sobre plantillas de menues. 
 5. https://www.flaticon.es/resultados?word=pizzas - Sitio visitado para utilizar diferentes iconos.
 
-## Facilidad de Uso:
+## Facilidad de Uso: > [!NOTE]
 
 - Sitio Web y App: Interfaz intuitiva y fácil de usar, con opciones claras para personalizar pedidos y realizar pagos seguros.
 
