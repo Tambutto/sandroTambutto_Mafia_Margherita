@@ -1,12 +1,17 @@
 # sandroTambutto_Desafio_Profesional
 
-¿Qué productos o servicios brindará nuestro sitio? 
+## ¿Qué productos o servicios brindará nuestro sitio? 
 
-Pizzas:
+## Pizzas:
 
-Clásicas: Margherita, Pepperoni, Napolitana, Cuatro Quesos.
+## Clásicas: 
+   - Margherita
+   - Pepperoni
+   -  Napolitana
+   -  Cuatro Quesos.
 
-Especiales: Pizza BBQ, Hawaiana, Vegetariana, Gourmet con ingredientes premium.
+### Especiales: 
+    - Pizza BBQ, Hawaiana, Vegetariana, Gourmet con ingredientes premium.
 
 Personalizadas: Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
 
