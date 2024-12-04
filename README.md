@@ -20,6 +20,7 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
 
 ## Clásicas: 
    - _Margherita_
+     - Ingredientes: Salsa di pomodoro :tomato:, Mozzarella di Bufala, Basilico :leafy_green:, Olio d'oliva :olive:
    - _Pepperoni_
    - _Napolitana_
    - _Cuatro Quesos_
