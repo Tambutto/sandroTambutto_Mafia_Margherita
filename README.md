@@ -21,8 +21,8 @@
 ## Complementos:
 
 ## Ensaladas: 
-1 Ensalada César 
-2 Ensalada mixta
+- Ensalada César 
+- Ensalada mixta
 
 ## Bebidas: 
 - Refrescos
@@ -38,7 +38,7 @@
 ## Familias:
 
 ## Perfil: 
-1 Padres con hijos que buscan opciones para cenas familiares y eventos
+1. Padres con hijos que buscan opciones para cenas familiares y eventos
 
 ## Necesidades: 
 - Opciones de menús variados que gusten a todos, promociones familiares.
@@ -46,7 +46,7 @@
 ## Jóvenes y Estudiantes:
 
 ## Perfil: 
-2 Adolescentes y jóvenes adultos que buscan una opción rápida y asequible.
+2. Adolescentes y jóvenes adultos que buscan una opción rápida y asequible.
 
 ## Necesidades: 
  - Ofertas económicas, promociones especiales para estudiantes, opciones personalizables.
@@ -54,7 +54,7 @@
 ## Profesionales y Oficinistas:
 
 ## Perfil: 
-3 Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas.
+3. Personas que trabajan y necesitan opciones rápidas para almuerzos o cenas.
 
 ## Necesidades: 
 - Entrega rápida, opciones de combos para llevar, ofertas especiales durante la semana laboral.
@@ -62,7 +62,7 @@
 ## Amantes de la Comida Gourmet:
 
 ## Perfil: 
-4 Personas que buscan ingredientes de alta calidad y opciones gourmet.
+4. Personas que buscan ingredientes de alta calidad y opciones gourmet.
 
 ## Necesidades: 
 - Ingredientes premium, opciones de maridaje con vinos y cervezas artesanales.
