@@ -110,7 +110,6 @@ Opciones para personalizar la pizza con elección de ingredientes y tipos de mas
 
 ## Facilidad de Uso: 
 
-> [!NOTE]
 
 - Sitio Web y App: Interfaz intuitiva y fácil de usar, con opciones claras para personalizar pedidos y realizar pagos seguros.
 
