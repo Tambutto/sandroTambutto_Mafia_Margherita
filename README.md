@@ -74,9 +74,10 @@
 
 ## ¿Cómo ajustaremos nuestra oferta a ese público?
 
-## Ajuste de la Oferta al Público
+
 
 ## Menús Personalizados:
+
 
 ## Familias: 
 - _Ofertas de combos familiares y menús infantiles_
