@@ -1,9 +1,9 @@
+
+# sandroTambutto_Desafio_Profesional
+
 <p aling="center">
  <img width="180" src="https://github.com/Tambutto/sandroTambutto_Desafio_Profesional/blob/main/Design/logo%201.png">
 </p>
-
-
-# sandroTambutto_Desafio_Profesional
 
 ## ¿Qué productos o servicios brindará nuestro sitio? 
 
