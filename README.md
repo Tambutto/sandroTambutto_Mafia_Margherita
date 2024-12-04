@@ -21,7 +21,8 @@
    - _Vegetariana_
    - _Gourmet con ingredientes premium_
 
-## Personalizadas: Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
+## Personalizadas: 
+Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
 
 ## Complementos:
 
