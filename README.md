@@ -7,7 +7,7 @@
 
 ## ¿Qué productos o servicios brindará nuestro sitio? 
 
-## Pizzas:
+## Pizzas: :pizza:
 
 ## Clásicas: 
    - _Margherita_
