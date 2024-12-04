@@ -4,6 +4,13 @@
 <p aling="center">
  <img width="180" src="https://github.com/Tambutto/sandroTambutto_Desafio_Profesional/blob/main/Design/logo%201.png">
 </p>
+_Mafia_ _Margherita_ es un nombre creativo para una pizzería que combina dos conceptos distintos: la referencia a la mafia italiana y la famosa pizza Margherita.
+
+**Mafia**: La palabra "Mafia" evoca la famosa organización criminal italiana. En el contexto de una pizzería, se utiliza de manera lúdica y no literal, para darle un toque distintivo y memorable al nombre, evocando una sensación de misterio y tradición.
+
+**Margherita**: La pizza Margherita es una de las pizzas más tradicionales y queridas en Italia. Su nombre se dice que proviene de la Reina Margherita de Saboya. Esta pizza clásica está hecha con ingredientes simples pero deliciosos: salsa de tomate, mozzarella, y albahaca, representando los colores de la bandera italiana.
+
+Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pizza Margherita con el tema intrigante y llamativo de la mafia, creando un nombre único y memorable para una pizzería.
 
 ## ¿Qué productos o servicios brindará nuestro sitio? 
 
