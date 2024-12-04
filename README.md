@@ -14,8 +14,6 @@ Es un nombre creativo para una pizzería que combina dos conceptos distintos: la
 
 Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pizza Margherita con el tema intrigante y llamativo de la mafia, creando un nombre único y memorable para una pizzería.
 
-## ¿Qué productos o servicios brindará nuestro sitio? 
-
 ## Pizzas: :pizza:
 
 ## Clásicas: 
@@ -37,13 +35,11 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
      - Ingredientes: Pomodori (Tomates):tomato:, Mozzarella (Muzzarela):cheese, Spinaci (Espinacas):leafy_green:, Origano (Orégano):leave:, Sale (sal):sal:
    - _Gourmet con ingredientes premium_
 
-## Personalizadas: 
-Opciones para personalizar la pizza con elección de ingredientes y tipos de masa.
 
 ## Complementos:
 
 ## Ensaladas: :green_salad:
-- _Insalata Tricolore_: Rucola(Rucula):leave:, Pomodori (tomate) :tomato:, Mozzarella (Muzzarela):cheese, Aceite de oliva:olive:, Sale (Sal):salt:
+- _Insalata Tricolore (Ensalada Tricolor)_: Rucola(Rucula):leave:, Pomodori (tomate) :tomato:, Mozzarella (Muzzarela):cheese, Aceite de oliva:olive:, Sale (Sal):salt:
 - _Insalata Mista (Ensalada mixta)_ :green_salad:
   - Ingredientes: Lattuga (Lechuga):leafy_green:, Pomodori (Tomates):tomato:,Carote (Zanahorias):carrot:,Cipolla (Cebolla):onio:,Peperoni (Pimientos):hot_pepper:,Olive (Aceitunas):olive:, Mais (Maíz):corn:,Uova sode (Huevos duros):egg: - opcional
 
@@ -52,9 +48,6 @@ Opciones para personalizar la pizza con elección de ingredientes y tipos de mas
 - _Cervezas artesanales_
 - _Vino_
 - _Agua_
-
-
-## ¿Quién será nuestra audiencia objetivo?
 
 ## Audiencia Objetivo
 
@@ -92,10 +85,7 @@ Opciones para personalizar la pizza con elección de ingredientes y tipos de mas
 
 ## ¿Cómo ajustaremos nuestra oferta a ese público?
 
-
-
 ## Menús Personalizados:
-
 
 ## Familias: 
 - _Ofertas de combos familiares y menús infantiles_
