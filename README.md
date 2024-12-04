@@ -19,16 +19,22 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
 ## Pizzas: :pizza:
 
 ## Clásicas: 
-   - _Margherita_
-     - Ingredientes: Salsa di pomodoro :tomato:, Mozzarella di Bufala, Basilico :leafy_green:, Olio d'oliva :olive:
-   - _Pepperoni_
-   - _Napolitana_
-   - _Cuatro Quesos_
-
+   - _Margherita (margarita)_
+     - Ingredientes: Salsa di pomodoro (Salsa de tomate) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Basilico (albahaca fresca) :leafy_green:, Olio d'oliva (aceite de oliva) :olive:
+   - _Pepperoni (salame piccante)_
+     - Ingredientes: Salsa di pomodoro (Salsa de tomate) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Pepperoni :salami:, Olio d'oliva (aceite de oliva) :olive:, Origano(Oregano) :leave:
+   - _Napoletana (Napolitana)_
+     - Ingredientes: Pomodori pelati (Tomates pelados) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Basilico (albahaca fresca) :leafy_green:, Olio d'oliva extra vergine (aceite de oliva extra virgen) :olive:, Sale (sal) :salt:
+   - _Quattro Formaggi (Cuatro Quesos)_
+     - Ingredientes: Mozzarella (Mozzarella), Gorgonzola (Gorgonzola), Parmigiano Reggiano (Queso parmesano), Provolone (Provolone) :cheese:
+       
 ## Especiales: :pinched_fingers:
-   - _Pizza BBQ_
-   - _Hawaiana_
+   - _Pizza Capricciosa_
+     - Ingredientes: Pomodori (tomate) :tomato: , Mozzarella (Muzarella):cheese:, Funghi (Champiñones) , Prosciutto (Jamon), Carciofi (alcachofas), Olive (aceitunas) y ocasionalmente un uovo (huevo):egg:.
+   - _Pizza Pugliese_
+     - Ingredientes: Pomodori (Tomates) :tomato:, Mozzarella (Muzzarella) :cheese:, Cipolla (Cebolla) :onion:, Olive (Aceitunas):olive:,Origano (Orégano):leave:, Olio d'oliva extra vergine (Aceite de oliva virgen extra):olive:, Sale (sal):salt:
    - _Vegetariana_
+     - Ingredientes: Pomodori (Tomates):tomato:, Mozzarella (Muzzarela):cheese, Spinaci (Espinacas):leafy_green:, Origano (Orégano):leave:, Sale (sal):sal:
    - _Gourmet con ingredientes premium_
 
 ## Personalizadas: 
@@ -37,8 +43,9 @@ Opciones para personalizar la pizza con elección de ingredientes y tipos de mas
 ## Complementos:
 
 ## Ensaladas: :green_salad:
-- _Ensalada César_ 
-- _Ensalada mixta_
+- _Insalata Tricolore_: Rucola(Rucula):leave:, Pomodori (tomate) :tomato:, Mozzarella (Muzzarela):cheese, Aceite de oliva:olive:, Sale (Sal):salt:
+- _Insalata Mista (Ensalada mixta)_ :green_salad:
+  - Ingredientes: Lattuga (Lechuga):leafy_green:, Pomodori (Tomates):tomato:,Carote (Zanahorias):carrot:,Cipolla (Cebolla):onio:,Peperoni (Pimientos):hot_pepper:,Olive (Aceitunas):olive:, Mais (Maíz):corn:,Uova sode (Huevos duros):egg: - opcional
 
 ## Bebidas: :beer: :wine_glass:
 - _Refrescos_
