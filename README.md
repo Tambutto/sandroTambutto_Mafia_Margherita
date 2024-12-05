@@ -24,7 +24,7 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
    - _Napoletana (Napolitana)_
      - Ingredientes: Pomodori pelati (Tomates pelados) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Basilico (albahaca fresca) :leafy_green:, Olio d'oliva extra vergine (aceite de oliva extra virgen) :olive:, Sale (sal) :salt:
    - _Quattro Formaggi (Cuatro Quesos)_
-     - Ingredientes: Mozzarella (Mozzarella):cheese:, Gorgonzola (Gorgonzola):cheese:, Parmigiano Reggiano (Queso parmesano):cheese:, Provolone (Provolone) :cheese:
+     - Ingredientes: Mozzarella (Mozzarella):cheese:, Gorgonzola (Gorgonzola):cheese:, Parmigiano Reggiano (Parmesano):cheese:, Provolone (Provolone) :cheese:
        
 ## Especiales: :pinched_fingers:
    - _Pizza Capricciosa_
