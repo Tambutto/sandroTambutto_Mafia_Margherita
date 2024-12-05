@@ -1,9 +1,9 @@
 
 # sandroTambutto_Desafio_Profesional
 
-<p aling="center">
+
  <img width="180" src="https://github.com/Tambutto/sandroTambutto_Desafio_Profesional/blob/main/Design/logo%201.png">
-</p>
+
 
 # _**Mafia** **Margherita**_ 
 Es un nombre creativo para una pizzería que combina dos conceptos distintos: la referencia a la mafia italiana y la famosa pizza Margherita.
