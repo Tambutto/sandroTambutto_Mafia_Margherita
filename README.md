@@ -34,15 +34,15 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
      - Ingredientes: Pomodori (Tomates) :tomato:, Mozzarella (Muzzarela) :cheese:, Spinaci (Espinacas) :leafy_green:, Origano (Orégano) :leave:, Sale (sal) :sal:
    - _Gourmet con ingredientes premium_
    - Pizza Gorgonzola e Pere:
-     - Ingredientes: Mozzarella (Mozzarella):cheese:,Gorgonzola (Gorgonzola):cheese,Pere (Peras):pear:,Noci (Nueces) opcional, Miele (Miel) opcional, Olio d'oliva extra vergine (Aceite de oliva virgen extra):olive:, Sale (sal):salt:
+     - Ingredientes: Mozzarella (Mozzarella) :cheese:,Gorgonzola (Gorgonzola) :cheese,Pere (Peras) :pear:,Noci (Nueces) opcional, Miele (Miel) opcional, Olio d'oliva extra vergine (Aceite de oliva virgen extra) :olive:, Sale (sal) :salt:
 
 
 ## Complementos:
 
 ## Ensaladas: :green_salad:
-- _Insalata Tricolore (Ensalada Tricolor)_: Rucola(Rucula):leave:, Pomodori (tomate) :tomato:, Mozzarella (Muzzarela):cheese, Aceite de oliva:olive:, Sale (Sal):salt:
+- _Insalata Tricolore (Ensalada Tricolor)_: Rucola(Rucula) :leave:, Pomodori (tomate) :tomato:, Mozzarella (Muzzarela) :cheese, Aceite de oliva :olive:, Sale (Sal) :salt:
 - _Insalata Mista (Ensalada mixta)_ :green_salad:
-  - Ingredientes: Lattuga (Lechuga):leafy_green:, Pomodori (Tomates):tomato:,Carote (Zanahorias):carrot:,Cipolla (Cebolla):onio:,Peperoni (Pimientos):hot_pepper:,Olive (Aceitunas):olive:, Mais (Maíz):corn:,Uova sode (Huevos duros):egg: - opcional
+  - Ingredientes: Lattuga (Lechuga) :leafy_green:, Pomodori (Tomates) :tomato:,Carote (Zanahorias) :carrot:,Cipolla (Cebolla) :onio:,Peperoni (Pimientos) :hot_pepper:,Olive (Aceitunas) :olive:, Mais (Maíz) :corn:,Uova sode (Huevos duros) :egg: - opcional
 
 ## Bebidas: :beer: :wine_glass:
 - _Refrescos_
