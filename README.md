@@ -23,8 +23,7 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
      - Ingredientes: Salsa di pomodoro (Salsa de tomate) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Pepperoni :salami:, Olio d'oliva (aceite de oliva) :olive:, Origano(Oregano) :leave:
    - _Napoletana (Napolitana)_
      - Ingredientes: Pomodori pelati (Tomates pelados) :tomato:, Mozzarella di Bufala (mozzarela de bufala) :cheese:, Basilico (albahaca fresca) :leafy_green:, Olio d'oliva extra vergine (aceite de oliva extra virgen) :olive:, Sale (sal) :salt:
-   - _Quattro Formaggi (Cuatro Quesos)_
-     - Ingredientes: Mozzarella (Mozzarella):cheese: , Gorgonzola (Gorgonzola):cheese: , Parmigiano Reggiano (Parmesano):cheese: , Provolone (Provolone) :cheese:
+ 
        
 ## Especiales: :pinched_fingers:
    - _Pizza Capricciosa_
@@ -32,7 +31,7 @@ Entonces, "Mafia Margherita" combina el concepto cultural y tradicional de la pi
    - _Pizza Pugliese_
      - Ingredientes: Pomodori (Tomates) :tomato:, Mozzarella (Muzzarella) :cheese:, Cipolla (Cebolla) :onion:, Olive (Aceitunas):olive:,Origano (Orégano):leave:, Olio d'oliva extra vergine (Aceite de oliva virgen extra):olive:, Sale (sal):salt:
    - _Vegetariana_
-     - Ingredientes: Pomodori (Tomates):tomato:, Mozzarella (Muzzarela):cheese, Spinaci (Espinacas):leafy_green:, Origano (Orégano):leave:, Sale (sal):sal:
+     - Ingredientes: Pomodori (Tomates):tomato:, Mozzarella (Muzzarela):cheese:, Spinaci (Espinacas):leafy_green:, Origano (Orégano):leave:, Sale (sal):sal:
    - _Gourmet con ingredientes premium_
    - Pizza Gorgonzola e Pere:
      - Ingredientes: Mozzarella (Mozzarella):cheese:,Gorgonzola (Gorgonzola):cheese,Pere (Peras):pear:,Noci (Nueces) opcional, Miele (Miel) opcional, Olio d'oliva extra vergine (Aceite de oliva virgen extra):olive:, Sale (sal):salt:
