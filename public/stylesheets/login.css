@@ -1,0 +1,110 @@
+
+.subtitulo {
+    margin-top: 4vh;
+}
+
+.login {
+   background-image: url('../images/fondologin2.jpg'); 
+   background-repeat: no-repeat;
+   background-size: 65vh ;
+   width: 80vw;
+   height: 50vh;
+   margin: 0 auto;
+   border-radius: 5px;
+   opacity: 0.8;
+   margin-bottom: 2vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 10vw;
+    padding-top: 7vh;
+    font-family: "italiana";
+    
+    
+}
+
+input {
+    margin: 1vh 0;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 4%;
+    text-align: center;
+    
+}
+
+ button {
+    background-color: #E67E22;
+    border-radius: 5px;
+    color: #ECF0F1;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 4vh;
+    padding: 4%;
+    transition: transform 0.3s ease;
+}
+
+ button:hover {
+    transform: scale(1.025);
+}
+
+/* Version Tablet */
+
+@media (min-width: 768px) {
+
+    .subtitulo {
+        margin-top: 10vh;
+    }
+
+    .login {  
+        background-size: 100vh;
+        height: 55vh;
+        margin-bottom: 15vh;
+    }
+}
+
+
+/* -----VERSION DESKTOP----- */
+
+@media (min-width: 1024px) {
+    .login {
+        background-size: 200vh;
+        height: 65vh;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .precio {
+        width: 16vw;
+        height: 8vh;
+        background-color: #E67E22;
+        font-weight: 15px;
+        border-radius: 10px;
+        position: relative;
+        left: 20vw;
+        top: 5vh;
+
+    }
+
+    input {
+        margin: 1vh 0;
+        border-radius: 10px;
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1.8rem;
+    }
+
+    form {
+        margin: 18vw;
+       
+    }    
+
+    .subtitulo {
+        margin-top: 20vh;
+    }
+}

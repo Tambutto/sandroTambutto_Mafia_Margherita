@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+}
+
+.container {
+    background-color: #0D0D0D;
+    width: 100vw;
+    font-family: "italiana", sans-serif;
+    font-size: 1.5rem;
+    display: flex;
+    
+}
+
+.img-logo {
+    width: 65vw;
+    height: 40vh;
+}
+
+
+a {
+    text-decoration: none;
+    color:#055325;
+    
+}
+
+li { 
+    list-style-type: none;
+    
+}
+
+.navbar ul {
+    display: none;
+    flex-direction: column;
+
+}
+
+.navbar ul li:hover {
+    background-color: #055325;  
+ 
+}
+
+.navbar ul li a:hover {
+    color:aliceblue;
+    
+}
+
+
+.navbar ul.visible { 
+    display: flex;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    gap: 0.5rem;
+    
+    
+    
+}
+
+.navbar ul li a {
+    
+    text-align: center;
+    color: #F1C40F;
+}
+
+
+.menu {
+    color: #055325;
+    font-size: 200%;
+    
+    
+}
+
+
+.navbar div {
+    cursor: pointer;
+    position: relative;
+    /* left: 100%;
+    top: 40%; */
+    /* left: 20%; */
+    top: 20%;
+    
+        
+}
+
+/* Version Tablet */
+
+@media (min-width: 768px) {
+    .container{
+        height: 45vh;
+    }
+
+    .img-logo {
+        width: 65vw;
+        height: 50vh;
+    }
+
+    .navbar ul.visible {
+
+        
+        top: 23%;
+        right: 16%;
+       
+    }
+}
+
+
+/* -----VERSION DESKTOP----- */
+
+@media (min-width: 1024px) {
+    .container{
+        font-size: 2rem;
+        height: 70vh;  
+           
+    }
+
+    .img-logo {
+        width: 55vw;
+        height: 63vh;
+    }
+
+    .navbar ul.visible {
+        top: 30%;
+        right: 20%;
+    }
+
+    .navbar i {
+        display: none;
+    }
+
+    
+    .navbar ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 55vh;
+    right: 20vw;
+    gap: 10vw;
+
+    }
+
+     li {
+        padding: 0.8vw ;
+        transition: all .5s;
+        border-radius: 5%;
+    }
+}
+    

@@ -1,0 +1,87 @@
+
+
+
+.car {
+    color:#055325;
+    font-size: 7vw;
+    position: relative;
+    left: 75vw;
+    bottom: 7vh;
+    cursor: pointer;
+}
+
+.description {
+    margin: 0.5rem;
+}
+
+.precio {
+    width: 20vw;
+    height: 5vh;
+    background-color: #E67E22;
+    font-weight:15px;
+    border-radius: 10px;
+    position: relative;
+    left: 20vw;
+    transition: transform 0.3s ease;
+}
+
+.precio:hover{
+    transform: scale(1.1);
+}
+
+.precio p {
+    color: #ECF0F1;
+}
+
+/* Version Tablet */
+
+@media (min-width: 768px) {
+    
+    .precio {
+        width: 17vw;
+        height: 6vh;
+        background-color: #E67E22;
+        font-weight:15px;
+        border-radius: 10px;
+        position: relative;
+        left: 20vw;
+    }
+
+    .precio p {
+        font-size: 1.9rem;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+}
+
+
+/* -----VERSION DESKTOP----- */
+
+@media (min-width: 1024px) {
+
+    .precio {
+        top: 20vh;
+    }
+
+    .precio p {
+        font-size: 2.6rem;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+    .img-producto {
+        width: 40vw;
+        height: 40vh;
+        margin: auto;
+        margin-top: 10vh;
+    }
+    
+    .description {
+        width: 40vw;
+        margin: auto;
+    }
+
+}

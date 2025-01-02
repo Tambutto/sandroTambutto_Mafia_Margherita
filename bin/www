@@ -4,7 +4,9 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+require('dotenv').config();
+
+const app = require('../source/app')
 var debug = require('debug')('desafioprofesional:server');
 var http = require('http');
 

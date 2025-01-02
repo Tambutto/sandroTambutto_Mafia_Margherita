@@ -1,0 +1,87 @@
+
+.main-container {
+    margin: 0;
+     
+}
+
+.foto {
+    margin-bottom: 5vh;    
+    width: 100vw;
+    height: 55vh;   
+}
+
+h2 {
+    font-size: 2.5rem;
+    
+}
+
+h3 {
+    font-size: 2em;
+    
+}
+
+
+h2, h3 {
+    font-family: "italianno";
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 3%;
+    
+}
+
+p {
+    margin-bottom: 5vh;
+}
+
+
+/* Version Tablet */
+
+@media (min-width: 768px) {
+
+    .food article { 
+        flex: 1 1 30%;
+    }   
+
+    .food {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+    }
+
+    .foto {
+        margin-bottom: 5vh;    
+        max-width: 80%;
+        height: 30vh;
+        margin: 2px;
+        margin: 0 auto;
+    } 
+
+    .food__2 article { 
+        flex: 1 1 30%;
+    }  
+
+  
+    h2 {
+        font-size: 5rem; 
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .main-container p::first-letter {
+        font-size: 2rem;
+    }
+
+}
+
+
+/* -----VERSION DESKTOP----- */
+
+@media (min-width: 1024px) {
+    .food {
+        display: flex;
+    
+    }
+}
