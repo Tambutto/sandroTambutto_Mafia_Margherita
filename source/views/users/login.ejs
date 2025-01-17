@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<header>
+    <%- include('../partials/head') %>
+</header>
+
 <body>
+
+    <header>
+        <%- include('../partials/header') %>
+    <header>    
+
     <h2 class="subtitulo">Formulario de logueo</h2>
 
-    <div class="login">
+    <div>
 
-        <form action="" method="post" >
-            <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Ingrese su Email" required>
+        <form action="" method="post" novalidate class="login">
+            <label for="email"></label><i class="fa-regular fa-envelope ico1"></i>
+            <input type="email" name="email" id="email" placeholder="Email" required autocomplete="off">
+            <div id="emailError" class="error-message"></div>
     
-            <label for="password"></label>
-            <input type="password" name="password" id="password" minlength="10" placeholder="Ingrese su password">
+            <label for="password"></label><i class="fa-solid fa-lock ico2"></i>
+            <input type="password" name="password" id="password" minlength="10" placeholder="Password">
+            <div id="passwordError" class="error-message"></div>
     
            <button type="submit">Enviar</button>
+
         </form>
         
     </div>

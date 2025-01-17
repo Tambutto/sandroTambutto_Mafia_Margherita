@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('../partials/head') %>
 </head>
+
 <body>
 
-    <h2>Formulario de Registro</h2>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
 
-    <div class="login">
-        <form action="" method="post" class="register">
+    <main>
+        <h2 class="titulo__registro">Formulario de Registro</h2>
     
-            <label for="usuario"></label>
-            <input type="text" name="usuario" id="usuario" placeholder="Usuario" minlength="10">
-    
-            <label for="password"></label>
-            <input type="password" name="password" id="password" placeholder="Password" minlength="10" required>
-    
-            <label for="confirm_password"></label>
-            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar password" minlength="10" required>
-    
-            <button type="submit">Registrar</button>
-    
-        </form>
+        <div>
+            <form action="" method="post" class="registro" >
         
-    </div>
+                <label for="name"></label><i class="fa-regular fa-user user"></i>
+                <input type="text" name="Name" id="nombre" placeholder="Nombre" minlength="10">
+    
+                <label for="lastname"></label><i class="fa-regular fa-user user1"></i>
+                <input type="text" name="lastname" id="apellido" placeholder="Apellido" minlength="10">
+    
+                <label for="telephone"></label><i class="fa-solid fa-phone user2"></i>
+                <input type="tel" name="telephone" id="telefono" placeholder="Telefono" minlength="10">
+        
+        
+        
+                <label for="password"></label><i class="fa-solid fa-lock user3"></i>
+                <input type="password" name="password" id="password" placeholder="Password" minlength="10" required>
+                <div id="passwordError" class="error-message"></div>
+        
+                <label for="confirm_password"></label><i class="fa-solid fa-key user4"></i>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar password" minlength="10" required>
+                <div id="confirmpasswordError" class="error-message"></div>
+                
+               <label for="remember" class="Recordarme">Recordame</label>
+               <input type="checkbox" name="remember" id="recordarme" class="recordarme__btn">
+        
+                <button type="submit" class="button__register">Registrar</button>
+        
+            </form>
+            
+        </div>
+
+    </main>
+
     
 </body>
 </html>

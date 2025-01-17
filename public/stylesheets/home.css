@@ -3,12 +3,11 @@
 
 img {
     width: 100vw;
-    height: 35vh;
-    
+    height: 43vh;    
 }
 
 .main-container {
-    margin: 2%;
+    margin: 1%;
      
 }
 
@@ -23,28 +22,28 @@ p::first-letter{
  } 
 
  .titulo__h1:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
  }
 
 
 h1 {
     color: #ECF0F1;
     font-family: "italianno";
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: lighter;
     text-align: center;   
     padding: 3vh 0;
     
   }
-
+/* 
 h1 {
     opacity: 0;
     transform: translateX(100%);
-    animation: slide-in 3s forwards;
+    animation: slide-in 3s forwards 0.5s;
     
-}  
+}   */
 
-@keyframes slide-in {
+/* @keyframes slide-in {
      0% {
          opacity: 0; 
          transform: translateX(100%); 
@@ -52,7 +51,7 @@ h1 {
      100% { 
          opacity: 1; 
          transform: translateX(0); } 
-    }
+    } */
 
 p {
     font-family: "italiana", sans-serif;
@@ -79,6 +78,10 @@ img {
     p {
         font-size: 1.2rem;
     }
+
+    h1 {
+        font-size: 4rem;
+    }
 }
  
 
@@ -88,13 +91,14 @@ img {
 
     img {
         width: 100vw;
-        height: 100vh;
+        height: 64vh;
+        margin-top: 9vw;
         
     }
 
     h1 {
-        font-size: 6rem;
-        padding: 5vh 0;
+        font-size: 4rem;
+        padding: 3vh 0;
     }
 
     .section p {
@@ -110,9 +114,6 @@ img {
 
     .sangria::first-letter{
         font-size: 5vw;
-    }
-
-  
-    
+    }   
 
     }

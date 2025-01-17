@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<head
+    <%- include('../partials/head', {title}) %>
 </head>
+
+<header>
+
+    <%- include('../partials/header', {title}) %>
+    
+</header>
+
+
 <body>
-    
-    
 
-    <main>
-        <img src="" alt="" class="img-producto">
+    <main">
+        <img src="./images/margueritafoto.webp" alt="" class="img-producto" id="producto">
+
+        <h3>Ingredientes</h3><i class="fa-solid fa-cart-shopping car"></i>
+
+        <p class="description" id="description">"Salsa de tomate", "Mozzarella de bufala", "albahaca", "Aceite de oliva</p>
         
-        <h2>Producto</h2>
+        <div class="contador"> 
+    
+            <button class="boton">$0</button>
+        
+            <button class="boton" onclick="decrementar()">-</button> 
+            <span id="valor">0</span> 
+            <button class="boton" onclick="incrementar()">+</button> 
 
-        <h3>Descripcion</h3><i class="fa-solid fa-cart-shopping car"></i>
-
-        <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga sapiente animi delectus quisquam magni quis fugiat veniam assumenda facilis cupiditate, doloremque cumque illum vero consectetur atque sint nihil blanditiis! Voluptatum?</p>
-
-        <div class="precio">
-            <p>Precio</p>
+            <button class="boton">5%</button>
         </div>
-
 
     </main>
 
+    <script src="../javascripts/productCartl.js"></script>
 
 </body>
 </html>

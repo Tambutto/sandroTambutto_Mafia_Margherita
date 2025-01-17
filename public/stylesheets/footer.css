@@ -1,25 +1,35 @@
-h2 {
-  margin-top: 2vh;
-  font-size: 3rem;
-  
-}
 
 .titulo__footer {
-  color:#ECF0F1;
+  color: var(--limpieza);
+}
+
+.titulo__footer-1 {
+  font-size: 2rem;
+  color: var(--limpieza);
 }
 
 
 .icons {
-  background-color: #E74C3C;
+  background-color: var(--tomate);
   width: 100%;
   height: 50%;
   text-align: center;
 }
 
 .icons p {
-  color: #ECF0F1;
+  color: var(--limpieza);
   font-size: 1.2rem;
   text-align: center;
+}
+
+.footer__container {
+  background-color: var(--fondo);
+}
+
+.img__footer {
+  width: 40vw;
+  height: 20vh;
+  margin: auto;
 }
 
 i {
@@ -32,16 +42,18 @@ i {
 
 i:hover {
   transform: scale(1.3);
-  color: #ECF0F1;
+  color: var(--limpieza);
 }
+
+
 
 /* Version Tablet */
 
 @media (min-width: 768px) {
 
-  h2 {
+  .titulo__footer {
     font-size: 4.5rem;
-  }
+  } 
 
   i {
     font-size: 3vw;
@@ -53,20 +65,54 @@ i:hover {
 
 @media (min-width: 1024px) {
 
-  h2 {
-    font-size: 5rem;
+  div .img__footer {
+    width: 20vw;
+    height: 20vh;
+    background-color: var(--fondo);
   }
 
-  i {
-    font-size: 3vw;
-  }
-
-  .icons p {
-    font-size: 1.5rem;
-  }
-
-  h3 {
+  .titulo__footer {
     font-size: 3rem;
+  }
+
+  .titulo__footer p {
+    font-size: 1rem;
+  }
+
+  .icono {
+    font-size: 1.5vw;
+    position: relative;
+    left: 7vw;
+  }
+
+  .titulo__footer-1 {
+    font-size: 2rem;
+    color: var(--limpieza);
+  }
+
+  .footer__container {
+    height: 25vh;
+    background-color: var(--fondo);
+  }
+  
+  div .img__footer {
+    width: 20vw;
+    height: 25vh;
+    margin: 0 auto;
+  }
+
+  .arrow{
+    color: var(--limpieza);
+    font-size: 1.1vw;
+    position: relative;
+    left: 20vw;
+    background: var(--CrujienteMasa);
+    padding: 1vw;
+    border-radius: 50%;
+  }
+
+  html { 
+    scroll-behavior: smooth; 
   }
 
 }

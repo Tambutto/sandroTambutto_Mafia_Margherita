@@ -1,28 +1,39 @@
 
 
+.img-producto {
+    border-radius: 45%;
+    height: 17vh;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 32vw;
+    transition: transform 0.9s ease-in-out;
+}
+
+.img-producto:hover {
+    transform: scale(1.1) rotate(180deg);
+}
 
 .car {
-    color:#055325;
-    font-size: 7vw;
-    position: relative;
+    color:var(--icono);
+    font-size: 6vw;
+    position: absolute;
     left: 75vw;
-    bottom: 7vh;
-    cursor: pointer;
+    top: 60vh;
+    transition: transform 0.3s ease;
 }
+
+
+.car:hover {
+    transform: scale(1.12);
+    color: var(--quesoDerretido);
+  }
 
 .description {
-    margin: 0.5rem;
-}
-
-.precio {
-    width: 20vw;
-    height: 5vh;
-    background-color: #E67E22;
-    font-weight:15px;
-    border-radius: 10px;
-    position: relative;
-    left: 20vw;
-    transition: transform 0.3s ease;
+    font-size: .8rem;
+    margin: 0 auto;
+    width: 40vw;
+    font-weight: bold;
 }
 
 .precio:hover{
@@ -30,17 +41,63 @@
 }
 
 .precio p {
-    color: #ECF0F1;
+    color: var(--limpieza);
+    font-size: 5vw;
+    
 }
 
-/* Version Tablet */
+.boton {
+    background: var(--ingredientesFrescos);
+    height: 6vh;
+    width: 10vw;
+    position: relative;
+    left: 23vw;
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+    padding: 5px;
+
+}
+
+.contador { 
+    display: flex;
+    gap: 5vw;
+    margin: 0 10px;
+} 
+
+span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    left: 52vw;
+    bottom: 9vh;
+}
+
+
+
+/* -----VERSION TABLET----- */
+
 
 @media (min-width: 768px) {
+
+    .img-producto {
+        width: 20vw;
+        height: 17vh;
+        border-radius: 45%;       
+    }
+
+    .boton {
+        height: 6vh;
+        width: 7vw;
+        left: 31vw;
+        font-size: 1.1rem;
+        padding: 5px;
+
+    }
     
     .precio {
         width: 17vw;
         height: 6vh;
-        background-color: #E67E22;
+        background-color: var(--quesoDerretido);
         font-weight:15px;
         border-radius: 10px;
         position: relative;
@@ -52,6 +109,31 @@
         text-align: center;
         font-weight: bold;
 
+    } 
+
+    .car {
+        font-size: 4vw;
+        top: 55vh;
+        left: 66vw;
+    }
+
+    .description {
+        font-size: 1rem;
+        width: 35vw;
+    }
+
+    .contador { 
+        display: flex;
+        gap: 3vw;
+        margin: 0 10px;
+    } 
+
+    span {
+        font-size: 1.3rem;
+        font-weight: bold;
+        position: absolute;
+        left: 50vw;
+        bottom: 16vh;
     }
 
 }
@@ -60,6 +142,7 @@
 /* -----VERSION DESKTOP----- */
 
 @media (min-width: 1024px) {
+
 
     .precio {
         top: 20vh;
@@ -73,15 +156,54 @@
     }
 
     .img-producto {
-        width: 40vw;
-        height: 40vh;
+        width: 15vw;
+        height: 30vh;
         margin: auto;
-        margin-top: 10vh;
+        margin-bottom: 6vh;
+        margin-top: 25vh;
+        border-radius: 45%;
     }
     
     .description {
-        width: 40vw;
+        width: 25vw;
         margin: auto;
+        font-size: 1rem;
+    }
+    
+    .boton {
+        width: 4vw;
+        height: 6vh;
+        font-weight:15px;
+        border-radius: 10px;
+        left: 37vw;
+        font-size: 1.2rem;
+        padding: 5px;
+
     }
 
+    .car {
+        color:#055325;
+        font-size: 3vw;
+        position: absolute;
+        left: 60vw;
+        /* bottom: 7vh; */
+        top: 50vh;
+        cursor: pointer;
+    }
+
+    .contador { 
+        display: flex;
+        gap: 3vw;
+        margin: 0 10px;
+    } 
+
+    span {
+        font-size: 1.3rem;
+        font-weight: bold;
+        position: absolute;
+        left: 50vw;
+        bottom: 15vh;
+    }
+
+    
 }

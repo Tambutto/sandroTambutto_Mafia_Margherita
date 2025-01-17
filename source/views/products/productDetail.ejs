@@ -2,9 +2,17 @@
 <html lang="en">
 
 <head
-    
+    <%- include('../partials/head', {title}) %>
 </head>
-   
+
+<header>
+
+    <%- include('../partials/header', {title}) %>
+    
+</header>
+
+    <h2 class="titulo__menu">Menu</h2>
+    <a href="/productCartl" class="boton__menu">Ordenar</a>
 
     <h2>Productos Clasicos</h2>
 
@@ -83,25 +91,61 @@
         
         <h2>Complementos: Ensaladas</h2>
 
-        <section class="food food__3">
+        <section class="food">
             <article>
                 <h3>Ensalada Tricolor</h3>
-                <img src="./images/ensaladaTricolorfoto.webp" alt="Ensalada tricolor" class="foto">
+                <img src="./images/ensaladaTricolore.jpg" alt="Ensalada tricolor" class="foto foto__ensalada">
                 <p>
-                    Se elabora de manera armoniosa, destacando los colores de cada ingrediente, y se aliña justo antes de servir. La Ensalada Tricolor es una celebración de los sabores mediterráneos, perfecta para quienes disfrutan de platos saludables y estéticamente atractivos.
+                    Se elabora de manera armoniosa, destacando los colores de cada ingrediente, y se aliña justo antes de servir. La ensalada tricolor es una celebración de los sabores mediterráneos, perfecta para quienes disfrutan de platos saludables y estéticamente atractivos.
                 </p>
     
             </article>
     
             <article>
                 <h3>Ensalada Mixta</h3>
-                <img src="./images/ensaladaMixta.webp" alt="Ensalada mixta" class="foto">
-                <p>La Ensalada Mixta es un plato equilibrado, saludable y adaptable, ideal para quienes buscan una opción ligera pero llena de sabor. Su simplicidad y frescura la convierten en una opción popular</p>
+                <img src="./images/ensaladaMixta.webp" alt="Ensalada mixta" class="foto foto__ensalada">
+                <p>La ensalada mixta es un plato equilibrado, saludable y adaptable, ideal para quienes buscan una opción ligera pero llena de sabor. Su simplicidad y frescura la convierten en una opción popular</p>
             </article>
             
         </section>
 
+        <h2>Comentarios</h2>
 
+        <div class="comments-section">
+            <div class="comment">
+                <img src="/images/coment1.webp" alt="Person 1" class="toggleImage" data-comment="comment1">
+                <p id="comment1">"La pizza Margarita fue una explosión de sabores frescos y auténticos. La albahaca, el tomate y la mozzarella se complementaron perfectamente. ¡Increíble!"</p>
+            </div>
+            <div class="comment">
+                <img src="/images/coment2.webp" alt="Person 2" class="toggleImage" data-comment="comment2">
+                <p id="comment2">"Me gustó mucho la ensalada mixta. Los ingredientes estaban frescos y bien balanceados. Sin duda, una opción saludable y satisfactoria." 🥗</p>
+            </div>
+            <div class="comment">
+                <img src="/images/coment3.webp" alt="Person 3" class="toggleImage" data-comment="comment3">
+                <p id="comment3">"La pizza de gorgonzola y pera me sorprendió gratamente. El sabor intenso del queso gorgonzola se equilibraba perfectamente con la dulzura de las peras. Una opción gourmet que vale la pena probar." 🍕🍐</p>
+            </div>
+        </div>
+        
+        <div class="comments-section2">
+            <div class="comment">
+                <img src="/images/coment4.webp" alt="Person 4" class="toggleImage" data-comment="comment4">
+                <p id="comment4">"El vino de la casa fue una grata sorpresa. Su sabor equilibrado complementó perfectamente nuestra comida. Definitivamente lo recomendaría." 🍷</p>
+            </div>
+            <div class="comment">
+                <img src="/images/coment5.webp" alt="Person 5" class="toggleImage" data-comment="comment5">
+                <p id="comment5">"La pizza vegetariana fue una delicia. Los vegetales frescos y bien cocidos crearon una combinación de sabores realmente agradable. Una opción saludable y sabrosa que volvería a pedir."</p>
+            </div>
+            <div class="comment">
+                <img src="/images/coment6.webp" alt="Person 6" class="toggleImage" data-comment="comment6">
+                <p id="comment6">"La atención fue excelente. La pizza capricciosa, fue una explosión de sabores. Los ingredientes estaban frescos y bien combinados. Sin duda, una experiencia para repetir."</p>
+            </div>
+        </div>
+        
     </main>
+
+    <i class="fa-solid fa-arrow-up arrow2"></i>
+
+    <script src="../javascripts/productDetail.js"></script>
+</body>
     
 </html>

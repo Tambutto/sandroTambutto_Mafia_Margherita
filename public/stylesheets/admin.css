@@ -1,0 +1,132 @@
+
+/* VERSION MOVIL */
+
+.encabezado {
+    color: var(--fondo);
+    font-size: 2.5rem;
+    margin-top: 20vh;
+    /* margin: 15px 0; */
+}
+
+.nuevo {
+    background: var(--ingredientesFrescos);
+    color: var(--fondo);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 1vw;
+    border-radius: 1vw;
+    font-family: 'Italianno';
+    font-size: 1.3rem;
+}
+
+.nuevo:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
+.delete-form {
+    display: inline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3vh;
+    font-size: .7rem;
+    text-align: center;
+}
+
+th, td {
+    border-bottom: 1px solid var(--CrujienteMasa);
+}
+
+th {
+    background: var(--CrujienteMasa);
+    font-size: 1.3rem;
+    padding: .5vh;
+    font-family: 'Italianno';
+    font-weight: 500;
+}
+
+tr:hover {
+    background-color: var(--fondoAdmin);
+}
+
+a {
+    color: #3498db;
+}
+
+/* a:hover {
+    background: var(--fondo);
+    color: var(--limpieza);
+} */
+
+.delete {
+    background: var(--tomate);
+    color: var(--limpieza);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 13vw;
+    font-size: 0.6rem;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* VERSION TABLET */
+
+@media (min-width: 768px) {
+    .encabezado {
+        font-size: 3rem;
+    }
+    table {
+        font-size: .9rem;
+    }
+    th {
+        height: 7vh;
+        font-size: 1.8rem;
+        padding: 1.5vh;
+    }
+    .nuevo {
+        font-size: 1.3rem;
+    }
+    .delete {
+        font-size: .8rem;
+        width: 10vw;
+    }
+}
+
+/* VERSION DESCKTOP */
+
+
+@media (min-width: 1024px) {
+    .encabezado {
+        
+        font-size: 4rem;
+    }
+    .nuevo {
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        border-radius: 2vw;
+    }
+
+    th {
+        height: 7vh;
+        font-size: 2.2rem;
+       
+    }
+
+    table {
+        font-size: 1.1rem;
+    }
+
+    .delete {
+        font-size: 1rem;
+        width: 6vw;
+    }
+}
+
