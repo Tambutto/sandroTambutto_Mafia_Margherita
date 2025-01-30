@@ -182,7 +182,7 @@ span {
     }
 
     .car {
-        color:#055325;
+        color: var(--icono);
         font-size: 3vw;
         position: absolute;
         left: 60vw;

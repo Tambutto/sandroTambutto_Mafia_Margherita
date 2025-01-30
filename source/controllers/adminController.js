@@ -1,4 +1,4 @@
-const pizzeria = require("../db/pizzeria");
+const pizzeria = require("../data/pizzeria");
 
 let adminController = {
     show: (req, res) => {

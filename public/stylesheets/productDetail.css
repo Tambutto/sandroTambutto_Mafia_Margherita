@@ -5,8 +5,8 @@
 }
 
 .boton__menu {
-    background-color: #E67E22;
-    color: white;
+    background: var(--quesoDerretido);
+    color: var(--limpieza);
     display: flex;
     font-size: 4.6vw;
     align-items: center;
@@ -22,8 +22,8 @@
 }
 
 .boton__menu:hover {
-    background-color: #000000;
-    color: #E74C3C;
+    background: var(--Quemado);
+    color: var(--tomate);
     transform: scale(1.1);
 }
 
@@ -126,8 +126,8 @@ p {
 @media (min-width: 768px) {
 
     .boton__menu {
-        background-color: #E67E22;
-        color: white;
+        background: var(--quesoDerretido);
+        color: var(--limpieza);
         display: flex;
         font-size: 1.6vw;
         align-items: center;
@@ -204,7 +204,7 @@ p {
 
 .comment img:hover {
     transform: scale(1.05);
-    box-shadow: 1px 1px 5px 3px #726d6d;
+    box-shadow: 1px 1px 5px 3px var(--tostado);
 }
 
 .comment p {
@@ -262,7 +262,7 @@ p {
         margin-bottom: 5vh;    
         max-width: 70%;
         height: 26vh;
-        box-shadow: 2px 2px 30px 0px #0D0D0D;
+        box-shadow: 2px 2px 30px 0px var(--fondo);
     }
 
     .foto__ensalada {
@@ -278,8 +278,8 @@ p {
     }
 
     .boton__menu {
-        background-color: #E67E22;
-        color: white;
+        background: var(--quesoDerretido);
+        color: var(--limpieza);
         display: flex;
         font-size: 1.6vw;
         align-items: center;
@@ -295,8 +295,8 @@ p {
     }
 
     .boton__menu:hover {
-        background-color: #000000;
-        color: #E74C3C;
+        background: var(--Quemado);
+        color: var(--tomate);
         transform: scale(1.1);
     }
 
@@ -330,7 +330,7 @@ p {
 
 .comment img:hover {
     transform: scale(1.05);
-    box-shadow: 1px 1px 5px 3px #726d6d;
+    box-shadow: 1px 1px 5px 3px var(--tostado);
 }
 
 .comment p {

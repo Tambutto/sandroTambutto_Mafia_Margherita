@@ -1,25 +1,6 @@
 const pizzeria = {
   variedad: [
-    {
-      nombre: "Mafia Marguerita",
-      direccion: {
-        calle: "Av. Siempre Viva",
-        numero: 123,
-        ciudad: "Muñiz",
-        provincia: "Buenos Aires",
-        codigo_postal: "1663",
-        pais: "Argentina"
-      },
-      telefono: "+54 11 1234-5678",
-      horarios: {
-        lunes: "12:00 - 23:00",
-        martes: "12:00 - 23:00",
-        miercoles: "12:00 - 23:00",
-        jueves: "12:00 - 23:00",
-        viernes: "12:00 - 00:00",
-        sabado: "12:00 - 00:00",
-        domingo: "12:00 - 23:00"
-      },
+    {      
       menu: [
         {
           id: 1,

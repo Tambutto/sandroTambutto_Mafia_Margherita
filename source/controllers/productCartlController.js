@@ -1,8 +1,8 @@
-let productCartlController = {
-    show: (req, res) => {
-        res.render('products/productCartl',{title: 'Carrito de compras'});
-    }   
+// let productCartlController = {
+//     show: (req, res) => {
+//         res.render('products/productCartl',{title: 'Carrito de compras'});
+//     }   
 
-}
+// }
 
-module.exports = productCartlController;
+// module.exports = productCartlController;
