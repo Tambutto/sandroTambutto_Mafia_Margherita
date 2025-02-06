@@ -1,0 +1,33 @@
+<head>
+    <%- include('../partials/head', {title}) %>
+    <title><%= title %></title>
+</head>
+
+<header>
+    <%- include('../partials/header') %>
+</header>
+
+<body>
+    <h1 class="titulo__productAdd">Editar Productos</h1>
+
+    <form action="/products/productEdit/<%= product.id %>?_method=PUT" class="form__productAdd" method="post" enctype="multipart/form-data"> 
+        <!-- <label for="nombre">Nombre del Producto:</label>  -->
+        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.nombre%>"> 
+        
+        <!-- <label for="description">Descripcion:</label>  -->
+        <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="<%= product.ingredientes %>"> 
+
+        <!-- <label for="category">Categoría:</label>  -->
+        <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="<%= product.categoria %>"> 
+
+        <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="<%= product.tamano %>">
+        
+        <!-- <label for="price">Precio:</label>  -->
+        <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.precio %>"> 
+        
+        <!-- <label for="image"></label> -->
+        <input type="file" id="imagen" name="imagen" placeholder="Imagen"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
+
+        <button type="submit" class="btn_productAdd">Actualizar Producto</button>
+    </form>
+</body>

@@ -8,6 +8,8 @@ const adminController = require('../controllers/adminController');
 
 router.get ('/', adminController.show);
 
+// router.get('/producto/agregar', adminController.show2);
+
 
 
 module.exports = router;

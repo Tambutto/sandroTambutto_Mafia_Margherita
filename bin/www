@@ -90,3 +90,7 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+console.log( 
+  `El servidor esta funcinando el Puerto ${port}`
+)

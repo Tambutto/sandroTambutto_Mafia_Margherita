@@ -1,0 +1,48 @@
+
+/* VERSION DESCKTOP */
+
+
+@media (min-width: 1024px) {
+    .titulo__productAdd {
+        color: var(--fondo);
+        font-size: 4rem;
+    }
+
+    .form__productAdd {
+        margin: 0 auto;
+        margin-top: 5vh;
+        background: var(--tostado);
+        width: 28vw;
+        height: 64vh;
+        border-radius: 1rem;
+    }
+
+    .form__productAdd input {
+        width: 25vw;
+        height: 7vh;
+        cursor: pointer;
+    }
+
+   .submit__productAdd {
+        background-color: #c0392b;
+       
+   }
+
+    .btn_productAdd {
+        margin-top: 5vh;
+        width: 20vw;
+        height: 7vh;
+   }
+
+   input::placeholder { 
+    color:var(--limpieza); 
+    font-size: 1rem;   
+   }
+
+   input:focus { 
+    outline: none;    
+}
+    input:hover { 
+        transform: scale(1.03);    
+    }
+}

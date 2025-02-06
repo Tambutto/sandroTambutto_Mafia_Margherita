@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head', {title}) %>
+    <title><%= title %></title>
+</head>
+
+
+<body>
+<h1 class="titulo__productAdd">Editar Productos</h1>
+
+<form class="form__productAdd" method="POST"> 
+    
+    <!-- <label for="name">Nombre del Producto:</label>  -->
+    <input type="text" id="name" name="name" required placeholder="Nombre del producto" > 
+    
+    <!-- <label for="description">Descripcion:</label>  -->
+    <input type="text" id="description" name="description" required placeholder="Descripcion" > 
+
+    <!-- <label for="category">Categoría:</label>  -->
+    <input type="text" id="category" name="category" required placeholder="Categoria"> 
+    
+    <!-- <label for="size">Tamaño</label> -->
+    <input type="text" id="size" name="size" required placeholder="Tamaño">
+    
+    <!-- <label for="price">Precio:</label>  -->
+    <input type="number" id="price" name="price" required placeholder="Precio"> 
+    
+    <!-- <label for="image"></label> -->
+    <input type="file" id="image" name="image" required placeholder="Imagen">
+
+    <button type="submit" class="btn_productAdd">Agregar Producto</button>
+
+</form>
+</body>
+</html>

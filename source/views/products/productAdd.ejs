@@ -1,5 +1,3 @@
-
-
 <head>
     <%- include('../partials/head', {title}) %>
 </head>
@@ -14,7 +12,7 @@
     <h1 class="titulo__productAdd">Agregar Nuevo Producto</h1>
 <body>
 
-<form action="/produtcs/productAdd" class="form__productAdd" method="post"> 
+<form class="form__productAdd" method=""> 
     
     <!-- <label for="name">Nombre del Producto:</label>  -->
     <input type="text" id="name" name="name" required placeholder="Nombre del producto"> 
@@ -32,7 +30,7 @@
     <input type="number" id="price" name="price" required placeholder="Precio"> 
     
     <!-- <label for="image"></label> -->
-    <!-- <input type="file" id="image" name="image"  placeholder="Imagen"> -->
+    <!-- <input type="file" id="image" name="image" required placeholder="Imagen"> -->
 
     <button type="submit" class="btn_productAdd">Agregar Producto</button>
 
