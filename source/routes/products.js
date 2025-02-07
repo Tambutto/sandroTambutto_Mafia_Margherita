@@ -1,6 +1,22 @@
 var express = require('express');
 var router = express.Router();
+const multer = require('multer');
 // var productsController = require('../controllers/productsController');
+
+// Configuración de almacenamiento de multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
+
+
+
 const { lista, 
         createForm, 
         detail, 
@@ -15,7 +31,7 @@ const { lista,
 
 // 1 Ruta para mostrar todos los productos
 
-router.get('/lista', lista);
+router.get('/listaProductos', lista);
 
 // 2 ruta para formulario de creacion de productos
 
@@ -40,6 +56,8 @@ router.put('/productEdit/:id', edit )
 // 7 Acción de borrado (DELETE)
 
 router.delete('/remove/:id', remove);
+
+// router.search('/search', search);
 
 
 

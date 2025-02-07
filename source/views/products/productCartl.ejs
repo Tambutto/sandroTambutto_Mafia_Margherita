@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head
+<head>
     <%- include('../partials/head', {title}) %>
 </head>
 
@@ -14,24 +14,29 @@
 
 <body>
 
-    <main">
-        <img src="/images/margueritafoto.webp" alt="" class="img-producto" id="producto">
+    <main>
+        <% products.forEach(({id, nombre, ingredientes, precio, categoria, imagen}) => { %>
+        <img src="/<%= imagen %>" alt="<%= nombre %>" class="img-producto" id="producto">
 
         <h3>Ingredientes</h3><i class="fa-solid fa-cart-shopping car"></i>
 
-        <p class="description" id="description">"Salsa de tomate", "Mozzarella de bufala", "albahaca", "Aceite de oliva</p>
+        <p class="description" id="description"><%= ingredientes.join(", ") %></p>
+
+        
+
+
         
         <div class="contador"> 
     
-            <button class="boton">$0</button>
+            <button class="boton">$ </button>
         
             <button class="boton" onclick="decrementar()">-</button> 
-            <span id="valor">0</span> 
-            <button class="boton" onclick="incrementar()">+</button> 
+            <span id="valor"></span> 
+            <button class="boton" onclick="incrementar()">+</button> <%= precio %>
 
             <button class="boton">5%</button>
         </div>
-
+        <% }) %>
     </main>
 
     <script src="../javascripts/productCartl.js"></script>

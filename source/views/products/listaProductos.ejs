@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title %></title>
 </head>
 <body>
     <h1>Lista de productos</h1>
+    <pre>{
+        <% products.menu.forEach((product, index) => { %>
+            "<%= index %>": {
+                "id": "<%= product.id %>",
+                "nombre": "<%= product.nombre %>",
+                "categoria": "<%= product.categoria %>",
+                "ingredientes": <%= product.ingredientes %>",
+                "tamano": "<%= product.tamano %>",
+                "precio": <%= product.precio %>
+            }<%= (index < products.menu.length - 1) ? ',' : '' %>
+        <% }) %>
+        }</pre>
     
 </body>
 </html>

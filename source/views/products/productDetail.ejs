@@ -18,14 +18,16 @@
 
     <main class="main-container">
 
+       <% products.forEach(({id, nombre, ingredientes, precio, categoria, imagen}) => { %>
         <section class="food">
             <article>
                 <h3>Marguerita</h3>
                 
-                <img src="./images/margueritafoto.webp" alt="Pizza Marguerita" class="foto">
+                <img src="/<%= imagen %>" alt="Pizza Marguerita" class="foto">
             
             
                 <p>La Pizza Margherita es un clásico de la cocina italiana que destaca por su sencillez y sabor auténtico. Es una de las pizzas más apreciadas y populares en todo el mundo, y su receta tradicional se mantiene inalterada desde hace siglos.
+                    <a href="/productCartl">Ver más</a>
                 </p>
                 
             </article>
@@ -140,7 +142,7 @@
                 <p id="comment6">"La atención fue excelente. La pizza capricciosa, fue una explosión de sabores. Los ingredientes estaban frescos y bien combinados. Sin duda, una experiencia para repetir."</p>
             </div>
         </div>
-        
+        <% }) %>
     </main>
 
     <i class="fa-solid fa-arrow-up arrow2"></i>

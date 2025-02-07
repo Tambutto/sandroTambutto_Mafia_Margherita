@@ -4,6 +4,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 
+
 // Ruta al archivo JSON
 const dataPath = path.join(__dirname, '..', 'data', 'products.json');
 
@@ -26,20 +27,21 @@ let productsController = {
     lista: function (req, res){
         const products = readData();
         // res.send(products);
-        return res.render('products/listaProductos')
+        return res.render('products/listaProductos', { title: 'lista Productos', products});
     },
 
     // 2 Formulario de creación de productos (GET)
-
-    createForm: function (req, res) {
-         return res.render('products/productAdd', { title: 'Nuevos Productos'});
+    
+    createForm: function (req, res){
+        
+         res.render('products/productAdd', { title: 'Nuevos Productos'});
         },
 
     
     // 3 Detalle de un producto particular (GET)
     detail: (req, res) => {
         const products = readData(); // Lee los productos desde el archivo JSON
-        const product = products.menu.find(p => p.id == req.params.id); // Encuentra el producto por ID
+        const product = products.menu.find(p => p.id === +req.params.id); // Encuentra el producto por ID
         if (product) {
             res.json(product); // muestra el producto encontrado
         } else {
@@ -107,11 +109,14 @@ let productsController = {
     
     
     showCart: (req, res) => {
-       return res.render('products/productCartl',{title: 'Carrito de compras'}); // muestra el carrito de compras
+        const products = readData().menu; // Leer los productos existentes
+
+       return res.render('products/productCartl',{title: 'Carrito de compras', products}); // muestra el carrito de compras
     },
 
     show: (req, res) => {
-       return res.render('products/productDetail', {title: 'Detalle de productos'})
+        const products = readData().menu; // Leer los productos existentes
+       return res.render('products/productDetail', {title: 'Detalle de productos', products})
     },
 }
 

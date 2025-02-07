@@ -11,3 +11,6 @@ function decrementar() {
         document.getElementById('valor').innerText = contador;
     }
 }
+
+
+

@@ -177,6 +177,11 @@ p {
         font-size: 2rem;
     }
 
+    .main-container a {
+        color: var(--quesoDerretido);
+        font-weight: bold;
+    }
+
     /* SECCION COMENTARIOS */ 
 
 .comments-section {
