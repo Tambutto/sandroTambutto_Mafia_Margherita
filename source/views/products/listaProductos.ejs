@@ -8,7 +8,7 @@
 <body>
     <h1>Lista de productos</h1>
     <pre>{
-        <% products.menu.forEach((product, index) => { %>
+        <% products.forEach((product, index) => { %>
             "<%= index %>": {
                 "id": "<%= product.id %>",
                 "nombre": "<%= product.nombre %>",
@@ -16,7 +16,7 @@
                 "ingredientes": <%= product.ingredientes %>",
                 "tamano": "<%= product.tamano %>",
                 "precio": <%= product.precio %>
-            }<%= (index < products.menu.length - 1) ? ',' : '' %>
+            }<%= (index < products.length - 1) ? ',' : '' %>
         <% }) %>
         }</pre>
     

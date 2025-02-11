@@ -8,13 +8,23 @@
         font-size: 4rem;
     }
 
-    .form__productAdd {
+    /* .form__productAdd {
+        display: flex;
+       
         margin: 0 auto;
         margin-top: 5vh;
         background: var(--tostado);
-        width: 28vw;
+        width: 5vw;
         height: 64vh;
         border-radius: 1rem;
+    } */
+     
+
+    .form__productAdd {
+        display: flex;
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */        
+        width: 100vw;
+        padding: 2rem; /* Añadir relleno */
     }
 
     .form__productAdd input {
@@ -25,13 +35,16 @@
 
    .submit__productAdd {
         background-color: #c0392b;
-       
+    
    }
 
-    .btn_productAdd {
-        margin-top: 5vh;
+     button .btn_productAdd {
+        position: absolute;
+        margin-top: 10vh;
         width: 20vw;
-        height: 7vh;
+        height: 5vh;
+        bottom: 10vh;
+        
    }
 
    input::placeholder { 
@@ -45,4 +58,26 @@
     input:hover { 
         transform: scale(1.03);    
     }
+
+    select {
+            color:  var( --limpieza);
+            font-size: .9rem;
+            margin: 0 auto;
+            background: var(--tostado);
+            width: 25vw;
+            height: 5vh;
+            border-top: none;
+            border-right: none;
+            border-left: none; 
+            border-bottom: .1vw solid var(--quesoDerretido);       
+    }
+
+    .ingredient-checkbox {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: start;
+        gap: 0.5rem;
+    }
+
+
 }

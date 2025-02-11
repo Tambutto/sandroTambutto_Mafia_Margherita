@@ -12,26 +12,100 @@
     <h1 class="titulo__productAdd">Agregar Nuevo Producto</h1>
 <body>
 
-<form class="form__productAdd" method="post"> 
+<form action="/products/productAdd" class="form__productAdd" method="post" enctype="multipart/form-data"> 
     
     <!-- <label for="name">Nombre del Producto:</label>  -->
-    <input type="text" id="name" name="name" required placeholder="Nombre del producto"> 
-    
-    <!-- <label for="description">Descripcion:</label>  -->
-    <input type="text" id="description" name="description" required placeholder="Descripcion"> 
+    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del producto"> 
 
-    <!-- <label for="category">Categoría:</label>  -->
-    <input type="text" id="category" name="category" required placeholder="Categoria"> 
+     <!-- <label for="name">Nombre del Producto:</label>  -->
+     <!-- <select name="ingredientes[]" id="ingredientes" class="" >
+        <option value="" disabled selected>Ingredientes</option>
+        <option value="Salsa de tomate">Salsa de tomate</option>
+        <option value="Mozzarella">Mozzarella de bufala</option>
+        <option value="Albahaca">Albahaca</option>
+        <option value="Pepperoni">Pepperoni</option>
+        <option value="Oregano">Oregano</option>
+        <option value="Tomates pelados">Tomates pelados</option>
+        <option value="Sal">Sal</option>
+        <option value="Champiñones">Champiñones</option>
+        <option value="Jamon">Jamon</option>
+        <option value="Alcachofas">Alcachofas</option>
+        <option value="Aceitunas">Aceitunas</option>
+        <option value="Cebolla">Cebolla</option>
+        <option value="queso gorgonzola">Queso gorgonzola</option>
+        <option value="pera">Pera</option>
+        <option value="pimientos">Pimientos</option>
+        <option value="Rucula">Rucula</option>
+        <option value="lechuga">lechuga</option>
+        <option value="zanahoria">Zanahoria</option>
+        <option value="tomate">Tomates</option>
+        <option value="pepino">Pepino</option>
+        <option value="choclo">choclo</option>
+
+     </select> -->
+    
+
+     <label for="ingredientes">Seleccione los ingredientes:</label>
+     <div id="ingredientes" class="ingredient-checkboxes">
+         <div class="ingredient-checkbox">
+             <input type="checkbox" id="salsa_de_tomate" name="ingredientes[]" value="Salsa de tomate">
+             <label for="salsa_de_tomate">Salsa de tomate</label>
+         </div>
+         <div class="ingredient-checkbox">
+             <input type="checkbox" id="mozzarella_de_bufala" name="ingredientes[]" value="Mozzarella de bufala">
+             <label for="mozzarella_de_bufala">Mozzarella de bufala</label>
+         </div>
+         <div class="ingredient-checkbox">
+             <input type="checkbox" id="albahaca" name="ingredientes[]" value="albahaca">
+             <label for="albahaca">Albahaca</label>
+         </div>
+         <div class="ingredient-checkbox">
+             <input type="checkbox" id="pepperoni" name="ingredientes[]" value="Pepperoni">
+             <label for="pepperoni">Pepperoni</label>
+         </div>
+         <div class="ingredient-checkbox">
+            <input type="checkbox" id="cebolla" name="ingredientes[]" value="Cebolla">
+            <label for="cebolla">Cebolla</label>
+        </div>
+        <div class="ingredient-checkbox">
+            <input type="checkbox" id="Jamon" name="ingredientes[]" value="Jamon">
+            <label for="Jamon">Jamon</label>
+        </div>
+        <div class="ingredient-checkbox">
+            <input type="checkbox" id="pimientos" name="ingredientes[]" value="pimientos">
+            <label for="pimientos">Pimientos</label>
+        </div>
+         <!-- Añadir más ingredientes según sea necesario -->
+     </div>
+
+    <!-- <label for="description">Descripcion:</label>  -->
+    <input type="text" id="descripcion" name="description" required placeholder="Descripcion"> 
+
     
     <!-- <label for="size">Tamaño</label> -->
-    <input type="text" id="size" name="size" required placeholder="Tamaño">
+    <select name="tamaño" id="tamaño" class="" >
+        <option value="" disabled selected>Tamaño</option>
+        <option value="grande">Grande</option>
+        <option value="mediana">Mediana</option>
+        <option value="chica">Chica</option>
+        <option value="porcion">Porcion</option>
+    </select>
     
     <!-- <label for="price">Precio:</label>  -->
-    <input type="number" id="price" name="price" required placeholder="Precio"> 
+    <input type="number" id="precio" name="precio" required placeholder="Precio"> 
+    
+    <!-- <label for="categoria">Categoría:</label> -->
+    <select name="categoria" id="categoria" class="" >
+        <option value="" disabled selected>Elija un categoria</option>
+        <option value="Clasica">Clasica</option>
+        <option value="Especial">Especial</option>
+        <option value="Complemento">Complemento</option>
+        <option value="Bebida">Bebida</option>
+    </select>
     
     <!-- <label for="image"></label> -->
-    <!-- <input type="file" id="image" name="image" required placeholder="Imagen"> -->
-
+    <input type="file" id="imagen" name="imagen"  placeholder="Imagen">
+    
     <button type="submit" class="btn_productAdd">Agregar Producto</button>
 
 </form>

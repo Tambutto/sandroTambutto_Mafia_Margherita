@@ -18,8 +18,8 @@
 
     
     <table>
-        <thead>
-            <tr>
+        <thead> <!-- Encabezado de la tabla-->
+            <tr> <!-- filas -->
                 <th>Nombre</th>
                 <th>Categoría</th>
                 <th>Ingredientes</th>
@@ -30,8 +30,8 @@
             </tr>
         </thead>
 
-        <tbody> 
-            <% products.menu.forEach(product => { %> <!-- Aquí, se itera sobre cada producto en el menú de la primera variedad de la pizzería.-->
+        <tbody> <!-- cuerpo de la--> 
+            <% products.forEach(product => { %> <!-- Aquí, se itera sobre cada producto en el menú de la primera variedad de la pizzería.-->
              <tr> <!-- Para cada producto, se genera una fila en la tabla:-->
                 <td><%= product.nombre %></td> 
                 <td><%= product.categoria %></td> 

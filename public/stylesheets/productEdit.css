@@ -3,13 +3,13 @@
     .titulo__productAdd {
         color: var(--fondo);
         font-size: 4rem;
-        margin-top: 20vh;
+        margin-top: 15vh;
     }
 
     .form__productAdd {
         margin: 0 auto;
         background: var(--tostado);
-        width: 28vw;
+        width: 70vw;
         height: 50vh;
         border-radius: 1rem;
     }

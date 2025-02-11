@@ -28,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use('/images', express.static(path.join(__dirname, 'public/images'))); // Servir el directorio 'public/images'
+
 app.use(methodOverride('_method'));
 
 
@@ -35,9 +37,6 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/products', productRouter);
-// app.use('/productCartl', productCartlRouter);
-// app.use('/login', loginRouter);
-// app.use('/register', registerRouter);
 app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
@@ -55,8 +54,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 
 module.exports = app;

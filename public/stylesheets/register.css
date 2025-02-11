@@ -253,7 +253,7 @@ input {
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
-                top: 28.5vh;
+                top: 25vh;
         }
 
         .user1 {
@@ -261,7 +261,7 @@ input {
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
-                top: 35.5vh;
+                top: 32vh;
             }
     
 
@@ -270,7 +270,7 @@ input {
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
-                top: 42.5vh;
+                top: 39vh;
             }
 
         .user3 {
@@ -278,7 +278,7 @@ input {
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
-                top: 49.5vh;
+                top: 46vh;
             }
 
         .user4 {
@@ -286,7 +286,7 @@ input {
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
-                top: 57vh;
+                top: 53vh;
         }    
 
  }

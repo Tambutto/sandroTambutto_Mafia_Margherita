@@ -4,32 +4,26 @@
     <%- include('../partials/head', {title}) %>
     <title><%= title %></title>
 </head>
-
-
 <body>
 <h1 class="titulo__productAdd">Editar Productos</h1>
 
-<form class="form__productAdd" method="POST"> 
+<form action="/products/update/<%= id %>?_method=PUT" class="form__productEdit" method="POST" enctype="multipart/form-data"> 
     
-    <!-- <label for="name">Nombre del Producto:</label>  -->
-    <input type="text" id="name" name="name" required placeholder="Nombre del producto" > 
+    <input type="text" id="name" name="nombre" required placeholder="Nombre del producto" value="<%= nombre %>"> 
     
-    <!-- <label for="description">Descripcion:</label>  -->
-    <input type="text" id="description" name="description" required placeholder="Descripcion" > 
+    <input type="text" id="description" name="descripcion" required placeholder="Descripcion" value="<%= descripcion %>" > 
 
-    <!-- <label for="category">Categoría:</label>  -->
-    <input type="text" id="category" name="category" required placeholder="Categoria"> 
-    
-    <!-- <label for="size">Tamaño</label> -->
-    <input type="text" id="size" name="size" required placeholder="Tamaño">
-    
-    <!-- <label for="price">Precio:</label>  -->
-    <input type="number" id="price" name="price" required placeholder="Precio"> 
-    
-    <!-- <label for="image"></label> -->
-    <input type="file" id="image" name="image" required placeholder="Imagen">
+    <input type="text" id="ingredientes" name="ingredientes" required placeholder="Ingredientes" value="<%= ingredientes %>"> 
 
-    <button type="submit" class="btn_productAdd">Agregar Producto</button>
+    <input type="text" id="category" name="categoria" required placeholder="Categoria" value="<%=categoria %>"> 
+    
+    <input type="text" id="size" name="tamaño" required placeholder="Tamaño" value="<%= tamaño %>">
+    
+    <input type="number" id="price" name="precio" required placeholder="Precio" value="<%= precio %>"> 
+
+    <input type="file" id="image" name="imagen" placeholder="Imagen">
+
+    <button type="submit" class="btn_productEdit">Actualizar Producto</button>
 
 </form>
 </body>

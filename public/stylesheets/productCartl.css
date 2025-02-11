@@ -1,7 +1,7 @@
 
 
 .img-producto {
-    border-radius: 45%;
+    /* border-radius: 45%; */
     height: 17vh;
     margin: auto;
     margin-top: 5vh;
@@ -11,7 +11,7 @@
 }
 
 .img-producto:hover {
-    transform: scale(1.1) rotate(180deg);
+    transform: scale(1.1) scale(1);
 }
 
 .car {
@@ -82,7 +82,7 @@ span {
     .img-producto {
         width: 20vw;
         height: 17vh;
-        border-radius: 45%;       
+        /* border-radius: 45%;        */
     }
 
     .boton {
@@ -161,7 +161,7 @@ span {
         margin: auto;
         margin-bottom: 6vh;
         margin-top: 25vh;
-        border-radius: 45%;
+        /* border-radius: 50%; */
     }
     
     .description {
