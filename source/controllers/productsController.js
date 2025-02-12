@@ -99,17 +99,19 @@ let productsController = {
     // 6  Acción de edición (a donde se envía el formulario - PUT) Update (actualizar):
 
     edit: (req, res) => {
+        try {
         const products = readData(); // Leer los productos existentes
         // Extraer los datos del cuerpo de la solicitud
-        const { nombre, precio, ingredientes, descripcion, categoria } = req.body
+        const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
 
                 const productsModify = products.map(product => {
-                    if(product.id === +req.params.id){
+                    if (product.id.toString() === req.params.id) {
                         product.nombre = nombre.trim();
-                        product.precio = +precio;
+                        product.precio = precio;
                         product.ingredientes = ingredientes;
                         product.descripcion = descripcion.trim();
                         product.categoria = categoria;
+                        product.tamaño  = tamaño;
 
 
                 // Manejar el campo de imagen si se ha subido una nueva imagen
@@ -124,6 +126,9 @@ let productsController = {
         
                 res.redirect(`/products/productDetail/${req.params.id}`); 
             
+            } catch (error) {
+                res.status(500).send('Error del servidor'); // Manejar errores del servidor
+            }
             },
     
 
@@ -134,9 +139,9 @@ let productsController = {
         
         console.log('Productos antes de eliminar:', products); // Registro para depuración
         
-        products.menu = products.filter(p => p.id != req.params.id); // Filtrar el producto por ID
+        const productsModify = products.filter(p => p.id != req.params.id); // Filtrar el producto por ID
         console.log('Productos después de eliminar:', products); // Registro para depuración
-        saveData(products); // Guardar el arreglo actualizado en el archivo JSON
+        saveData(productsModify); // Guardar el arreglo actualizado en el archivo JSON
         res.redirect('/products'); // Redirigir al listado de productos
     },
     
