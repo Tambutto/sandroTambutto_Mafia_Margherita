@@ -23,7 +23,7 @@ const { lista,
         detail, 
         create, 
         editForm, 
-        edit, 
+        update, 
         remove, 
         showCart, 
         show 
@@ -40,7 +40,7 @@ router.get('/productAdd', createForm);
 
 // 3 ruta para mostrar un producto por su id
 
-router.get('/productCartl/:id', detail);
+router.get('/productEspecific/:id', detail);
 
 // 4 Formulario de POST Acción de creación (a donde se envía el formulario)
 
@@ -52,7 +52,8 @@ router.get('/productEdit/:id', editForm);
 
 // 6 Acción de edición (a donde se envía el formulario - PUT o update):
 
-router.put('/update/:id', edit )
+// router.put('/update/:id', edit )
+router.put('/update/:id', upload.single('imagen'), update);
 
 // 7 Acción de borrado (DELETE)
 
@@ -64,7 +65,7 @@ router.delete('/remove/:id', remove);
 
 // Ruta para mostrar el carrito de compras
 
-router.get('/productCartl', showCart);
+router.get('/productCartl/:id', showCart);
 
 // Ruta para mostrar el detalle de los productos
 

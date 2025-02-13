@@ -45,7 +45,7 @@ let productsController = {
             const products = readData();
             const product = products.find(product => product.id == req.params.id);
             if (product) {
-                res.render('products/productCartl', { title: 'Detalle de productos', product });
+                res.render('products/productEspecific', { title: 'Detalle de un producto', product });
             } else {
                 res.status(404).send('Producto no encontrado');
             }
@@ -63,11 +63,11 @@ let productsController = {
             id: uuidv4(), // Generar un UUID único
             nombre,
             descripcion,
-            ingredientes,
-            tamaño,
+            ingredientes: Array.isArray(ingredientes) ? ingredientes : [ingredientes], // Asegurarse de que los ingredientes sean un array            tamaño,
             precio,
             categoria,
-            imagen
+            imagen,
+            tamaño
         };
     
         // Agregar el nuevo producto al arreglo
@@ -98,22 +98,21 @@ let productsController = {
 
     // 6  Acción de edición (a donde se envía el formulario - PUT) Update (actualizar):
 
-    edit: (req, res) => {
+    update: (req, res) => {
         try {
         const products = readData(); // Leer los productos existentes
         // Extraer los datos del cuerpo de la solicitud
-        const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
+        const { nombre, descripcion, ingredientes, tamaño, precio, categoria, imagen } = req.body;
 
                 const productsModify = products.map(product => {
-                    if (product.id.toString() === req.params.id) {
-                        product.nombre = nombre.trim();
-                        product.precio = precio;
-                        product.ingredientes = ingredientes;
-                        product.descripcion = descripcion.trim();
+                    if (product.id.toString() === +req.params.id) {
+                        product.nombre = nombre;
+                        product.descripcion = descripcion;
+                        product.ingredientes = Array.isArray(ingredientes) ? ingredientes : [ingredientes]; // Asegurarse de que los ingredientes sean un array                        product.precio = precio;
                         product.categoria = categoria;
                         product.tamaño  = tamaño;
-
-
+                        product.imagen = imagen;
+                        product.precio = precio;
                 // Manejar el campo de imagen si se ha subido una nueva imagen
                 if (req.file) {
                     product.imagen = `images/${req.file.filename}`;
@@ -123,9 +122,11 @@ let productsController = {
                 })
         
                 saveData(productsModify);
-        
-                res.redirect(`/products/productDetail/${req.params.id}`); 
-            
+
+                
+                // res.render('products/productEspecific', { title: 'Detalle de un producto', productsModify });
+                res.redirect(`/products/productEspecific/${req.params.id}`);
+                            
             } catch (error) {
                 res.status(500).send('Error del servidor'); // Manejar errores del servidor
             }
@@ -145,12 +146,19 @@ let productsController = {
         res.redirect('/products'); // Redirigir al listado de productos
     },
     
-    
-   showCart: (req, res) => {
+     showCart : (req, res) => {
         const products = readData(); // Leer los productos existentes
-        return res.render('products/productCartl', {title: 'Carrito de compras', products})
-       // muestra el carrito de compras
-    }, 
+        const productId = req.params.id; // Obtener el ID del producto desde los parámetros de la URL
+        const product = products.find(p => p.id.toString() === productId); // Buscar el producto por ID
+    
+        if (product) {
+            return res.render('products/productCartl', { title: 'Carrito de compras', product });
+        } else {
+            return res.status(404).send('Producto no encontrado');
+        }
+    },
+    
+
 
     show: (req, res) => {
         const products = readData(); // Leer los productos existentes

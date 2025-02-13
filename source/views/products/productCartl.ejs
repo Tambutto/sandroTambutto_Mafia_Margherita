@@ -16,7 +16,8 @@
 
         <h3>Ingredientes</h3><i class="fa-solid fa-cart-shopping car"></i>
 
-        <p class="description" id="description"><%= product.ingredientes %></p>
+        <p class="description" id="description"><%= product.ingredientes.join(', ') %></p>
+        <!-- <p class="description" id="description"><%= product.ingredientes %></p> -->
 
         <div class="contador"> 
             <button class="boton">$<%= product.precio %></button>
@@ -26,7 +27,7 @@
             <button class="boton">5%</button>
         </div>
         
-        <p><%= product.descripcion %></p>
+        
         
         <a href="/products">Volver al listado</a>
     </main>

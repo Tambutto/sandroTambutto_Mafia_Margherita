@@ -1,0 +1,226 @@
+
+
+.img_productEspecific {
+    /* border-radius: 45%; */
+    height: 17vh;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 32vw;
+    transition: transform 0.3s ease;
+}
+
+.img_productEspecific:hover {
+    transform: scale(1.12);
+}
+
+.car {
+    color:var(--icono);
+    font-size: 6vw;
+    position: absolute;
+    left: 75vw;
+    top: 60vh;
+    transition: transform 0.3s ease;
+}
+
+
+.car:hover {
+    transform: scale(1.12);
+    color: var(--quesoDerretido);
+  }
+
+.description_productEspecific {
+    font-size: .8rem;
+    margin: 0 auto;
+    width: 40vw;
+    font-weight: bold;
+}
+
+.precio:hover{
+    transform: scale(1.1);
+}
+
+.precio p {
+    color: var(--limpieza);
+    font-size: 5vw;
+    
+}
+
+.boton {
+    background: var(--ingredientesFrescos);
+    height: 6vh;
+    width: 10vw;
+    position: relative;
+    left: 23vw;
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+    padding: 5px;
+
+}
+
+.contador { 
+    display: flex;
+    gap: 5vw;
+    margin: 0 10px;
+} 
+
+
+
+/* -----VERSION TABLET----- */
+
+
+@media (min-width: 768px) {
+
+    .img-producto {
+        width: 20vw;
+        height: 17vh;
+        /* border-radius: 45%;        */
+    }
+
+    .boton {
+        height: 6vh;
+        width: 7vw;
+        left: 31vw;
+        font-size: 1.1rem;
+        padding: 5px;
+
+    }
+    
+    .precio {
+        width: 17vw;
+        height: 6vh;
+        background-color: var(--quesoDerretido);
+        font-weight:15px;
+        border-radius: 10px;
+        position: relative;
+        left: 20vw;
+    }
+
+    .precio p {
+        font-size: 1.9rem;
+        text-align: center;
+        font-weight: bold;
+
+    } 
+
+    .car {
+        font-size: 4vw;
+        top: 55vh;
+        left: 66vw;
+    }
+
+    .description_productEspecific {
+        font-size: .5rem;
+        width: 35vw;
+    }
+
+    .contador { 
+        display: flex;
+        gap: 3vw;
+        margin: 0 10px;
+    } 
+
+
+}
+
+
+/* -----VERSION DESKTOP----- */
+
+@media (min-width: 1024px) {
+
+
+    .precio {
+        top: 20vh;
+    }
+
+    .precio p {
+        font-size: 2.6rem;
+        text-align: center;
+        font-weight: bold;
+
+    }
+
+    .img_productEspecific {
+        cursor: pointer;
+        width: 25vw;
+        height: 45vh;
+        margin: auto;
+        margin-bottom: 6vh;
+        margin-top: 35vh;
+        position: relative;
+        transition: opacity 0.5s ease;
+    }
+    
+    .img_productEspecific__img {
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.2s ease;
+    }
+    
+    .img_productEspecific:hover .img_productEspecific__img {
+        opacity: 0.7; /* Aplica opacidad a la imagen */
+    }
+    
+    .description_productEspecific {
+        width: 23.5vw;
+        height: 42.5vh;
+        color: var(--limpieza);
+        margin: auto;
+        /* font-size: .2rem; */
+        position: absolute;
+        top: 50%; /* Centrar verticalmente */
+        left: 50%; /* Centrar horizontalmente */
+        transform: translate(-50%, -50%); /* Ajuste de centrado */
+        background-color: rgba(60, 64, 65, 0.5); /* 50% de opacidad - Fondo semitransparente */
+        padding: 10px;
+        border-radius: 8px;
+        opacity: 0; /* Inicialmente oculto */
+        transition: opacity 0.5s ease; /* Transición suave */
+    }
+    
+    .img_productEspecific:hover .description_productEspecific {
+        opacity: 1; /* Mostrar descripción al pasar el cursor sobre la imagen */
+    }
+
+    .nombre__descripcion {
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    
+    .boton {
+        width: 4vw;
+        height: 6vh;
+        font-weight:15px;
+        border-radius: 10px;
+        left: 37vw;
+        font-size: 1.2rem;
+        padding: 5px;
+
+    }
+
+    .car {
+        color: var(--icono);
+        font-size: 3vw;
+        position: absolute;
+        left: 60vw;
+        /* bottom: 7vh; */
+        top: 50vh;
+        cursor: pointer;
+    }
+
+    .Back {
+        color: var(--limpieza);
+        font-size: 1.1vw;
+        position: relative;
+        left: 10vw;
+        bottom: 60vh;
+        background: var(--CrujienteMasa);
+        padding: 1vw;
+        border-radius: 50%;
+    }
+
+    
+
+    
+}

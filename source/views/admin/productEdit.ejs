@@ -7,13 +7,12 @@
 <body>
 <h1 class="titulo__productAdd">Editar Productos</h1>
 
-<form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="POST" enctype="multipart/form-data"> 
-    
+<form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="POST" enctype="multipart/form-data">     
     <input type="text" id="name" name="nombre" required placeholder="Nombre del producto" value="<%= product.nombre %>"> 
     
     <input type="text" id="description" name="descripcion" required placeholder="Descripcion" value="<%= product.descripcion %>" > 
 
-    <input type="text" id="ingredientes" name="ingredientes" required placeholder="Ingredientes" value="<%= product.ingredientes %>"> 
+    <input type="text" id="ingredientes" name="ingredientes[]" required placeholder="Ingredientes" value="<%= product.ingredientes %>"> 
 
     <input type="text" id="category" name="categoria" required placeholder="Categoria" value="<%= product.categoria %>"> 
     
