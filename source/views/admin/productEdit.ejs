@@ -5,25 +5,31 @@
     <title><%= title %></title>
 </head>
 <body>
-<h1 class="titulo__productAdd">Editar Productos</h1>
+<h1 class="titulo__productEdit">Editar Productos</h1>
+<div class="form__productEdit">
 
-<form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="POST" enctype="multipart/form-data">     
-    <input type="text" id="name" name="nombre" required placeholder="Nombre del producto" value="<%= product.nombre %>"> 
+    <form action="/products/update/<%= product.id %>?_method=PUT" id="form__productEdit" method="POST" enctype="multipart/form-data"> 
     
-    <input type="text" id="description" name="descripcion" required placeholder="Descripcion" value="<%= product.descripcion %>" > 
-
-    <input type="text" id="ingredientes" name="ingredientes[]" required placeholder="Ingredientes" value="<%= product.ingredientes %>"> 
-
-    <input type="text" id="category" name="categoria" required placeholder="Categoria" value="<%= product.categoria %>"> 
+        <input type="text" id="name" name="nombre" required placeholder="Nombre del producto" value="<%= product.nombre %>"> 
     
-    <input type="text" id="size" name="tamaño" required placeholder="Tamaño" value="<%= product.tamaño %>">
+        <label for="descripcion">descripcion</label>
+        <input type="text" name="descripcion" id="" value="<%= product.descripcion %>"> 
+        
+        <!-- <input type="text" id="description" name="descripcion" required placeholder="Descripcion" value="<%= product.descripcion %>" >  -->
     
-    <input type="number" id="price" name="precio" required placeholder="Precio" value="<%= product.precio %>"> 
-
-    <input type="file" id="image" name="imagen" placeholder="Imagen">
-
-    <button type="submit" class="btn_productEdit">Actualizar Producto</button>
-
-</form>
+        <input type="text" id="ingredientes" name="ingredientes[]" required placeholder="Ingredientes" value="<%= product.ingredientes %>" > 
+    
+        <input type="text" id="category" name="categoria" required placeholder="Categoria" value="<%= product.categoria %>"> 
+        
+        <input type="text" id="size" name="tamaño" required placeholder="Tamaño" value="<%= product.tamaño %>">
+        
+        <input type="number" id="price" name="precio" required placeholder="Precio" value="<%= product.precio %>"> 
+    
+        <input type="file" id="image" name="imagen" placeholder="Imagen">
+    
+        <button type="submit" class="btn_productEdit">Actualizar Producto</button>
+    
+    </form>
+</div>
 </body>
 </html>

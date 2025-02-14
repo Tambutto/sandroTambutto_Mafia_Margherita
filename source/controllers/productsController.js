@@ -105,7 +105,7 @@ let productsController = {
         const { nombre, descripcion, ingredientes, tamaño, precio, categoria, imagen } = req.body;
 
                 const productsModify = products.map(product => {
-                    if (product.id.toString() === +req.params.id) {
+                    if (product.id.toString() === req.params.id) {
                         product.nombre = nombre;
                         product.descripcion = descripcion;
                         product.ingredientes = Array.isArray(ingredientes) ? ingredientes : [ingredientes]; // Asegurarse de que los ingredientes sean un array                        product.precio = precio;
@@ -116,17 +116,20 @@ let productsController = {
                 // Manejar el campo de imagen si se ha subido una nueva imagen
                 if (req.file) {
                     product.imagen = `images/${req.file.filename}`;
+                } 
+            
+                 // Conservar el valor de la imagen anterior si no se sube una nueva imagen
+                 if (!req.file) {
+                    product.imagen = product.imagen;
                 }
-                    }
+            }
                     return product;
                 })
         
                 saveData(productsModify);
-
-                
-                // res.render('products/productEspecific', { title: 'Detalle de un producto', productsModify });
+               
                 res.redirect(`/products/productEspecific/${req.params.id}`);
-                            
+
             } catch (error) {
                 res.status(500).send('Error del servidor'); // Manejar errores del servidor
             }
