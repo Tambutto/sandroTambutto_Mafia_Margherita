@@ -11,9 +11,9 @@
     <h1 class="titulo__productAdd">Editar Productos</h1>
     
 
-    <form action="/products/update/<%= product.id %>?_method=PUT" class="form__productAdd" method="post" enctype="multipart/form-data"> 
+    <form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="post" enctype="multipart/form-data"> 
         <!-- <label for="nombre">Nombre del Producto:</label>  -->
-        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.nombre%>"> 
+        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.nombre%>">        
         
         <!-- <label for="description">Descripcion:</label>  -->
         <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="<%= product.ingredientes %>"> 
@@ -29,6 +29,6 @@
         <!-- <label for="image"></label> -->
         <input type="file" id="imagen" name="imagen" placeholder="Imagen"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
 
-        <button type="submit" class="btn_productAdd">Actualizar Producto</button>
+        <button type="submit" class="btn_productEdit">Actualizar Producto</button>
     </form>
 </body>

@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const session = require('express-session');
+const userCookie = require('./middlewares/usersCookie');
 
 
 
@@ -32,6 +34,15 @@ app.use('/images', express.static(path.join(__dirname, 'public/images'))); // Se
 
 app.use(methodOverride('_method'));
 
+// Configuración del middleware de sesiones
+app.use(session({
+  secret: 'mi_secreto', // Clave secreta para firmar la cookie de la sesión
+  resave: false,        // No guardar la sesión si no ha sido modificada
+  saveUninitialized: true, // Guardar la sesión aunque no esté inicializada
+  cookie: { secure: false } // Solo enviar la cookie en conexiones HTTPS (debería ser true en producción con HTTPS)
+}));
+
+app.use(userCookie); // middleware de cookie
 
 
 app.use('/', indexRouter);

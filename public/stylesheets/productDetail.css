@@ -159,6 +159,7 @@ p {
     .food article {
         flex: 1 1 30%;
         margin: 10px; /* Asegurar espacio alrededor de cada artículo */
+    }
 
     .foto {
         margin-bottom: 5vh;    
@@ -289,6 +290,7 @@ p {
 .food article {
     flex: 1 1 30%;
     margin: 10px; /* Asegurar espacio alrededor de cada artículo */
+}
 
     .foto {
         border-radius: 0.8vw;
@@ -336,7 +338,7 @@ p {
     
 /* PRIMER CUADRO DE COMENTARIOS */
 .comments-section {
-    
+    display: flex;
     flex-direction: row;
     justify-content: center;
 }
@@ -382,12 +384,12 @@ p {
 
 /* SEGUNDO CUADRO DE COMENTARIOS */
 
-/* .comments-section2 {
+.comments-section2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 5vh;
-} */
+}
 
 /* Flecha para arriba */
 
@@ -395,7 +397,7 @@ p {
     color: var(--limpieza);
     font-size: 1.1vw;
     position: relative;
-    left: 80vw;
+    left: 85vw;
     background: var(--CrujienteMasa);
     padding: 1vw;
     border-radius: 50%;
@@ -406,4 +408,4 @@ html {
   }
 
     
-}}}
+}

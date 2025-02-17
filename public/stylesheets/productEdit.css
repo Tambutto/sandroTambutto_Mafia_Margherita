@@ -6,17 +6,23 @@
         margin-top: 15vh;
     }
 
-    #form__productEdit {
-        margin: 0 auto;
-        background: var(--tostado);
-        width: 70vw;
+    .form__productEdit {
+        display: flex;
+        /* flex-direction: row; */
+        flex-wrap: wrap;
+        width: 80vw ;
         height: 50vh;
+        margin: 0 auto;
+        /* margin-top: 2vh; */
+        background-color: var(--CrujienteMasa);   
+        align-items: center;   
         border-radius: 1rem;
-    }
+        padding: 2rem; 
+    } 
 
     .form__productEdit input {
-        width: 10vw;
-        height: 3vh;
+        /* width: 10vw; */
+        height: 10vh;
         cursor: pointer;
     }
 
@@ -26,8 +32,12 @@
    }
 
     .btn_productEdit {
+        background: var(--quesoDerretido);
+        border-radius: 2vh;
+        color: var(--limpieza);
+        font-size: 1rem;
         margin-top: 5vh;
-        width: 20vw;
+        width: 15vw;
         height: 7vh;
    }
 
@@ -41,6 +51,12 @@
 }
     input:hover { 
         transform: scale(1.03);    
+    }
+
+    .select{
+        cursor: pointer;
+        background: var(--quesoDerretido);
+        margin-top: 3vh;
     }
     
 }

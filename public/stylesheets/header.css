@@ -89,7 +89,7 @@ li {
 @media (min-width: 768px) {
     
     .container{
-        height: 34vh;
+        height: 30vh;
     }
 
     .img-logo {
@@ -103,7 +103,7 @@ li {
 
     .navbar ul.visible {
        
-        top: 6%;
+        top: 3%;
         right: 28%;
     }
 
@@ -115,14 +115,14 @@ li {
     }
 
     .navbar ul li a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     canvas {
         position: absolute;
         right: -3vw;
         width: 70vw;
-        height: 34vh;
+        height: 30vh;
         /* background: var(--fondo); */
 
 }

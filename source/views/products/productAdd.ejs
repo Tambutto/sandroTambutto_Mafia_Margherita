@@ -45,66 +45,68 @@
      </select> -->
     
 
-     <label for="ingredientes">Seleccione los ingredientes:</label>
-     <div id="ingredientes" class="ingredient-checkboxes">
-         <div class="ingredient-checkbox">
-             <input type="checkbox" id="salsa_de_tomate" name="ingredientes[]" value="Salsa de tomate" class="input__add">
-             <label for="salsa_de_tomate">Salsa de tomate</label>
-         </div>
-         <div class="ingredient-checkbox">
-             <input type="checkbox" id="mozzarella_de_bufala" name="ingredientes[]" value="Mozzarella de bufala" class="input__add">
-             <label for="mozzarella_de_bufala">Mozzarella de bufala</label>
-         </div>
-         <div class="ingredient-checkbox">
-             <input type="checkbox" id="albahaca" name="ingredientes[]" value="Albahaca" class="input__add">
-             <label for="albahaca">Albahaca</label>
-         </div>
-         <div class="ingredient-checkbox">
-             <input type="checkbox" id="pepperoni" name="ingredientes[]" value="Pepperoni" class="input__add">
-             <label for="pepperoni">Pepperoni</label>
-         </div>
-         <div class="ingredient-checkbox">
-            <input type="checkbox" id="cebolla" name="ingredientes[]" value="Cebolla" class="input__add">
-            <label for="cebolla">Cebolla</label>
-        </div>
-        <div class="ingredient-checkbox">
-            <input type="checkbox" id="Jamon" name="ingredientes[]" value="Jamon" class="input__add">
-            <label for="Jamon">Jamon</label>
-        </div>
-        <div class="ingredient-checkbox">
-            <input type="checkbox" id="pimientos" name="ingredientes[]" value="Pimientos" class="input__add">
-            <label for="pimientos">Pimientos</label>
-        </div>
-         <!-- Añadir más ingredientes según sea necesario -->
-     </div>
-
     <!-- <label for="description">Descripcion:</label>  -->
-    <input type="text" id="descripcion" name="descripcion" required placeholder="Descripcion" class="input__add"> 
-
-    
-    <!-- <label for="size">Tamaño</label> -->
-    <select name="tamaño" id="tamaño" class="" >
-        <option value="" disabled selected>Tamaño</option>
-        <option value="grande">Grande</option>
-        <option value="mediana">Mediana</option>
-        <option value="chica">Chica</option>
-        <option value="porcion">Porcion</option>
-    </select>
+    <input type="text" id="descripcion" name="descripcion" required placeholder="Descripcion" class="input__add">     
     
     <!-- <label for="price">Precio:</label>  -->
     <input type="number" id="precio" name="precio" required placeholder="Precio" class="input__add"> 
-    
-    <!-- <label for="categoria">Categoría:</label> -->
-    <select name="categoria" id="categoria" class="" >
-        <option value="" disabled selected>Elija un categoria</option>
-        <option value="Clasica">Clasica</option>
-        <option value="Especial">Especial</option>
-        <option value="Complemento">Complemento</option>
-        <option value="Bebida">Bebida</option>
-    </select>
-    
+
+    <div class="form__inside">
+                <!-- <label for="categoria">Categoría:</label> -->
+            <select name="categoria" id="categoria" class="" >
+                <option value="" disabled selected>Elija un categoria</option>
+                <option value="Clasica">Clasica</option>
+                <option value="Especial">Especial</option>
+                <option value="Complemento">Complemento</option>
+                <option value="Bebida">Bebida</option>
+            </select>
+
+            <!-- <label for="ingredientes">Seleccione los ingredientes:</label> -->
+            <div id="ingredientes" class="ingredient-checkboxes">
+                <div class="ingredient-checkbox">
+                    <input type="checkbox" id="salsa_de_tomate" name="ingredientes[]" value="Salsa de tomate" class="input__add">
+                    <label for="salsa_de_tomate">Salsa de tomate</label>
+                </div>
+                <div class="ingredient-checkbox">
+                    <input type="checkbox" id="mozzarella_de_bufala" name="ingredientes[]" value="Mozzarella de bufala" class="input__add">
+                    <label for="mozzarella_de_bufala">Mozzarella de bufala</label>
+                </div>
+                <div class="ingredient-checkbox">
+                    <input type="checkbox" id="albahaca" name="ingredientes[]" value="Albahaca" class="input__add">
+                    <label for="albahaca">Albahaca</label>
+                </div>
+                <div class="ingredient-checkbox">
+                    <input type="checkbox" id="pepperoni" name="ingredientes[]" value="Pepperoni" class="input__add">
+                    <label for="pepperoni">Pepperoni</label>
+                </div>
+                <div class="ingredient-checkbox">
+                <input type="checkbox" id="cebolla" name="ingredientes[]" value="Cebolla" class="input__add">
+                <label for="cebolla">Cebolla</label>
+            </div>
+            <div class="ingredient-checkbox">
+                <input type="checkbox" id="Jamon" name="ingredientes[]" value="Jamon" class="input__add">
+                <label for="Jamon">Jamon</label>
+            </div>
+            <div class="ingredient-checkbox">
+                <input type="checkbox" id="pimientos" name="ingredientes[]" value="Pimientos" class="input__add">
+                <label for="pimientos">Pimientos</label>
+            </div>
+                <!-- Añadir más ingredientes según sea necesario -->
+            </div>
+
+            <!-- <label for="size">Tamaño</label> -->
+            <select name="tamaño" id="tamaño" class="tamaño" >
+                <option value="" disabled selected>Tamaño</option>
+                <option value="grande">Grande</option>
+                <option value="mediana">Mediana</option>
+                <option value="chica">Chica</option>
+                <option value="porcion">Porcion</option>
+            </select>
+            
+            <input type="file" id="imagen" name="imagen"  placeholder="Imagen" class="input__add">
+    </div>
     <!-- <label for="image"></label> -->
-    <input type="file" id="imagen" name="imagen"  placeholder="Imagen" class="input__add">
+
     
     <button type="submit" class="btn_productAdd">Agregar Producto</button>
 

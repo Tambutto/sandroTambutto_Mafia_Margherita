@@ -98,42 +98,100 @@ let productsController = {
 
     // 6  Acción de edición (a donde se envía el formulario - PUT) Update (actualizar):
 
-    update: (req, res) => {
+    update : (req, res) => {
         try {
-        const products = readData(); // Leer los productos existentes
-        // Extraer los datos del cuerpo de la solicitud
-        const { nombre, descripcion, ingredientes, tamaño, precio, categoria, imagen } = req.body;
-
-                const productsModify = products.map(product => {
-                    if (product.id.toString() === req.params.id) {
-                        product.nombre = nombre;
-                        product.descripcion = descripcion;
-                        product.ingredientes = Array.isArray(ingredientes) ? ingredientes : [ingredientes]; // Asegurarse de que los ingredientes sean un array                        product.precio = precio;
-                        product.categoria = categoria;
-                        product.tamaño  = tamaño;
-                        product.imagen = imagen;
-                        product.precio = precio;
-                // Manejar el campo de imagen si se ha subido una nueva imagen
-                if (req.file) {
-                    product.imagen = `images/${req.file.filename}`;
-                } 
+            const products = readData(); // Leer los productos existentes
+            const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
+    
+            // Convertir el ID de la solicitud a cadena para comparación
+            const productId = req.params.id.toString();
+    
+            // Buscar el producto existente antes de modificarlo
+            const existingProduct = products.find(p => p.id.toString() === productId);
             
-                 // Conservar el valor de la imagen anterior si no se sube una nueva imagen
-                 if (!req.file) {
-                    product.imagen = product.imagen;
+            // Si no se encuentra el producto, lanzar un error
+            if (!existingProduct) {
+                return res.status(404).send('Producto no encontrado');
+            }
+    
+            // Actualizar el producto
+            const productsModify = products.map(product => {
+                if (product.id.toString() === productId) {
+                    product.nombre = nombre;
+                    product.descripcion = descripcion;
+                    product.ingredientes = Array.isArray(ingredientes) ? ingredientes : [ingredientes];
+                    product.tamaño = tamaño;
+                    product.precio = precio;
+                    product.categoria = categoria;
+    
+                    // Manejar el campo de imagen si se ha subido una nueva imagen
+                    if (req.file) {
+                        product.imagen = `images/${req.file.filename}`;
+                        console.log('Nueva imagen subida:', req.file);
+                    } else {
+                        // Mantener la imagen existente si no se sube una nueva
+                        product.imagen = existingProduct.imagen;
+                        console.log('Imagen existente conservada:', product.imagen);
+                    }
                 }
-            }
-                    return product;
-                })
-        
-                saveData(productsModify);
-               
-                res.redirect(`/products/productEspecific/${req.params.id}`);
+                return product;
+            });
+    
+            saveData(productsModify);
+            
+            res.redirect(`/products/productEspecific/${productId}`);
+    
+        } catch (error) {
+            console.error('Error del servidor:', error);
+            res.status(500).send('Error del servidor');
+        }
+    },
+    
+    
 
-            } catch (error) {
-                res.status(500).send('Error del servidor'); // Manejar errores del servidor
-            }
-            },
+    // update: (req, res) => {
+    //     try {
+    //     const products = readData(); // Leer los productos existentes
+    //     // Extraer los datos del cuerpo de la solicitud
+    //     const { nombre, descripcion, ingredientes, tamaño, precio, categoria, imagen } = req.body;
+
+    //             const productsModify = products.map(product => {
+    //                 if (product.id.toString() === req.params.id) {
+    //                     product.nombre = nombre;
+    //                     product.descripcion = descripcion;
+    //                     product.ingredientes = Array.isArray(ingredientes) ? ingredientes : [ingredientes]; // Asegurarse de que los ingredientes sean un array                        product.precio = precio;
+    //                     product.categoria = categoria;
+    //                     product.tamaño  = tamaño;
+    //                     product.imagen = imagen;
+    //                     product.precio = precio;
+
+    //             // Manejar el campo de imagen si se ha subido una nueva imagenn
+    //             if (req.file) {
+    //                 product.imagen = `images/${req.file.filename}`;
+    //                 console.log('Nueva imagen subida:', req.file);
+    //             } else {
+    //                 // Mantener la imagen existente si no se sube una nueva
+    //                 const existingProduct = products.find(p => p.id === req.params.id);
+    //                 if (existingProduct) {
+    //                     product.imagen = existingProduct.imagen;
+    //                     console.log('Imagen existente conservada:', product.imagen);
+    //                 }
+    //             }
+               
+    //         }
+
+
+            //         return product;
+            //     })
+        
+            //     saveData(productsModify);
+               
+            //     res.redirect(`/products/productEspecific/${req.params.id}`);
+
+            // } catch (error) {
+            //     res.status(500).send('Error del servidor'); // Manejar errores del servidor
+            // }
+            // },
     
 
     // 7 Acción de borrado (DELETE)

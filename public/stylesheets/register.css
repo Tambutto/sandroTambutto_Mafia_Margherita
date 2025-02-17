@@ -17,10 +17,10 @@ form {
 .registro {
         background-image: url('../images/fondoregister2.jpg'); 
         background-size: contain;
-        background-size: 40vh;
+        background-size: 47vh;
         box-shadow: 1px 1px 10px var(--quesoDerretido);
         width: 70vw;
-        height: 45vh;
+        height: 58vh;
         margin: 0 auto;
         border-radius: 3vw;
         opacity: 0.9;
@@ -45,7 +45,7 @@ input {
         font-size: .8rem;
         position: absolute;
         right: 16vw;
-        top: 53vh;
+        top: 54vh;
 }
 
 .user1 {
@@ -53,7 +53,7 @@ input {
         font-size: .8rem;
         position: absolute;
         right: 16vw;
-        top: 59vh;
+        top: 61vh;
     }
 
 
@@ -62,7 +62,7 @@ input {
         font-size: .8rem;
         position: absolute;
         right: 16vw;
-        top: 65.5vh;
+        top: 69vh;
 }
 
 .user3 {
@@ -70,7 +70,7 @@ input {
         font-size: .8rem;
         position: absolute;
         right: 16vw;
-        top: 71.5vh;
+        top: 76vh;
 }
 
 .user4 {
@@ -78,8 +78,16 @@ input {
         font-size: .8rem;
         position: absolute;
         right: 16vw;
-        top: 77.5vh;
+        top: 83vh;
 }    
+
+.user5 {
+        color:var(--quesoDerretido);  
+        font-size: .8rem;
+        position: absolute;
+        right: 16vw;
+        top: 91vh; 
+}
 
 .Recordarme {
         color: var(--limpieza);
@@ -98,13 +106,18 @@ input {
 .registro input:focus { 
         outline: none;    
 }
-/* 
+
 .form_div_button{
-        width: 22vw;
+        color: var(--limpieza);
         font-size: 1rem;
-        border: none;
-        /* margin: 4vw 0 0; 
-} */
+        width: 22vw;
+        height: 5vh;
+        border: none; 
+        margin-left: 25vw;  
+        margin-top: 4vh;
+        background: var(--quesoDerretido);
+        border-radius: 2vh;
+}
 
 
 /* VERSION TABLET */
@@ -113,7 +126,7 @@ input {
 
 .titulo__registro{
         margin-top: 2vh;
-        font-size: 3rem;
+        font-size: 2.5rem;
         }        
 
 .registro {
@@ -121,7 +134,7 @@ input {
         background-size: contain;
         background-size: 77vh ;
         width: 50vw;
-        height: 48vh;
+        height: 52vh;
         margin: 0 auto;
         border-radius: 2vw;
         opacity: 0.9;
@@ -138,7 +151,7 @@ form {
 
 input {
         margin: 1vh 0 0 2.5vw; 
-        padding: 3%;
+        padding: 2%;
         width: 45vw;
    
 }
@@ -146,38 +159,49 @@ input {
 .user { 
         font-size: 1rem;
         right: 24vw;
-        top: 48.5vh;
+        top: 43vh;
     }
 
 .user1 { 
         font-size: 1rem;
         right: 24vw;
-        top: 54.5vh;
+        top: 49vh;
     }
    
 .user2 { 
         font-size: 1rem;
         right: 24vw;
-        top: 60.5vh;
+        top: 55vh;
     }
 
 .user3 { 
         font-size: 1rem;
         right: 24vw;
-        top: 66.5vh;
+        top: 60.5vh;
     }
 
 .user4 { 
         font-size: 1rem;
         right: 24vw;
-        top: 72.5vh;
+        top: 66vh;
     }
 
-    /* .form_div_button {
-         width: 15vw;
-         margin: 2.5vw 0 0; 
-         padding: 3%;
-    } */
+    .user5 {
+        color:var(--quesoDerretido);  
+        font-size: 1rem;
+        right: 24vw;
+        top: 73vh; 
+}    
+
+    .form_div_button {
+        font-size: 1rem;
+        width: 22vw;
+        height: 5vh;
+        border: none; 
+        margin-left: 13vw;  
+        margin-top: 4vh;
+        border-radius: 1vh;
+    }
 
 }
 
@@ -281,14 +305,24 @@ input {
                 right: 35vw;
                 top: 53vh;
         }  
+
+        .user5 {
+                color:var(--quesoDerretido);  
+                font-size: 1rem;
+                position: absolute;
+                right: 35vw;
+                top: 60vh; 
+        }
+
         .form_div_button {
+                color: var(--limpieza);
                 font-size: 1rem;
                 width: 10vw;
                 height: 5vh;
                 border: none; 
                /* margin: 1.8vw 0 0; */
                 margin-left: 7.5vw;  
-                margin-top: 5vh;
+                margin-top: 3vh;
                 background: var(--quesoDerretido);
                 border-radius: 2vh;
         }

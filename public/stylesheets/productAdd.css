@@ -6,33 +6,27 @@
     .titulo__productAdd {
         color: var(--fondo);
         font-size: 4rem;
+        margin-top: 15vh;
     }
-
-    /* .form__productAdd {
-        display: flex;
-       
-        margin: 0 auto;
-        margin-top: 5vh;
-        background: var(--tostado);
-        width: 5vw;
-        height: 64vh;
-        border-radius: 1rem;
-    } */
      
 
     .form__productAdd {
         display: flex;
-        flex-direction:row;
+        flex-direction: row;
         flex-wrap: wrap;
-        /* flex-wrap: nowrap; Permitir que los elementos se envuelvan   */
-        background-color: var(--CrujienteMasa);      
-        /* width: 100vw; */
-        /* padding: 2rem; Añadir relleno */
+        height: 40vh;
+        width: 80vw ;
+        margin: 0 auto;
+        /* margin-top: 2vh; */
+        background-color: var(--CrujienteMasa);   
+        align-items: center;   
+        border-radius: 1rem;
+        padding: 2rem; 
     }
 
     .input__add {
         /* width: 5vw; */
-        height: 1vh;
+        /* height: 1vh; */
         cursor: pointer;
     } 
 
@@ -41,12 +35,24 @@
     
    }
 
+   .form__inside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1vw;
+   }
+
     .btn_productAdd {
+        background: var(--quesoDerretido);
+        border-radius: 2vh;
+        color: var(--limpieza);
+        font-size: 1rem;
         position: absolute;
         margin-top: 10vh;
-        width: 5vw;
+        width: 15vw;
         height: 5vh;
         bottom: 10vh;
+        left: 70vw;
         
    }
 
@@ -68,19 +74,21 @@
             margin: 0 auto;
             background: var(--tostado);
             /* width: 25vw; */
-            height: 5vh;
+            height: 3vh;
             border-top: none;
             border-right: none;
             border-left: none; 
             border-bottom: .1vw solid var(--quesoDerretido);       
     }
 
-    .ingredient-checkbox {
+     .ingredient-checkbox {
         display: flex;
-        /* flex-wrap: nowrap; */
-        align-items: start;
-        /* gap: 0.5rem; */
+        flex-wrap: nowrap; 
+        align-items: start; 
+        gap: 0.5rem; 
+    } 
+    .size{
+        position: absolute;
+        left: 24vw;
     }
-
-
 }

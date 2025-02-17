@@ -204,7 +204,8 @@
 
     .login button {
         font-size: 1rem;
-        width: 23vw;
+        width: 10vw;
+        height: 6vh;
         font-size: 1.2rem;
         border: none;
         margin: 3vw;
@@ -224,6 +225,18 @@
         position: absolute;
         right: 35vw;
         top: 43vh;
+    }
+
+    .alert{
+        background-color: darksalmon;
+    }
+
+    .remember {
+        color: var(--limpieza); 
+        font-size: 1rem;
+        position: absolute;
+        margin-left: 2vw;
+        bottom: 37.5vh;
     }
 
 }
