@@ -4,9 +4,12 @@
     "firstName": "Juan",
     "lastName": "Pérez",
     "email": "juan.perez@example.com",
-    "password": "1234",
-    "category": "Admin",
-    "image": "url_to_image_juan"
+    "password": "123456",
+    "image": "",
+    "token": null,
+    "validate": true,
+    "lock": false,
+    "roll": "admin"
   },
   {
     "id": "2",
@@ -14,8 +17,11 @@
     "lastName": "Martínez",
     "email": "ana.martinez@example.com",
     "password": "5678",
-    "category": "User",
-    "image": "url_to_image_ana"
+    "image": "",
+    "token": null,
+    "validate": true,
+    "lock": false,
+    "roll": "user"
   },
   {
     "id": "d5898132-0ff7-4cda-967f-0e19f428448b",
@@ -23,6 +29,31 @@
     "lastName": "Tambutiyo",
     "email": "sandrillo@mail.com",
     "password": "$2b$10$rl2i44TdDR4z36aNvqzX2OEmNxgn0sGUPP6y6PXFXTkX8Z/Y5/lnS",
+    "image": "",
+    "token": null,
+    "validate": true,
+    "lock": false,
+    "roll": "admin"
+  },
+  {
+    "id": "c761def9-0218-4e80-98b2-fec56bc9a570",
+    "firstName": "ailen",
+    "lastName": "torres",
+    "email": "ailen@mail.com",
+    "password": "$2b$10$wKIfHDGEXOamIG2KT2cij.YUVQG6bmd7XE1YLh2cvb38wfG5wBca2",
+    "image": "",
+    "token": null,
+    "validate": true,
+    "lock": false,
+    "roll": "user"
+  },
+  {
+    "id": "1b83c7e6-29e5-45da-b608-e48122495805",
+    "firstName": "emiliano",
+    "lastName": "martinez",
+    "email": "dibu@mail.com",
+    "password": "$2b$10$6cIBAmBV5ha58/SUvNO9Neie3aK3GhivnMc/FbJ9Drb69LAYl9liS",
+    "image": "image-1740497257095.webp",
     "token": null,
     "validate": true,
     "lock": false,

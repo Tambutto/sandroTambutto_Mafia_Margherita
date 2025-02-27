@@ -1,4 +1,29 @@
 
+
+
 .profile__main {
-    margin-top: 30vh;
+    margin-top: 20vh;
+}
+
+@media (min-width: 1024px) {
+
+.foto__profile img{
+    border-radius: 3vw;
+    height: 50vh;
+    margin: 0 auto;
+    width: 30vw;
+    margin-top: 2vh;
+    
+}
+
+.logout{
+    position: absolute;
+    top:30vh;
+    left: 5vw;
+    background: var(--quesoDerretido);
+    color: var(--limpieza);
+    padding: 1vw;
+    border-radius: 5vw;
+}
+
 }

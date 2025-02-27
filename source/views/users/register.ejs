@@ -14,7 +14,7 @@
         <h2 class="titulo__registro">Formulario de Registro</h2>
     
         <div>
-            <form action="/processRegister" method="POST" class="registro" >
+            <form action="/processRegister" method="POST" class="registro" enctype="multipart/form-data">
         
                 <label for="name"></label><i class="fa-regular fa-user user"></i>
                 <input type="text" name="firstName" id="nombre" placeholder="Nombre" minlength="5">
@@ -34,7 +34,7 @@
                 <div id="confirmpasswordError" class="error-message"></div>
 
                 <label for="image"></label><i class="fa-regular fa-image user5"></i>
-                <input type="file" name="image" id="">
+                <input type="file" name="image" id="image">
                 
                <!-- <label for="remember" class="Recordarme">Recordame</label>
                <input type="checkbox" name="remember" id="recordarme" class="recordarme__btn"> -->

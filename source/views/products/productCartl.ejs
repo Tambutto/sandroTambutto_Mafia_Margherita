@@ -14,7 +14,7 @@
         
         <img src="/<%= product.imagen %>" alt="<%= product.nombre %>" class="img-producto" id="producto">
 
-        <h3>Ingredientes</h3><i class="fa-solid fa-cart-shopping car"></i>
+        <h3>Ingredientes</h3>
 
         <p class="description" id="description"><%= product.ingredientes.join(', ') %></p>
         <!-- <p class="description" id="description"><%= product.ingredientes %></p> -->
@@ -27,9 +27,7 @@
             <button class="boton">5%</button>
         </div>
         
-        
-        
-        <a href="/products">Volver al listado</a>
+        <a href="/products" class="back">Volver al listado</a>
     </main>
 
     <script src="../javascripts/productCartl.js"></script>

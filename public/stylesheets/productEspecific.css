@@ -1,13 +1,19 @@
-
+/* VERSION MOVIL */
 
 .img_productEspecific {
     /* border-radius: 45%; */
-    height: 17vh;
+    height: 25vh;
     margin: auto;
-    margin-top: 5vh;
+    margin-top: 10vh;
     margin-bottom: 5vh;
-    width: 32vw;
+    width: 40vw;
     transition: transform 0.3s ease;
+}
+
+.img_productEspecific__img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.2s ease;
 }
 
 .img_productEspecific:hover {
@@ -30,10 +36,41 @@
   }
 
 .description_productEspecific {
-    font-size: .8rem;
-    margin: 0 auto;
     width: 40vw;
-    font-weight: bold;
+    height: 25vh;
+    color: var(--limpieza);
+    margin: auto;
+    font-size: .8rem;
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste de centrado */
+    background-color: rgba(60, 64, 65, 0.5); /* 50% de opacidad - Fondo semitransparente */
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease; /* Transición suave */
+    
+}
+
+.description_productEspecific p{
+    text-align: center;
+    margin-bottom: -1vh;
+} 
+
+.h3__descripcion{
+    margin-top: -1vh;
+}
+
+
+
+.img_productEspecific:hover .description_productEspecific {
+    opacity: 1; /* Mostrar descripción al pasar el cursor sobre la imagen */
+}
+
+.nombre__descripcion {
+    font-size: .9rem;
+    text-align: center;
 }
 
 .precio:hover{
@@ -43,7 +80,6 @@
 .precio p {
     color: var(--limpieza);
     font-size: 5vw;
-    
 }
 
 .boton {
@@ -56,6 +92,17 @@
     font-size: 1rem;
     padding: 5px;
 
+}
+
+.Back {
+    color: var(--limpieza);
+    font-size: 3vw;
+    position: relative;
+    left: 38vw;
+    top: 5vh;
+    background: var(--CrujienteMasa);
+    padding: 2vw;
+    border-radius: 50%;
 }
 
 .contador { 
@@ -71,10 +118,19 @@
 
 @media (min-width: 768px) {
 
-    .img-producto {
-        width: 20vw;
-        height: 17vh;
-        /* border-radius: 45%;        */
+    .img_productEspecific {
+        width: 35vw;
+        height: 37vh;
+    }
+
+    .description_productEspecific{
+        width: 30vw;
+        height: 35vh;
+    }
+
+    .nombre__descripcion {
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .boton {
@@ -109,9 +165,9 @@
         left: 66vw;
     }
 
-    .description_productEspecific {
-        font-size: .5rem;
-        width: 35vw;
+    .Back {
+        padding: 1.5vw;
+        top: 7vh;
     }
 
     .contador { 
@@ -184,7 +240,6 @@
 
     .nombre__descripcion {
         font-size: 3rem;
-        text-align: center;
     }
     
     
@@ -219,8 +274,6 @@
         padding: 1vw;
         border-radius: 50%;
     }
-
-    
 
     
 }

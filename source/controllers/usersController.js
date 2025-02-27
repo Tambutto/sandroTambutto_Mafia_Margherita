@@ -33,16 +33,24 @@ const usersController = {
         const users = readData();
         const {firstName, lastName, email, password} = req.body;
 
+        // Verifica si hay una imagen subida
+        const image = req.file ? req.file.filename : '';
+
+
+        // Log para verificar el nombre del archivo
+        console.log('Imagen subida:', image);
+
         const newUser = {
             id : uuidv4(),
             firstName : firstName.trim(), //si el valor no llega, me da undefined y da error
             lastName : lastName.trim(),
             email: email.trim(),
             password: bcrypt.hashSync(password, 10),
+            image: image,
             token: null, // clave que se envia por mail para validar formulario de registro
             validate: true, // queda en true cuando el usuario confirma el token en su mail
             lock: false, // el usuario no esta bloqueado, si le pongo true lo bloqueo 
-            roll: 'user'
+            roll: 'user' //por defecto esta en usuario el roll, pero lo puedo dejar vacio y debo modificar la vista de registro para incluir un input de admin
 
         }
 
@@ -72,7 +80,8 @@ const usersController = {
                 id: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                roll: user.roll
+                roll: user.roll,
+                image: user.image 
             };
 
             // Si el usuario opta por ser recordado, establecer una cookie

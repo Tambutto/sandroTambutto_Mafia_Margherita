@@ -6,7 +6,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const userCookie = require('./middlewares/usersCookie');
-
+const userLoginMiddleware = require('./middlewares/userLogin');
 
 
 var indexRouter = require('./routes/index');
@@ -43,7 +43,7 @@ app.use(session({
 }));
 
 app.use(userCookie); // middleware de cookie
-
+app.use(userLoginMiddleware);
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);

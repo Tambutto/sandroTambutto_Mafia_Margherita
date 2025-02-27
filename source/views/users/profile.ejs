@@ -8,9 +8,20 @@
     <header>
         <%- include('../partials/header', { user: user }) %>
     </header>
-    <main class="profile__main">
-        <h2>Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
-        <a href="/logout">Cerrar Sesión</a>
-    </main>
+
+        <main class="profile__main">
+            
+            <h2>Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
+            <div class="foto__profile">
+                <!-- Mostrar la imagen del usuario -->
+                <% if (user.image) { %>
+                    <img src="/images/users/<%= user.image %>" alt="Foto de perfil de <%= user.firstName %>">
+                <% } else { %>
+                    <p>No hay imagen de perfil disponible.</p>
+                <% } %>
+            </div>
+            <a href="/logout" class="logout">Cerrar Sesión</a>
+        </main>
+    
 </body>
 </html>
