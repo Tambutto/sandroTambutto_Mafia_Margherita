@@ -1,1 +1,170 @@
-[{"id":1,"nombre":"Pizza Margherita","categoria":"Clasica","ingredientes":["Salsa de tomate,Mozzarella de bufala,Albahaca,Aceite de oliva"],"tamaño":"","precio":"600","descripcion":"La pizza Margherita es una clásica pizza italiana con salsa de tomate, mozzarella y albahaca fresca. Los ingredientes representan los colores de la bandera italiana: rojo, blanco y verde. Simple, deliciosa y tradicional.","imagen":"images/imagen-1739819876160.webp"},{"id":2,"nombre":"Pizza Pepperoni","categoria":"Clasica","ingredientes":["Pepperoni","Mozzarella de bufala","Salsa de tomate","Aceite de oliva","Oregano"],"tamaño":"","precio":750,"descripcion":"La pizza pepperoni es un clásico de la cocina italiana-americana que combina una base de masa crujiente y esponjosa con sabores intensos y deliciosos. Está cubierta con una capa de salsa de tomate condimentada, queso mozzarella derretido y abundantes rodajas de pepperoni","imagen":"images/pepperoniFoto.webp"},{"id":3,"nombre":"Napoletana","categoria":"Clasica","ingredientes":["Tomates pelados","Albahaca","Mozzarella","Aceite de oliva","Sal"],"tamaño":"","precio":700,"descripcion":"La simplicidad de la pizza napoletana resalta la calidad de sus ingredientes frescos y locales. Es un platillo que captura la esencia de la cocina napolitana: auténtico, sencillo y lleno.","imagen":"images/napoletana.webp"},{"id":4,"nombre":"Capricciosa","categoria":"Especial","ingredientes":["Tomate","Champiñones","Mozzarella","Jamon","Alcachofas","Aceitunas"],"tamaño":"","precio":900,"descripcion":"   Algunos chefs incluyen huevo cocido, salame o alcaparras, dependiendo de la región y las preferencias. La Pizza Caprichosa es un reflejo de la creatividad culinaria italiana, ideal para quienes disfrutan de una explosión de sabor","imagen":"images/Capricciosa.webp"},{"id":5,"nombre":"Pugliese","categoria":"Especial","ingredientes":["Tomate","Cebolla","Oregano","Aceitunas","Aceite de oliva","Sal"],"tamaño":"","precio":900,"descripcion":"La Pizza Pugliese es una opción perfecta para quienes buscan una experiencia sencilla pero sabrosa, donde los ingredientes locales brillan por sí mismos","imagen":"images/pugliesefoto.webp"},{"id":6,"nombre":"Pizza Gorgonzola y Pera","categoria":"Especial","ingredientes":["Queso gorgonzola","Pera","Mozzarella"],"tamaño":"","precio":1000,"descripcion":"La Pizza de Gorgonzola y Pera es una mezcla armoniosa de texturas y sabores, ideal para ocasiones especiales o para disfrutar con una copa de vino blanco o prosecco. Su perfil único la convierte en una experiencia inolvidable ","imagen":"images/Gorgoypera.webp"},{"id":7,"nombre":"Pizza Vegetariana","categoria":"Especial","ingredientes":["Pimientos","Champiñones","Cebolla","Tomate","Mozzarella"],"tamaño":"","precio":700,"descripcion":"La Pizza Vegetariana combina lo mejor de los ingredientes naturales, ofreciendo una experiencia sabrosa y versátil que encanta tanto a vegetarianos como a amantes de la comida saludable.","imagen":"images/vegetarianafoto.webp"},{"id":8,"nombre":"Ensalada Tricolor","categoria":"Complemento","ingredientes":["Tomate","Muzzarella","Rucula"],"tamaño":"","precio":500,"descripcion":"Se elabora de manera armoniosa, destacando los colores de cada ingrediente, y se aliña justo antes de servir. La ensalada tricolor es una celebración de los sabores mediterráneos, perfecta para quienes disfrutan de platos saludables y estéticamente atractivos.","imagen":"images/ensaladaTricolore.jpg"},{"id":9,"nombre":"Ensalada Mixta","categoria":"Complemento","ingredientes":["Lechuga","Tomate","Zanahoria","Pepino"],"tamaño":"","precio":450,"descripcion":"La ensalada mixta es un plato equilibrado, saludable y adaptable, ideal para quienes buscan una opción ligera pero llena de sabor. Su simplicidad y frescura la convierten en una opción popular","imagen":"images/ensaladaMixta.webp"},{"id":10,"nombre":"Gaseosa","categoria":"Bebida","ingredientes":["Cola, lima limon, naranja"],"precio":"500","imagen":"images/imagen-1739824354773.jpg"},{"id":11,"nombre":"Cerveza Artesanal","categoria":"Bebida","precio":"900","ingredientes":["Lupulo, agua y cebada"],"tamaño":"","imagen":"images/cerveza.jpg"},{"id":"5d5bc298-b250-4942-bd64-03c0f247d2e6","nombre":"agua","ingredientes":["Agua con poco gas"],"precio":"5555","categoria":"Bebida","imagen":"images/imagen-1739824264319.jpg"}]
+[
+    {
+        "id": 1,
+        "nombre": "Pizza Margherita",
+        "categoria": "Clasica",
+        "ingredientes": [
+            "Salsa de tomate,Mozzarella de bufala,Albahaca,Aceite de oliva"
+        ],
+        "tamaño": "",
+        "precio": "600",
+        "descripcion": "La pizza Margherita es una clásica pizza italiana con salsa de tomate, mozzarella y albahaca fresca. Los ingredientes representan los colores de la bandera italiana: rojo, blanco y verde. Simple, deliciosa y tradicional.",
+        "imagen": "images/imagen-1739819876160.webp"
+    },
+    {
+        "id": 2,
+        "nombre": "Pizza Pepperoni",
+        "categoria": "Clasica",
+        "ingredientes": [
+            "Pepperoni",
+            "Mozzarella de bufala",
+            "Salsa de tomate",
+            "Aceite de oliva",
+            "Oregano"
+        ],
+        "tamaño": "",
+        "precio": 750,
+        "descripcion": "La pizza pepperoni es un clásico de la cocina italiana-americana que combina una base de masa crujiente y esponjosa con sabores intensos y deliciosos. Está cubierta con una capa de salsa de tomate condimentada, queso mozzarella derretido y abundantes rodajas de pepperoni",
+        "imagen": "images/pepperoniFoto.webp"
+    },
+    {
+        "id": 3,
+        "nombre": "Napoletana",
+        "categoria": "Clasica",
+        "ingredientes": [
+            "Tomates pelados",
+            "Albahaca",
+            "Mozzarella",
+            "Aceite de oliva",
+            "Sal"
+        ],
+        "tamaño": "",
+        "precio": 700,
+        "descripcion": "La simplicidad de la pizza napoletana resalta la calidad de sus ingredientes frescos y locales. Es un platillo que captura la esencia de la cocina napolitana: auténtico, sencillo y lleno.",
+        "imagen": "images/napoletana.webp"
+    },
+    {
+        "id": 4,
+        "nombre": "Capricciosa",
+        "categoria": "Especial",
+        "ingredientes": [
+            "Tomate",
+            "Champiñones",
+            "Mozzarella",
+            "Jamon",
+            "Alcachofas",
+            "Aceitunas"
+        ],
+        "tamaño": "",
+        "precio": 900,
+        "descripcion": "   Algunos chefs incluyen huevo cocido, salame o alcaparras, dependiendo de la región y las preferencias. La Pizza Caprichosa es un reflejo de la creatividad culinaria italiana, ideal para quienes disfrutan de una explosión de sabor",
+        "imagen": "images/Capricciosa.webp"
+    },
+    {
+        "id": 5,
+        "nombre": "Pugliese",
+        "categoria": "Especial",
+        "ingredientes": [
+            "Tomate",
+            "Cebolla",
+            "Oregano",
+            "Aceitunas",
+            "Aceite de oliva",
+            "Sal"
+        ],
+        "tamaño": "",
+        "precio": 900,
+        "descripcion": "La Pizza Pugliese es una opción perfecta para quienes buscan una experiencia sencilla pero sabrosa, donde los ingredientes locales brillan por sí mismos",
+        "imagen": "images/pugliesefoto.webp"
+    },
+    {
+        "id": 6,
+        "nombre": "Pizza Gorgonzola y Pera",
+        "categoria": "Especial",
+        "ingredientes": [
+            "Queso gorgonzola",
+            "Pera",
+            "Mozzarella"
+        ],
+        "tamaño": "",
+        "precio": 1000,
+        "descripcion": "La Pizza de Gorgonzola y Pera es una mezcla armoniosa de texturas y sabores, ideal para ocasiones especiales o para disfrutar con una copa de vino blanco o prosecco. Su perfil único la convierte en una experiencia inolvidable ",
+        "imagen": "images/Gorgoypera.webp"
+    },
+    {
+        "id": 7,
+        "nombre": "Pizza Vegetariana",
+        "categoria": "Especial",
+        "ingredientes": [
+            "Pimientos",
+            "Champiñones",
+            "Cebolla",
+            "Tomate",
+            "Mozzarella"
+        ],
+        "tamaño": "",
+        "precio": 700,
+        "descripcion": "La Pizza Vegetariana combina lo mejor de los ingredientes naturales, ofreciendo una experiencia sabrosa y versátil que encanta tanto a vegetarianos como a amantes de la comida saludable.",
+        "imagen": "images/vegetarianafoto.webp"
+    },
+    {
+        "id": 8,
+        "nombre": "Ensalada Tricolor",
+        "categoria": "Complemento",
+        "ingredientes": [
+            "Tomate",
+            "Muzzarella",
+            "Rucula"
+        ],
+        "tamaño": "",
+        "precio": 500,
+        "descripcion": "Se elabora de manera armoniosa, destacando los colores de cada ingrediente, y se aliña justo antes de servir. La ensalada tricolor es una celebración de los sabores mediterráneos, perfecta para quienes disfrutan de platos saludables y estéticamente atractivos.",
+        "imagen": "images/ensaladaTricolore.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Ensalada Mixta",
+        "categoria": "Complemento",
+        "ingredientes": [
+            "Lechuga",
+            "Tomate",
+            "Zanahoria",
+            "Pepino"
+        ],
+        "tamaño": "",
+        "precio": 450,
+        "descripcion": "La ensalada mixta es un plato equilibrado, saludable y adaptable, ideal para quienes buscan una opción ligera pero llena de sabor. Su simplicidad y frescura la convierten en una opción popular",
+        "imagen": "images/ensaladaMixta.webp"
+    },
+    {
+        "id": 10,
+        "nombre": "Gaseosa",
+        "categoria": "Bebida",
+        "ingredientes": [
+            "Cola, lima limon, naranja"
+        ],
+        "precio": "500",
+        "imagen": "images/imagen-1739824354773.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Cerveza Artesanal",
+        "categoria": "Bebida",
+        "precio": "900",
+        "ingredientes": [
+            "Lupulo, agua y cebada"
+        ],
+        "tamaño": "",
+        "imagen": "images/cerveza.jpg"
+    },
+    {
+        "id": "5d5bc298-b250-4942-bd64-03c0f247d2e6",
+        "nombre": "agua",
+        "ingredientes": [
+            "Agua con poco gas"
+        ],
+        "precio": "5555",
+        "categoria": "Bebida",
+        "imagen": "images/imagen-1739824264319.jpg"
+    }
+]
