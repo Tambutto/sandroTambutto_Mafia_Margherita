@@ -8,7 +8,7 @@
 </header>
 
 <body>
-    <h1 class="titulo__productAdd">Editar Productos</h1>
+    <h1 class="titulo__productEdit">Editar Productos</h1>
     
 
     <form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="post" enctype="multipart/form-data"> 
@@ -27,7 +27,7 @@
         <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.precio %>"> 
         
         <!-- <label for="image"></label> -->
-        <input type="file" id="imagen" name="imagen" placeholder="Imagen"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
+        <input type="file" id="imagen" name="imagen" placeholder="Imagen" class="file"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
 
         <button type="submit" class="btn_productEdit">Actualizar Producto</button>
     </form>

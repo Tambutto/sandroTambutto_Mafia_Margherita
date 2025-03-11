@@ -1,62 +1,120 @@
+/* VERSION MOVIL */
+
+.titulo__productEdit {
+    color: var(--fondo);
+    font-size: 1.6rem;
+    padding: 1vh;
+  }
+
+.form__productEdit {
+  background: var(--CrujienteMasa);
+  color: var(--fondo);
+  height: 52vh;
+  margin: 0 auto;
+  width: 80vw;
+  padding-top: 1vh;
+  border-radius: 2vw;
+}
+
+.form__productEdit input {
+  margin: 0 auto;
+  height: 6.5vh;
+  cursor: pointer;
+}
+
+input[type="file"].file {
+  position: relative;
+  top: 0vh;
+}
+
+.btn_productEdit {
+  background: var(--quesoDerretido);
+  border-radius: 1vh;
+  color: var(--limpieza);
+  margin-top: 5vh;
+  width: 35vw;
+  height: 5vh;
+  position: relative;
+  margin: 0 auto;
+  top: 4vh;
+}
+
+/* VERSION TABLET */
+
+@media (min-width: 768px) {
+  .titulo__productEdit {
+    font-size: 2.3rem;
+    margin-top: 0.5vh;
+    padding: 1vh;
+  }
+
+  .form__productEdit {
+    width: 65vw;
+    height: 55vh;
+  }
+
+  .form__productEdit input {
+    height: 6.5vh;
+    margin: 0 auto;
+    margin-top: 0.5vh;
+    width: 52vw;
+  }
+
+  .btn_productEdit {
+    width: 30vw;
+  }
+}
 
 @media (min-width: 1024px) {
-    .titulo__productEdit {
-        color: var(--fondo);
-        font-size: 4rem;
-        margin-top: 15vh;
-    }
+  .titulo__productEdit {
+    font-size: 2.6rem;
+    margin-top: 20vh;
 
-    .form__productEdit {
-        display: flex;
-        /* flex-direction: row; */
-        flex-wrap: wrap;
-        width: 80vw ;
-        height: 50vh;
-        margin: 0 auto;
-        /* margin-top: 2vh; */
-        background-color: var(--CrujienteMasa);   
-        align-items: center;   
-        border-radius: 1rem;
-        padding: 2rem; 
-    } 
+  }
 
-    .form__productEdit input {
-        /* width: 10vw; */
-        height: 10vh;
-        cursor: pointer;
-    }
+  .form__productEdit {
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    background-color: var(--CrujienteMasa);
+    border-radius: 1rem;
+  }
 
-   .submit__productAdd {
-        background-color: #c0392b;
-       
-   }
+  .form__productEdit input {
+    margin: 0 auto;
+    width: 40vw;
+    padding: 1vw;
+  }
 
-    .btn_productEdit {
-        background: var(--quesoDerretido);
-        border-radius: 2vh;
-        color: var(--limpieza);
-        font-size: 1rem;
-        margin-top: 5vh;
-        width: 15vw;
-        height: 7vh;
-   }
+  .submit__productAdd {
+    background-color: #c0392b;
+  }
 
-   input::placeholder { 
-    color:var(--limpieza); 
-    font-size: 1rem;   
-   }
+  .btn_productEdit {
+    background: var(--quesoDerretido);
+    border-radius: 2vh;
+    color: var(--limpieza);
+    font-size: 1rem;
+    width: 15vw;
+    height: 5vh;
+ 
+  }
 
-   input:focus { 
-    outline: none;    
-}
-    input:hover { 
-        transform: scale(1.03);    
-    }
+  input::placeholder {
+    color: var(--limpieza);
+    font-size: 1rem;
+  }
 
-    .select{
-        cursor: pointer;
-        background: var(--quesoDerretido);
-        margin-top: 3vh;
-    }
-    
+  input:focus {
+    outline: none;
+  }
+  input:hover {
+    transform: scale(1.03);
+  }
+
+  .select {
+    cursor: pointer;
+    background: var(--quesoDerretido);
+    margin-top: 3vh;
+  }
 }

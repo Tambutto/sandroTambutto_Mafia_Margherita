@@ -66,6 +66,7 @@ p {
     margin-bottom: 5vh;
 }
 
+
 /* SECCION COMENTARIOS */ 
 
 .comments-section {
@@ -119,6 +120,9 @@ p {
     
 }
 
+.arrow2{
+    display:none;
+}
 
 
  
@@ -254,6 +258,16 @@ p {
     font-size: .57rem;
     
  }
+
+ .arrow2{
+    color: var(--limpieza);
+    font-size: 1vw;
+    position: relative;
+    left: 85vw;
+    background: var(--CrujienteMasa);
+    padding: 1vw;
+    border-radius: 50%;
+  }
 
 }
 
