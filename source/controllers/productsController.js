@@ -259,7 +259,7 @@ let productsController = {
 
     update: async (req, res) => {
         try {
-            const { nombre, descricion, ingredientes, tamaño, precio, categoria } = req.body;
+            const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
 
             const product = await Product.findByPk(req.params.id); // Busca producto por id
             if (!product) {
