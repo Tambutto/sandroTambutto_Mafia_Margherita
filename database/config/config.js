@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   "development": {
     "username": process.env.DB_USERNAME, //hacemos uso de las variables de entorno para no exponer la informacion sensible en el codigo con process.env.NOMBRE_VARIABLE

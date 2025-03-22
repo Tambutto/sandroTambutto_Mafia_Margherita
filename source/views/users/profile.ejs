@@ -12,6 +12,9 @@
         <main class="profile__main">
             
             <h2>Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
+            <p>Correo: <%= user.email %></p>
+            <p>Rol: <%= user.role ? user.role.tipo : 'Sin rol asignado' %></p>
+
             <div class="foto__profile">
                 <!-- Mostrar la imagen del usuario -->
                 <% if (user.image) { %>

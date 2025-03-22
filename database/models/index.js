@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
@@ -15,6 +15,19 @@ if (config.use_env_variable) {
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
+
+// // Conectar con Sequelize
+// const { sequelize } = require('./models'); // Asegúrate de que 'models/index.js' exporte el objeto sequelize
+
+// sequelize.authenticate()
+//   .then(() => console.log('Conexión establecida correctamente con la base de datos'))
+//   .catch((error) => console.error('No se pudo conectar con la base de datos:', error));
+
+// // Sincronizar modelos con la base de datos
+// sequelize.sync()
+//   .then(() => console.log('Modelos sincronizados con la base de datos'))
+//   .catch((error) => console.error('Error al sincronizar los modelos:', error));
+
 
 fs
   .readdirSync(__dirname)

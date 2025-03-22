@@ -9,7 +9,7 @@
     "token": null,
     "validate": true,
     "lock": false,
-    "roll": "admin"
+    "roll": "user"
   },
   {
     "id": "2",

@@ -12,14 +12,41 @@
 <body>
     <main>
         <div class="img_productEspecific">
+            <% if (product.images && product.images.length > 0) { %>
+                <% product.images.forEach(image => { %>
+                    <img src="/<%= image.imageUrl %>" alt="<%= product.name %>" class="img_productEspecific__img">
+                <% }) %>
+            <% } else { %>
+                <p>No hay imágenes disponibles para este producto.</p>
+            <% } %>
             
-            <img src="/<%= product.imagen %>" alt="<%= product.nombre %>" class="img_productEspecific__img">
-            <div class="description_productEspecific">
-                <p class="nombre__descripcion"><%= product.nombre %></p>
+            <!-- CON SEQUELIZE -->
+
+            <% if (product.ingredients && product.ingredients.length > 0) { %>
+                <div class="description_productEspecific">
+                        <p class="nombre__descripcion"><%= product.name %></p>
+                    <h3 class="h3__descripcion">Ingredientes</h3>
+                    <ul >
+                        <% product.ingredients.forEach(ingredient => { %>
+                            <p class="p__ingredientes"><%= ingredient.name %></p>
+                            <% }) %>
+                            <p>$<%= product.price %></p>
+                    </ul>
+                        <% } else { %>
+                            <p>No hay ingredientes disponibles.</p>
+                        <% } %>
+
+                </div>
+
+            <!--Sin sequelize-->    
+            
+            <!-- <img src="/ product.imagen %>" alt="< product.nombre %>" class="img_productEspecific__img"> -->
+            <!-- <div class="description_productEspecific">
+                <p class="nombre__descripcion">< product.nombre %></p>
                 <h3 class="h3__descripcion">Ingredientes</h3>
-                <p class="p__ingredientes"><%= product.ingredientes %></p>
-                <p>$<%=product.precio %></p>
-            </div>
+                <p class="p__ingredientes">< product.ingredientes %></p>
+                <p>$<product.precio %></p>
+            </div> -->
         </div>
     
         <a href="/products/productCartl/<%= product.id %>"><i class="fa-solid fa-cart-shopping car"></i></a>
@@ -27,7 +54,6 @@
         <a href="/products" class="Back">Volver al listado</a>
     </main>
     
-
     <script src="../javascripts/productCartl.js"></script>
 </body>
 </html>

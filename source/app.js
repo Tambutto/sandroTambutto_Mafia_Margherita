@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -36,7 +38,7 @@ app.use(methodOverride('_method'));
 
 // Configuración del middleware de sesiones
 app.use(session({
-  secret: 'mi_secreto', // Clave secreta para firmar la cookie de la sesión
+  secret: process.env.SECRET, // Clave secreta para firmar la cookie de la sesión
   resave: false,        // No guardar la sesión si no ha sido modificada
   saveUninitialized: true, // Guardar la sesión aunque no esté inicializada
   cookie: { secure: false } // Solo enviar la cookie en conexiones HTTPS (debería ser true en producción con HTTPS)

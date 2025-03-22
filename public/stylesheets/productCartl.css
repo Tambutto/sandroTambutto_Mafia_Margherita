@@ -72,6 +72,10 @@ span {
     bottom: 9vh;
 }
 
+.precio__total{
+    background: var(--quesoDerretido);
+}
+
 
 
 /* -----VERSION TABLET----- */
@@ -201,7 +205,7 @@ span {
         font-size: 1.3rem;
         font-weight: bold;
         position: absolute;
-        left: 50vw;
+        left: 70vw;
         bottom: 15vh;
     }
 
@@ -217,5 +221,10 @@ span {
         border-radius: 50%;
     }
 
+   
+
+    .precio__total{
+        position: absolute;
+    } 
     
 }

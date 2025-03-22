@@ -11,25 +11,51 @@
 
 <body>
     <main>
+
+        <!-- CON SEQUELIZE -->
         
-        <img src="/<%= product.imagen %>" alt="<%= product.nombre %>" class="img-producto" id="producto">
+            <% if (product.images && product.images.length > 0) { %>
+                <% product.images.forEach(image => { %>
+                    <img src="/<%= image.imageUrl %>" alt="<%= product.name %>" class="img-producto"">
+                <% }) %>
+            <% } else { %>
+                <p>No hay imágenes disponibles para este producto.</p>
+            <% } %>
+        
 
-        <h3>Ingredientes</h3>
+            <% if (product.description && product.description.length > 0) { %>
+                <div>
+                  <p class="nombre__descripcion"><%= product.name %></p>
+                  <p class="description"><%= product.description %></p>
+                </div>
+              <% } else { %>
+                <p>No hay descripción disponible para este producto.</p>
+              <% } %>
+              
 
-        <p class="description" id="description"><%= product.ingredientes.join(', ') %></p>
-        <!-- <p class="description" id="description"><%= product.ingredientes %></p> -->
+          <!--SIN SEQUELIZE -->
+        <!-- <p class="description" id="description">< product.ingredientes.join(', ') %></p> -->
+        <!-- <p class="description" id="description">< product.ingredientes %></p> -->
 
         <div class="contador"> 
-            <button class="boton">$<%= product.precio %></button>
+            <button class="boton">$<%= product.price %></button>
             <button class="boton" onclick="decrementar()">-</button> 
-            <span id="valor"></span> 
             <button class="boton" onclick="incrementar()">+</button>
             <button class="boton">5%</button>
         </div>
+        <div class="contador_total">
+            <p>Cantidad: <span id="valor" class="contador__valor">0</span></p> <!-- Valor inicial -->
+            <p class="precio__total">
+                Precio total: <span id="precio-total">$<%= product.price %></span>
+            </p>
+        </div>
+        
+        
         
         <a href="/products" class="back">Volver al listado</a>
     </main>
 
-    <script src="../javascripts/productCartl.js"></script>
+    <script src="/javascripts/productCartl.js"></script>
+
 </body>
 </html>
