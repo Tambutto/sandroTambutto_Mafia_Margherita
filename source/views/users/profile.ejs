@@ -11,7 +11,7 @@
 
         <main class="profile__main">
             
-            <h2>Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
+            <h2 class="titulo__profile">Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
             <p>Correo: <%= user.email %></p>
             <p>Rol: <%= user.role ? user.role.tipo : 'Sin rol asignado' %></p>
 
@@ -23,6 +23,11 @@
                     <p>No hay imagen de perfil disponible.</p>
                 <% } %>
             </div>
+
+            <!-- Enlace a la vista de admin solo si el usuario es Admin -->
+            <% if (isAdmin) { %>
+                <a href="/admin" class="admin-link">Ir al Panel de Administración</a>
+            <% } %>
             <a href="/logout" class="logout">Cerrar Sesión</a>
         </main>
     

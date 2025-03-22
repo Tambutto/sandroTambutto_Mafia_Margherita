@@ -157,7 +157,8 @@ const usersController = {
                 id: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                roll: user.roll,
+                role: user.role,
+                // roll: user.roll,
                 image: user.image,
             };
         // Si el usuario opta por ser recordado, establecer una cookie
@@ -183,13 +184,23 @@ const usersController = {
             try{
                 // Buscar al usuario en la base de datos usando el ID de la sesión
                 const user = await User.findByPk(req.session.userLogin.id, {
-                    // include: { model: Rol, as: 'role' } // Incluye la información del rol
+                    include: { model: Rol, as: 'role' } // Incluye la información del rol
                 });
 
                 if (!user) {
                     console.log('Usuario no encontrado en la base de datos.');
                     return res.redirect('/login'); // Redirige si el usuario no existe
                 }
+
+                // Verifica si el usuario es admin
+                const isAdmin = user.role && user.role.tipo === 'Admin';
+
+                // Renderiza la vista con la información del usuario
+                res.render('users/profile', { 
+                    title: 'Perfil del usuario', 
+                    user: user,
+                    isAdmin: isAdmin // Pasa esta variable a la vista
+                });
 
                 // Renderiza la vista con el usuario encontrado en la base de datos
                 res.render('users/profile', { title: 'Perfil del usuario', user: user // Pasa el objeto actualizado del usuario 

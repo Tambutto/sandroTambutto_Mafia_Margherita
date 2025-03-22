@@ -13,22 +13,23 @@
 
     <form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="post" enctype="multipart/form-data"> 
         <!-- <label for="nombre">Nombre del Producto:</label>  -->
-        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.nombre%>">        
+        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.name%>">        
         
         <!-- <label for="description">Descripcion:</label>  -->
-        <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="<%= product.ingredientes %>"> 
+        <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="<%= product.ingredients %>"> 
 
         <!-- <label for="category">Categoría:</label>  -->
-        <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="<%= product.categoria %>"> 
+        <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="<%= product.category %>"> 
 
-        <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="<%= product.tamano %>">
+        <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="<%= product.size %>">
         
         <!-- <label for="price">Precio:</label>  -->
-        <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.precio %>"> 
+        <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.price %>"> 
         
         <!-- <label for="image"></label> -->
         <input type="file" id="imagen" name="imagen" placeholder="Imagen" class="file"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
 
         <button type="submit" class="btn_productEdit">Actualizar Producto</button>
     </form>
+    <a href="/admin" class="nuevo">Volver</a>
 </body>

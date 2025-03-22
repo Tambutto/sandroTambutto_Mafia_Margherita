@@ -14,6 +14,7 @@
 </header>
 <a href="/products/productAdd" class="nuevo">Agregar Nuevo Producto</a>
 <a href="/products/listaProductos" class="nuevo">Ver lista productos</a>
+<a href="/profile" class="nuevo">Volver</a>
 <body>       
 
     
@@ -40,7 +41,7 @@
                 <td> $ <%= product.precio %></td> 
                 <td> 
                     <a href="/products/productEdit/<%= product.id %>" class="edit">Editar</a>
-                    <form action="/products/remove/<%= product.id %>?_method=DELETE" method="post" class="delete-form"> 
+                    <form action="/products/remove/<%= product.id %>?_method=DELETE" method="post" class="delete-form" onsubmit="return confirm('¿Estás seguro de eliminar este producto?')"> 
                         <button type="submit" class="delete">Eliminar</button> 
                     </form>
                     

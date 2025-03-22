@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // Un usuario tiene un rol
-      User.belongsTo(models.Rol, { foreignKey: 'roleId', as: 'role' });
+      User.belongsTo(models.Rol, { foreignKey: 'role_id', as: 'role' });
     }
   }
   User.init(
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         defaultValue: false
       },
-      roleId: {
+      role_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
         field: 'role_id' // Mapea con la columna de la base de datos

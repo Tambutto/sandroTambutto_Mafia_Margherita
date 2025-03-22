@@ -7,18 +7,39 @@
 
 @media (min-width: 1024px) {
 
+.titulo__profile {
+    font-family: "italianno";
+    font-size: 3.5rem;
+    font-weight: lighter;
+    text-align: center;
+}    
+
+.profile__main p{
+    text-align: center;
+    font-weight: bold;
+}
+
 .foto__profile img{
     border-radius: 3vw;
-    height: 50vh;
+    height: 45vh;
     margin: 0 auto;
-    width: 30vw;
-    margin-top: 2vh;
-    
+    width: 25vw;
+   
 }
 
 .logout{
     position: absolute;
     top:30vh;
+    left: 5vw;
+    background: var(--quesoDerretido);
+    color: var(--limpieza);
+    padding: 1vw;
+    border-radius: 5vw;
+}
+
+.admin-link{
+    position: absolute;
+    top:20vh;
     left: 5vw;
     background: var(--quesoDerretido);
     color: var(--limpieza);
