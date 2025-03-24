@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
        // Un Size puede estar asociado con muchos Products a través de la tabla intermedia ProductSizes
-      Size.belongsToMany(models.Product, { through: 'ProductSizes', foreignKey: 'sizeId', as: 'products' });
+      Size.belongsToMany(models.Product, { through: 'productsize', foreignKey: 'sizeId', otherKey: 'productId', as: 'products' });
         }
   }
   Size.init({
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Size',
-    underscored: true
+    underscored: false
   });
   return Size;
 };

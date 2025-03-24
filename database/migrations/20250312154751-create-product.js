@@ -22,7 +22,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: true
       },
-      category_id: {
+      categoryId: {
         type: Sequelize.INTEGER,
         references: {
           model: {
@@ -34,12 +34,12 @@ module.exports = {
         onDelete: 'SET NULL'
       
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW

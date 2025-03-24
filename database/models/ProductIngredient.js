@@ -18,18 +18,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ProductIngredient.init({
-    product_id: { 
+    productId: { 
       type: DataTypes.INTEGER,
-      field: 'product_id'
+      field: 'productId'
    }, // Nombre de la columna en la base de datos
-    ingredient_id: { 
+    ingredientId: { 
       type: DataTypes.INTEGER,
-      field: 'product_id' // Nombre de la columna en la base de datos
+      field: 'ingredientId' // Nombre de la columna en la base de datos
     },
   }, {
     sequelize,
     modelName: 'ProductIngredient',
-    underscored: true
+    underscored: false
   });
   return ProductIngredient;
 };

@@ -14,12 +14,12 @@ module.exports = {
         allowNull: false, //asegura que el campo name no sea nulo
         unique: true
       },
-      created_at: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW //Asegura que las fechas createdAt y updatedAt se establezcan automáticamente con la fecha y hora actual al crear y actualizar registros.
       },
-      updated_at: {
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW

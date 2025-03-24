@@ -13,8 +13,8 @@ module.exports = {
         state: 'California',
         postalCode: 90210,
         userId: 1, // Usuario 1
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         street: 'Maple Avenue',
@@ -25,8 +25,8 @@ module.exports = {
         state: 'Texas',
         postalCode: 73301,
         userId: 2, // Usuario 2
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         street: 'Elm Street',
@@ -37,8 +37,8 @@ module.exports = {
         state: 'Nevada',
         postalCode: 89101,
         userId: 3, // Usuario 3
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         street: 'Oak Drive',
@@ -49,8 +49,8 @@ module.exports = {
         state: 'Florida',
         postalCode: 33101,
         userId: 4, // Usuario 4
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         street: 'Pine Road',
@@ -61,8 +61,8 @@ module.exports = {
         state: 'New York',
         postalCode: 10001,
         userId: 5, // Usuario 5
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       }
     ], {});
   },

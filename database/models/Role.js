@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // Un rol tiene muchos usuarios y un usuario solo un rol
       Rol.hasMany(models.User, {
-        foreignKey: 'role_id', as: 'users' 
+        foreignKey: 'roleId', as: 'users' 
       })
     }
   }
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Rol',
     tableName: 'roles',
-    underscored: true
+    underscored: false
   });
   return Rol;
 };

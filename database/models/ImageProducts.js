@@ -11,25 +11,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
         // Una Imagen pertenece a un Producto
-        ImageProducts.belongsTo(models.Product, { foreignKey: 'product_id', as: 'product' });
+        ImageProducts.belongsTo(models.Product, { foreignKey: 'productId', as: 'product' });
       }
     }
     ImageProducts.init({
       imageUrl: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'image_url' // Nombre exacto de la columna en la base de datos
+        field: 'imageUrl' // Nombre exacto de la columna en la base de datos
       },
       productId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        field: 'product_id' // Nombre exacto de la columna en la base de datos
+        field: 'productId' // Nombre exacto de la columna en la base de datos
       }
   }, {
     sequelize,
     modelName: 'ImageProducts',
     tableName: 'imageproducts', // Nombre exacto de la tabla en la base de datos
-    underscored: true
+    underscored: false
   });
   return ImageProducts;
 };

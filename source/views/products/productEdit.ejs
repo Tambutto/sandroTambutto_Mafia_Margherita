@@ -16,12 +16,48 @@
         <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.name%>">        
         
         <!-- <label for="description">Descripcion:</label>  -->
-        <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="<%= product.ingredients %>"> 
+        <!-- <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="< product.ingredients %>">  -->
+
+        <label>Selecciona los Ingredientes:</label>
+            <div class="checkbox-container">
+                <% if (allIngredients && allIngredients.length > 0) { %>
+                <% allIngredients.forEach(ingredient => { %>
+                    <label class="checkbox">
+                        <input type="checkbox" name="ingredientes[]" value="<%= ingredient.id %>" <%= product.ingredients.some(i => i.id === ingredient.id) ? 'checked' : '' %>>
+                        <p class="ingredientes__name"><%= ingredient.name %></p>
+                    </label>
+                <% }); %>
+                <% } else { %>
+                    <p>No hay ingredientes disponibles</p>
+                <% } %>
+            </div>
+
+        
 
         <!-- <label for="category">Categoría:</label>  -->
-        <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="<%= product.category %>"> 
+        <!-- <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="< product.category %>">  -->
 
-        <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="<%= product.size %>">
+        <label for="categoria">Categoría:</label>
+            <select name="categoria" id="categoria" required>
+                <% allCategories.forEach(category => { %>
+                    <option value="<%= category.id %>" <%= category.id === product.categoryId ? 'selected' : '' %>>
+                        <%= category.name %>
+                    </option>
+                <% }); %>
+            </select>
+
+
+        <!-- <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="< product.size %>"> -->
+
+        <label for="tamano">Tamaños:</label>
+            <select name="tamanos[]" id="tamano" multiple>
+                <% allSizes.forEach(size => { %>
+                    <option value="<%= size.id %>" <%= product.sizes.some(s => s.id === size.id) ? 'selected' : '' %>>
+                        <%= size.name %>
+                    </option>
+                <% }); %>
+            </select>
+
         
         <!-- <label for="price">Precio:</label>  -->
         <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.price %>"> 

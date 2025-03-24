@@ -6,7 +6,7 @@ const { v4: uuidv4 } = require('uuid');
 const { Sequelize } = require('../../database/models');
 
 // Con sequelize
-const { Product, ImageProducts, Ingredient} = require('../../database/models'); // Importa el modelo Product
+const { Product, ImageProducts, Ingredient, Category, Size} = require('../../database/models'); // Importa el modelo Product
 
 
 
@@ -188,19 +188,48 @@ let productsController = {
 
     editForm: async (req, res) => {
         try {
-            const product = await Product.findByPk(req.params.id); // Busca producto por id
-            if (product) {
-                res.render('products/productEdit', {
-                    title: 'Editar producto', product });
-                } else {
-                    res.status(404).send('Producto no encontrado');
-                }
-            } catch (error) {
-                console.error('Error al buscar un producto:', error);
-                res.status(500).send('Error del servidor');
-            
+            // Buscar el producto por ID y traer los ingredientes relacionados
+            const product = await Product.findByPk(req.params.id, {
+                include: [
+                    { model: Ingredient, as: 'ingredients' }, // Relación con ingredientes
+                    { model: Size, as: 'sizes' } // Relación con tamaños
+                ]// Relación entre producto e ingredientes
+            });
+            if (!product) {
+                return res.status(404).send('Producto no encontrado');
             }
+
+            // Realiza pruebas adicionales si es necesario
+        console.log('Propiedades del producto:', {
+            name: product.name,
+            ingredients: product.ingredients,
+            sizes: product.sizes,
+            categoryId: product.categoryId
+        });
+    
+            // Obtener todos los ingredientes disponibles
+            const allIngredients = await Ingredient.findAll();
+
+            // Obtener todas las categorías disponibles
+            const allCategories = await Category.findAll();
+
+            // Obtener todos los tamaños disponibles
+            const allSizes = await Size.findAll();
+    
+            // Renderizar la vista y pasar los datos necesarios
+            res.render('products/productEdit', {
+                title: 'Editar producto',
+                product, // Producto con sus datos
+                allIngredients, // Todos los ingredientes disponibles
+                allCategories, // Todas las categorias disponibles
+                allSizes
+            });
+        } catch (error) {
+            console.error('Error al buscar un producto:', error);
+            res.status(500).send('Error del servidor');
+        }
     },
+    
 
     // 6  Acción de edición (a donde se envía el formulario - PUT) Update (actualizar):
 
@@ -261,22 +290,41 @@ let productsController = {
         try {
             const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
 
-            const product = await Product.findByPk(req.params.id); // Busca producto por id
+            // Buscar el producto por su ID
+            const product = await Product.findByPk(req.params.id, {
+                include: [
+                    { model: Ingredient, as: 'ingredients' }, // Relación con ingredientes
+                    { model: Size, as: 'sizes' } // Relación con tamaños
+                ] //include como array: Esto permite incluir varias relaciones.
+            });
+                 // Trae los ingredientes relacionados); // Busca producto por id
             if (!product) {
                 return res.status(404).send('Producto no encontrado');
             }
 
+            // Procesar la imagen (si se subió una nueva)
+            const imagen = req.file ? req.file.filename : product.image;
+
+
             await product.update({
                 name: nombre,
                 description: descripcion,
-                ingredients: Array.isArray(ingredientes) ? ingredientes : [ingredientes],
                 size: tamaño,
                 price: precio,
                 categoryId: categoria,
                 image: imagen || product.image // Mantener la imagen existente
             });
-            
 
+            // Manejar la relación con los ingredientes
+            if (ingredientes) {
+             const ingredientIds = typeof ingredientes === 'string'
+                ? ingredientes.split(',').map(id => parseInt(id.trim())) // Convierte los IDs
+                : ingredientes;
+
+            await product.setIngredients(ingredientIds); // Actualiza la relación en la tabla intermedia setIngredients. Este método se encarga de gestionar la tabla intermedia (productingredient) para eliminar las relaciones previas y agregar las nuevas.
+        }
+            
+            console.log(`Producto actualizado: ${product.id} - ${product.name}`);
             res.redirect(`/products/${req.params.id}`);
         } catch (error) {
             console.error('Error al actualizar un producto:', error);

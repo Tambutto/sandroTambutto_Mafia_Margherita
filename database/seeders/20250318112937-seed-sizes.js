@@ -6,23 +6,23 @@ module.exports = {
     await queryInterface.bulkInsert('Sizes', [
       {
         name: 'grande',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'mediana',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'chica',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'porcion',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       }
     ], {});
   },

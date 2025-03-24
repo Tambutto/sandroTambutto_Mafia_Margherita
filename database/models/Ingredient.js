@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         // Un Ingrediente puede estar en muchos Productos a través de ProductIngredients      
         Ingredient.belongsToMany(models.Product, { 
         through: 'ProductIngredients', 
-        foreignKey: 'ingredient_id', 
+        foreignKey: 'ingredientId', 
         as: 'products' 
       });
     }
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Ingredient',
-    underscored: true
+    underscored: false
   });
   return Ingredient;
 };

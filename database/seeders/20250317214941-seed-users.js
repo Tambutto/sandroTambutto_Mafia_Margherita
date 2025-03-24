@@ -17,8 +17,8 @@ module.exports = {
         is_validated: true,
         lock: false,
         role_id: 2, // Asociado con el rol "user"
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         first_name: "Ana",
@@ -30,8 +30,8 @@ module.exports = {
         is_validated: true,
         lock: false,
         role_id: 2, // Asociado con el rol "user"
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         first_name: "Sandro",
@@ -43,8 +43,8 @@ module.exports = {
         is_validated: true,
         lock: false,
         role_id: 1,// Asociado con el rol "Admin
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         first_name: "ailen",
@@ -56,8 +56,8 @@ module.exports = {
         is_validated: true,
         lock: false,
         role_id: 2, // Asociado con el rol "user"
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         first_name: "emiliano",
@@ -69,8 +69,8 @@ module.exports = {
         is_validated: true,
         lock: false,
         role_id: 2, // Asociado con el rol "user"
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       
      }], {});
     

@@ -6,23 +6,23 @@ module.exports = {
     await queryInterface.bulkInsert('Categories', [
       {
         name: 'clasicas',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'especiales',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'complementos',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       },
       {
         name: 'bebidas',
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
       }
     ], {});
   },

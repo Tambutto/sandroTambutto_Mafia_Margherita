@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     productId: {
       type: DataTypes.INTEGER,
       allowNull: false, // No puede ser nulo
+      field:'productId',
       validate: {
         isInt: true // Verifica que sea un número entero
       }
@@ -28,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     sizeId: {
       type: DataTypes.INTEGER,
       allowNull: false, // No puede ser nulo
+      field:'sizeId',
       validate: {
         isInt: true // Debe ser un número entero
       }
@@ -35,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'ProductSize',
-    underscored: true
+    underscored: false
   });
   return ProductSize;
 };

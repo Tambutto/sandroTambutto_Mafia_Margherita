@@ -1,10 +1,10 @@
 /* VERSION MOVIL */
 
 .titulo__productEdit {
-    color: var(--fondo);
-    font-size: 1.6rem;
-    padding: 1vh;
-  }
+  color: var(--fondo);
+  font-size: 1.6rem;
+  padding: 1vh;
+}
 
 .form__productEdit {
   background: var(--CrujienteMasa);
@@ -69,12 +69,11 @@ input[type="file"].file {
   .titulo__productEdit {
     font-size: 2.6rem;
     margin-top: 20vh;
-
   }
 
   .form__productEdit {
-    width: 50vw;
-    height: 50vh;
+    width: 90vw;
+    height: 60vh;
     margin: 0 auto;
     background-color: var(--CrujienteMasa);
     border-radius: 1rem;
@@ -97,7 +96,6 @@ input[type="file"].file {
     font-size: 1rem;
     width: 15vw;
     height: 5vh;
- 
   }
 
   input::placeholder {
@@ -116,5 +114,40 @@ input[type="file"].file {
     cursor: pointer;
     background: var(--quesoDerretido);
     margin-top: 3vh;
+  }
+
+  .checkbox-container {
+    /* display: block; */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas */
+    justify-content: space-around;
+    /* gap: 10px; Espaciado entre las opciones */
+  }
+
+  .checkbox {
+    margin: 1.3vw;
+    font-size: 2px;
+  }
+
+  .checkbox input[type="checkbox"] {
+    /* margin-right: 8px; Espaciado entre el checkbox y el texto */
+    transform: scale(1.2); /* Agranda los checkboxes */
+  }
+
+  .checkbox input[type="checkbox"]:checked + span {
+    font-weight: bold; /* Resalta el texto de las opciones seleccionadas */
+    color: #007bff; /* Cambia el color del texto */
+  }
+  input[type="checkbox"] {
+    width: 10px; /* Ajusta el ancho (opcional) */
+    height: 10px; /* Ajusta la altura (opcional) */
+    transform: scale(0.8); /* Reduce el tamaño general del checkbox */
+    margin: 0.5vw; /* Espaciado opcional para mejorar la visualización */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+  }
+
+  .ingredientes__name {
+    margin: -0.8vw;
+    font-size: 1rem;
   }
 }

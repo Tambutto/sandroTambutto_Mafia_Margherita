@@ -7,12 +7,12 @@ module.exports = {
     await queryInterface.bulkInsert('Roles', [
 
       { tipo: 'Admin', 
-        created_at: new Date(), 
-        updated_at: new Date() 
+        createdAt: new Date(), 
+        updatedAt: new Date() 
       },
       { tipo: 'User', 
-        created_at: new Date(),
-        updated_at: new Date()
+        createdAt: new Date(), 
+        updatedAt: new Date()
      }
     ]);
   } catch (error) {
