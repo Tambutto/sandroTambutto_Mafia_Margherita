@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+
+    <main>
+        <h2 class="titulo__registro">Actualizar o Eliminar Registro</h2>
+    
+        <div>
+            <!-- Formulario para actualizar -->
+            <form action="/update/<%= user.id %>?_method=PUT" method="POST" class="registro" enctype="multipart/form-data">
+                <label for="name"></label><i class="fa-regular fa-user user"></i>
+                <input type="text" name="firstName" id="nombre" value="<%= user.firstName %>" placeholder="Nombre" minlength="5" required>
+    
+                <label for="lastname"></label><i class="fa-regular fa-user user1"></i>
+                <input type="text" name="lastName" id="apellido" value="<%= user.lastName %>" placeholder="Apellido" minlength="5" required>
+    
+                <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
+                <input type="email" name="email" id="email" value="<%= user.email %>" placeholder="Email" maxlength="20" required>        
+        
+                <label for="password"></label><i class="fa-solid fa-lock user3"></i>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <div id="passwordError" class="error-message"></div>
+        
+                <label for="confirm_password"></label><i class="fa-solid fa-key user4"></i>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar password">
+                <div id="confirmpasswordError" class="error-message"></div>
+
+                <label for="image"></label><i class="fa-regular fa-image user5"></i>
+                <input type="file" name="image" id="image">
+                
+                <button type="submit" class="form_div_button">Actualizar</button>
+            </form>
+
+            <!-- Botón para eliminar -->
+            <form action="/deleteUser/<%= user.id %>?_method=DELETE" method="POST" class="registro">
+                <button type="submit" class="form_div_button delete-button">Eliminar</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

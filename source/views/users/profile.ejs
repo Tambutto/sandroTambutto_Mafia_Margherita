@@ -27,6 +27,11 @@
             <!-- Enlace a la vista de admin solo si el usuario es Admin -->
             <% if (isAdmin) { %>
                 <a href="/admin" class="admin-link">Ir al Panel de Administración</a>
+                <ul>
+                    <li><a href="/updateDelete/<%= user.id %>" class="nuevo">Usuario <%= user.firstName %></a></li>
+                </ul>
+                  
+                  
             <% } %>
             <a href="/logout" class="logout">Cerrar Sesión</a>
         </main>

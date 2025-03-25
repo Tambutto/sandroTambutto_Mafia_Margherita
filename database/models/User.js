@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // Un usuario tiene un rol
-      User.belongsTo(models.Rol, { foreignKey: 'roleId', as: 'role' });
+      User.belongsTo(models.Role, { foreignKey: 'roleId', as: 'role' });
     }
   }
   User.init(
@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
       firstName: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'firstName' // Mapea con la columna de la base de datos
+        field: 'first_name' // Mapea con la columna de la base de datos
       },
       lastName: {
         type: DataTypes.STRING,
         allowNull: false,
-        field: 'lastName' // Mapea con la columna de la base de datos
+        field: 'last_name' // Mapea con la columna de la base de datos
       },
       email: {
         type: DataTypes.STRING,
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       isValidated: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
-        field: 'isValidated' // Mapea con la columna de la base de datos
+        field: 'is_validated' // Mapea con la columna de la base de datos
       },
       lock: {
         type: DataTypes.BOOLEAN,
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       roleId: {
         type: DataTypes.INTEGER,
         allowNull: true,
-        field: 'roleId' // Mapea con la columna de la base de datos
+        field: 'role_id' // Mapea con la columna de la base de datos
       }
     },
     {

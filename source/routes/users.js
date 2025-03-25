@@ -5,6 +5,8 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+const { Sequelize } = require('../../database/models');
+
 // Configuración de almacenamiento
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -21,7 +23,7 @@ const upload = multer({ storage: storage });
 
 
 
-const { register, login, processRegister, processLogin, profile, logout, update } = require('../controllers/usersController');
+const { register, login, processRegister, processLogin, profile, logout, update, deleteUser, editForm} = require('../controllers/usersController');
 const usersCheck = require('../middlewares/usersCheck');
 
 // Users
@@ -36,11 +38,15 @@ router.get('/login', login); // Muestra el formulario de login
 
 router.post('/processLogin', processLogin); // Procesa el login
 
-router.get('/profile', usersCheck, profile); // Muestra el perfil del usuario
+// router.get('/profile', usersCheck, profile); // Muestra el perfil del usuario
+router.get('/profile', usersCheck, profile);
 
 router.get('/logout',logout);  // Cierra sesión
 
 // router.put('/update', upload.single('image'), update); // Actualiza el perfil del usuario
 
+router.get('/updateDelete/:id', usersCheck, editForm); // Muestra el formulario
+router.put('/update/:id', upload.single('image'), update); // Procesa la edición
+router.delete('/delete/:id', deleteUser);
 
 module.exports = router;

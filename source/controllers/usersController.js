@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas c
 const { route, lock } = require('../routes');
 const fs = require('fs');
 const path = require('path');
-
+const { Sequelize } = require('../../database/models');
 
 // Ruta al archivo JSON
 // const dataPath = path.join(__dirname, '..', 'data', 'users.json');
@@ -21,7 +21,9 @@ const path = require('path');
 // }
 
 // Usando sequelize:
-const { User, Rol} = require('../../database/models');
+
+const { User, Role} = require('../../database/models'); // Importa el modelo User
+
 
 const usersController = {
 
@@ -176,42 +178,78 @@ const usersController = {
             }
          },
 
+        // profile: async (req, res) => {
+        //     if (!req.session.userLogin) {
+        //         return res.redirect('/login'); // Si no hay sesión, redirige al login
+        //     }
+
+        //     try{
+        //         // Buscar al usuario en la base de datos usando el ID de la sesión
+        //         const user = await User.findByPk(req.session.userLogin.id, {
+        //             include: { model: Rol, as: 'role' } // Incluye la información del rol
+        //         });
+
+        //         if (!user) {
+        //             console.log('Usuario no encontrado en la base de datos.');
+        //             return res.redirect('/login'); // Redirige si el usuario no existe
+        //         }
+
+        //         // Verifica si el usuario es admin
+        //         const isAdmin = user.role && user.role.tipo === 'Admin';
+
+        //         // Renderiza la vista con la información del usuario
+        //         res.render('users/profile', { 
+        //             title: 'Perfil del usuario', 
+        //             user: user,
+        //             isAdmin: isAdmin // Pasa esta variable a la vista
+        //         });
+
+        //         // Renderiza la vista con el usuario encontrado en la base de datos
+        //         res.render('users/profile', { title: 'Perfil del usuario', user: user // Pasa el objeto actualizado del usuario 
+
+        //         });
+        //     } catch (error) { 
+        //         console.error("Error al obtener el perfil: ", error.message );
+        //         res.redirect('/login');// Redirige en caso de un error
+        //     }
+        // },
+
         profile: async (req, res) => {
-            if (!req.session.userLogin) {
+            if (!req.session.userLogin || !req.session.userLogin.id) {
                 return res.redirect('/login'); // Si no hay sesión, redirige al login
             }
-
-            try{
+        
+            try {
                 // Buscar al usuario en la base de datos usando el ID de la sesión
                 const user = await User.findByPk(req.session.userLogin.id, {
-                    include: { model: Rol, as: 'role' } // Incluye la información del rol
+                    include: { model: Role, as: 'role' } // Incluye la información del rol
                 });
-
+        
                 if (!user) {
                     console.log('Usuario no encontrado en la base de datos.');
                     return res.redirect('/login'); // Redirige si el usuario no existe
                 }
-
+        
                 // Verifica si el usuario es admin
-                const isAdmin = user.role && user.role.tipo === 'Admin';
-
+                const isAdmin = user?.role?.tipo === 'Admin';
+        
                 // Renderiza la vista con la información del usuario
-                res.render('users/profile', { 
+                return res.render('users/profile', { 
                     title: 'Perfil del usuario', 
                     user: user,
                     isAdmin: isAdmin // Pasa esta variable a la vista
                 });
-
-                // Renderiza la vista con el usuario encontrado en la base de datos
-                res.render('users/profile', { title: 'Perfil del usuario', user: user // Pasa el objeto actualizado del usuario 
-
+        
+            } catch (error) {
+                console.error('Error al cargar perfil:', error);
+                return res.status(500).render('error', { 
+                    message: 'Error interno al cargar el perfil.', 
+                    error: { status: 500, stack: error.stack || 'No se proporcionó información detallada.' } 
                 });
-            } catch (error) { 
-                console.error("Error al obtener el perfil: ", error.message );
-                res.redirect('/login');// Redirige en caso de un error
+            
             }
         },
-    
+        
 
         logout: (req, res) => {
             req.session.destroy();
@@ -219,11 +257,95 @@ const usersController = {
             res.redirect("/login")
         },
 
-        update: (req, res) => {
+        editForm: async (req, res) => {
+            try {
+                // Log para depuración
+                console.log('ID recibido:', req.params.id)
+                const id = req.params.id;
+                const user = await User.findByPk(id, {
+                    include: { model: Role, as: 'role' } // Incluye el modelo "Role"
+                });
 
+                if (!user) {
+                    return res.status(404).render('error', { 
+                        message: 'Usuario no encontrado.', 
+                        error: { status: 404, stack: 'El usuario con el ID proporcionado no existe.' } 
+                    });
+                }
+                
+        
+                return res.render('users/updateDelete', { title: 'Editar Usuario', user });
+            } catch (error) {
+                console.error('Error cargando formulario:', error);
+                return res.render('error', { message: 'Error al cargar el formulario.' });
+            }
         },
-    }
+        
+        update: async (req, res) => {
+            try {
+                const id = req.params.id;
+                const { firstName, lastName, email, password, roleId } = req.body;
+                
+                const user = await User.findByPk(id);
+        
+                if (!user) {
+                    return res.status(404).render('error', { 
+                        message: 'Usuario no encontrado.',
+                        error: { status: 404, stack: 'No se encontró el usuario.' }
+                    });
+                }
+        
+                if (email && email !== user.email) {
+                    const emailExists = await User.findOne({
+                        where: { email, id: { [Sequelize.Op.ne]: id } }
+                    });
+        
+                    if (emailExists) {
+                        return res.render('users/update', { 
+                            error: 'El email ya está registrado.',
+                            title: 'Editar Usuario',
+                            user
+                        });
+                    }
+                }
+        
+                const image = req.file ? req.file.filename : user.image;
+        
+                await user.update({
+                    firstName,
+                    lastName,
+                    email,
+                    password: password ? bcrypt.hashSync(password, 10) : user.password,
+                    image,
+                    roleId: roleId || user.roleId,
+                });
+        
+                return res.redirect(`/users/profile/${id}`);
+            } catch (error) {
+                console.error('Error al actualizar usuario:', error);
+                return res.status(500).render('error', { 
+                    message: 'Error al actualizar el usuario.', 
+                    error: { status: 500, stack: error.stack } 
+                });
+            }
+        },
+        
 
+        deleteUser: async (req, res) => {
+            try {
+              req.session.destroy();
+              res.clearCookie("user");
+              const id = req.params.id;
+              await User.destroy({ where: { id } });
+              res.redirect("/users/register");
+            } catch (error) {
+              console.log("error: ", error);
+              res.render("error", error);
+            }
+          },
+        
+    
+}
     
 
 
