@@ -48,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       roleId: {
         type: DataTypes.INTEGER,
         allowNull: true,
+        defaultValue: User,
         field: 'role_id' // Mapea con la columna de la base de datos
       }
     },

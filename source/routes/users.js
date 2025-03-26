@@ -38,8 +38,7 @@ router.get('/login', login); // Muestra el formulario de login
 
 router.post('/processLogin', processLogin); // Procesa el login
 
-// router.get('/profile', usersCheck, profile); // Muestra el perfil del usuario
-router.get('/profile', usersCheck, profile);
+router.get('/profile/:id', usersCheck, profile); // Muestra el perfil del usuario
 
 router.get('/logout',logout);  // Cierra sesión
 

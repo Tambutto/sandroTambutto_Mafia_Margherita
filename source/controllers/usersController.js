@@ -159,7 +159,7 @@ const usersController = {
                 id: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                role: user.role,
+                role: user.role || 'user', //Asegura establecer un rol por defect como user 
                 // roll: user.roll,
                 image: user.image,
             };
@@ -216,6 +216,7 @@ const usersController = {
 
         profile: async (req, res) => {
             if (!req.session.userLogin || !req.session.userLogin.id) {
+                console.log('Sesión no encontrada o inválida. Redirigiendo a login.');
                 return res.redirect('/login'); // Si no hay sesión, redirige al login
             }
         
@@ -283,48 +284,60 @@ const usersController = {
         
         update: async (req, res) => {
             try {
-                const id = req.params.id;
+                const id = req.params.id; // ID del usuario a actualizar
                 const { firstName, lastName, email, password, roleId } = req.body;
-                
-                const user = await User.findByPk(id);
+                console.log('Datos recibidos para actualizar:', req.body);
+
         
+                // Buscar al usuario en la base de datos
+                const user = await User.findByPk(id);
                 if (!user) {
                     return res.status(404).render('error', { 
-                        message: 'Usuario no encontrado.',
-                        error: { status: 404, stack: 'No se encontró el usuario.' }
+                        message: 'Usuario no encontrado.', 
+                        error: { status: 404 }
                     });
                 }
         
-                if (email && email !== user.email) {
-                    const emailExists = await User.findOne({
-                        where: { email, id: { [Sequelize.Op.ne]: id } }
-                    });
-        
-                    if (emailExists) {
-                        return res.render('users/update', { 
-                            error: 'El email ya está registrado.',
-                            title: 'Editar Usuario',
-                            user
-                        });
-                    }
-                }
-        
-                const image = req.file ? req.file.filename : user.image;
-        
-                await user.update({
+                console.log('Valores actuales en la base de datos:', user);
+                console.log('Valores que se intentan guardar:', {
                     firstName,
                     lastName,
                     email,
                     password: password ? bcrypt.hashSync(password, 10) : user.password,
-                    image,
-                    roleId: roleId || user.roleId,
+                    image: req.file ? req.file.filename : user.image,
+                    roleId
                 });
         
-                return res.redirect(`/users/profile/${id}`);
+                // Validar email duplicado
+                const emailExists = email && email !== user.email ? await User.findOne({
+                    where: { email, id: { [Sequelize.Op.ne]: id } }
+                }) : null;
+        
+                if (emailExists) {
+                    console.log('El email ya está registrado:', email);
+                    return res.status(400).render('error', { 
+                        message: 'El email ya está registrado.', 
+                        error: { status: 400 }
+                    });
+                }
+        
+                // Asignar nuevos valores y guardar
+                user.set({
+                    firstName,
+                    lastName,
+                    email,
+                    password: password ? bcrypt.hashSync(password, 10) : user.password,
+                    image: req.file ? req.file.filename : user.image,
+                    roleId: roleId || user.roleId
+                });
+                await user.save();
+        
+                console.log(`Usuario con ID ${id} actualizado correctamente.`);
+                return res.redirect(`/profile/${id}`);
             } catch (error) {
                 console.error('Error al actualizar usuario:', error);
                 return res.status(500).render('error', { 
-                    message: 'Error al actualizar el usuario.', 
+                    message: 'Error interno al actualizar el usuario.', 
                     error: { status: 500, stack: error.stack } 
                 });
             }
@@ -333,16 +346,30 @@ const usersController = {
 
         deleteUser: async (req, res) => {
             try {
-              req.session.destroy();
-              res.clearCookie("user");
-              const id = req.params.id;
-              await User.destroy({ where: { id } });
-              res.redirect("/users/register");
+                const id = req.params.id; // Captura el ID desde el parámetro de la URL
+                console.log(`ID recibido para eliminación: ${id}`);
+        
+                const user = await User.findByPk(id); // Busca al usuario con el ID proporcionado
+                if (!user) {
+                    console.log(`Usuario con ID ${id} no encontrado.`);
+                    return res.status(404).render('error', {
+                        message: 'Usuario no encontrado.',
+                        error: { status: 404, stack: 'El usuario con el ID proporcionado no existe.' }
+                    });
+                }
+        
+                await User.destroy({ where: { id } }); // Elimina al usuario
+                console.log(`Usuario con ID ${id} eliminado.`);
+                return res.redirect('/users'); // Redirige tras la eliminación
             } catch (error) {
-              console.log("error: ", error);
-              res.render("error", error);
+                console.error(`Error al eliminar usuario con ID ${id}:`, error);
+                return res.status(500).render('error', {
+                    message: 'Error al eliminar el usuario.',
+                    error: { status: 500, stack: error.stack || 'Información no disponible.' }
+                });
             }
-          },
+        }
+        
         
     
 }

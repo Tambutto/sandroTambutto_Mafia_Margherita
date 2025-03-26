@@ -44,6 +44,14 @@ app.use(session({
   cookie: { secure: false } // Solo enviar la cookie en conexiones HTTPS (debería ser true en producción con HTTPS)
 }));
 
+
+// Middleware para definir res.locals.userLogin
+app.use((req, res, next) => {
+  res.locals.user = req.session.userLogin || null; // Define user globalmente desde la sesión
+  next();
+});
+
+
 app.use(userCookie); // middleware de cookie
 app.use(userLoginMiddleware);
 
