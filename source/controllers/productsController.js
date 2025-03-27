@@ -451,9 +451,18 @@ let productsController = {
     
 
 
-    show: (req, res) => {
-        const products = readData(); // Leer los productos existentes
-       return res.render('products/productDetail', {title: 'Detalle de productos', products})
+    show: async (req, res) => {
+        try {
+            const products = await Product.findAll({
+                include : ['images']
+            })            
+
+            return res.render('products/productDetail', {title: 'Detalle de productos', products})
+            
+        } catch (error) {
+            console.error('Error al cargar los productos:', error);
+            res.status(500).send('Error del servidor');
+        }
     }
 }
 
