@@ -5,110 +5,85 @@
 <header>
 
     <%- include('../partials/header') %>
-    
+
 </header>
 
-    
-    <h1 class="titulo__productAdd">Agregar Nuevo Producto</h1>
+
+<h1 class="titulo__productAdd">Agregar Nuevo Producto</h1>
+
 <body>
 
-<form action="/products/productAdd" class="form__productAdd" method="post" enctype="multipart/form-data"> 
-    
-    <!-- <label for="name">Nombre del Producto:</label>  -->
-    <input type="text" id="nombre" name="nombre" required placeholder="Nombre del producto" class="input__add"> 
+    <form action="/products/productAdd" class="form__productAdd" method="post" enctype="multipart/form-data">
 
-     <!-- <label for="name">Nombre del Producto:</label>  -->
-     <!-- <select name="ingredientes[]" id="ingredientes" class="" >
-        <option value="" disabled selected>Ingredientes</option>
-        <option value="Salsa de tomate">Salsa de tomate</option>
-        <option value="Mozzarella">Mozzarella de bufala</option>
-        <option value="Albahaca">Albahaca</option>
-        <option value="Pepperoni">Pepperoni</option>
-        <option value="Oregano">Oregano</option>
-        <option value="Tomates pelados">Tomates pelados</option>
-        <option value="Sal">Sal</option>
-        <option value="Champiñones">Champiñones</option>
-        <option value="Jamon">Jamon</option>
-        <option value="Alcachofas">Alcachofas</option>
-        <option value="Aceitunas">Aceitunas</option>
-        <option value="Cebolla">Cebolla</option>
-        <option value="queso gorgonzola">Queso gorgonzola</option>
-        <option value="pera">Pera</option>
-        <option value="pimientos">Pimientos</option>
-        <option value="Rucula">Rucula</option>
-        <option value="lechuga">lechuga</option>
-        <option value="zanahoria">Zanahoria</option>
-        <option value="tomate">Tomates</option>
-        <option value="pepino">Pepino</option>
-        <option value="choclo">choclo</option>
+        <!-- <label for="name">Nombre del Producto:</label>  -->
+        <input type="text" id="nombre" name="name" required placeholder="Nombre del producto" class="input__add">
 
-     </select> -->
-    
 
-    <!-- <label for="description">Descripcion:</label>  -->
-    <input type="text" id="descripcion" name="descripcion" required placeholder="Descripcion" class="input__add">     
-    
-    <!-- <label for="price">Precio:</label>  -->
-    <input type="number" id="precio" name="precio" required placeholder="Precio" class="input__add"> 
 
-    <div class="container__add">
-                <!-- <label for="categoria">Categoría:</label> -->
-            <select name="categoria" id="categoria" class="form__inside" >
-                <option value="" disabled selected>Elija un categoria</option>
-                <option value="Clasica">Clasica</option>
-                <option value="Especial">Especial</option>
-                <option value="Complemento">Complemento</option>
-                <option value="Bebida">Bebida</option>
-            </select>
+        <!-- <label for="description">Descripcion:</label>  -->
+        <input type="text" id="descripcion" name="description" required placeholder="Descripcion" class="input__add">
 
-            <!-- <label for="ingredientes">Seleccione los ingredientes:</label> -->
-            <div id="ingredientes" class="ingredient-checkboxes">
-                <div class="ingredient-checkbox">
-                    <input type="checkbox" id="salsa_de_tomate" name="ingredientes[]" value="Salsa de tomate" class="input__add">
-                    <label for="salsa_de_tomate">Salsa de tomate</label>
+        <!-- <label for="price">Precio:</label>  -->
+        <input type="number" id="precio" name="price" required placeholder="Precio" class="input__add">
+
+        <div style="display: flex; flex-wrap: wrap; margin: 20px 0;">
+
+
+            <div id="ingredientes" style=" width: 60%; height: 400px; ">
+                <label for="ingredientes" style="font-weight: 800; color: white; ">Seleccione los ingredientes:</label>
+                <div id="ingredientes" style="display: flex; flex-wrap: wrap;margin: 20px 0;">
+                    <% ingredients.forEach((i)=> { %>
+                        <div style="width: 50%; display: flex; align-items: center;">
+                            <input type="checkbox" id="i<%= i.name %>" style="width: 50px; margin: 0;"
+                                name="ingredients" value="<%= i.id %>">
+                            <label for="i<%= i.name %>">
+                                <%= i.name %>
+                            </label>
+                        </div>
+                        <% }) %>
                 </div>
-                <div class="ingredient-checkbox">
-                    <input type="checkbox" id="mozzarella_de_bufala" name="ingredientes[]" value="Mozzarella de bufala" class="input__add">
-                    <label for="mozzarella_de_bufala">Mozzarella de bufala</label>
-                </div>
-                <div class="ingredient-checkbox">
-                    <input type="checkbox" id="albahaca" name="ingredientes[]" value="Albahaca" class="input__add">
-                    <label for="albahaca">Albahaca</label>
-                </div>
-                <div class="ingredient-checkbox">
-                    <input type="checkbox" id="pepperoni" name="ingredientes[]" value="Pepperoni" class="input__add">
-                    <label for="pepperoni">Pepperoni</label>
-                </div>
-                <div class="ingredient-checkbox">
-                <input type="checkbox" id="cebolla" name="ingredientes[]" value="Cebolla" class="input__add">
-                <label for="cebolla">Cebolla</label>
-            </div>
-            <div class="ingredient-checkbox">
-                <input type="checkbox" id="Jamon" name="ingredientes[]" value="Jamon" class="input__add">
-                <label for="Jamon">Jamon</label>
-            </div>
-            <div class="ingredient-checkbox">
-                <input type="checkbox" id="pimientos" name="ingredientes[]" value="Pimientos" class="input__add">
-                <label for="pimientos">Pimientos</label>
-            </div>
-                <!-- Añadir más ingredientes según sea necesario -->
             </div>
 
-            <!-- <label for="size">Tamaño</label> -->
-            <select name="tamaño" id="tamaño" class="tamaño" >
-                <option value="" disabled selected>Tamaño</option>
-                <option value="grande">Grande</option>
-                <option value="mediana">Mediana</option>
-                <option value="chica">Chica</option>
-                <option value="porcion">Porcion</option>
-            </select>
-            
-            <input type="file" id="imagen" name="imagen"  class="input__add">
-    </div>
-    <!-- <label for="image"></label> -->
+            <div style="width: 40%;">
+                <div>
+                    <label for="categoria" style="font-weight: 800; color: white; ">Categoría:</label>
+                    <select name="categoryId" id="categoria" style="margin: 20px 0; width: 90%;">
+                        <option value="" disabled selected>Elija un categoria</option>
+                        <% categories.forEach(c=> { %>
+                            <option value="<%= c.id %>">
+                                <%= c.name %>
+                            </option>
+                            <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <label for="tamaños" style="font-weight: 800; color: white; ">Seleccione los tamaños:</label>
+                    <div id="tamaños" style="display: flex; flex-wrap: wrap;margin: 20px 0;">
+                        <% sizes.forEach(s=> { %>
+                            <div style="display: flex; align-items: center;">
+                                <input type="checkbox" id="i<%= s.name %>" style="width: 50px; margin: 0;"
+                                    name="sizes" value="<%= s.id %>">
+                                <label for="i<%= s.name %>">
+                                    <%= s.name %>
+                                </label>
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+                <div>
+                    <label for="file" style="font-weight: 800; color: white; ">Imagen:</label>
 
-    
-    <button type="submit" class="btn_productAdd">Agregar Producto</button>
+                    <input type="file" id="imagen" name="imagen" style="width: 90%;">
 
-</form>
+                </div>
+                <button type="submit" class="btn_productAdd" style="width: 90%;">Agregar Producto</button>
+
+            </div>
+
+        </div>
+        <!-- <label for="image"></label> -->
+
+
+
+    </form>
 </body>
