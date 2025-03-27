@@ -1,7 +1,4 @@
 const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas con hash y compare
-const fs = require('fs');
-const path = require('path');
-const { Sequelize } = require('../database/models');
 
 // Ruta al archivo JSON
 // const dataPath = path.join(__dirname, '..', 'data', 'users.json');
@@ -35,9 +32,10 @@ const usersController = {
         try {
             // const users = readData();
             const {firstName, lastName, email, password, roleId} = req.body;
-
+            
         // Validación de usuario único
             const userExists = await User.findOne({ where: { email } })
+            
             if (userExists) {
                 return res.render('users/register', {
                     title: 'Pagina de registro',
@@ -80,8 +78,7 @@ const usersController = {
             token: null, // Puedes agregar lógica para generar el token si lo necesitas
             isValidated: false, // Ajusta el campo según tu esquema de base de datos
             lock: false,
-            roll: roleId === 1 ? 'Admin' : 'User',
-            roleId: roleId || null,
+            roleId: roleId || 2,
         });
 
         console.log('Usuario registrado:', newUser);
