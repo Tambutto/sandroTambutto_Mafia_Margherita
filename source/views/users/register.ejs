@@ -12,8 +12,8 @@
 
     <main>
         <h2 class="titulo__registro">Formulario de Registro</h2>
-    
         <div>
+
             <form action="/processRegister" method="POST" class="registro" enctype="multipart/form-data">
         
                 <label for="name"></label><i class="fa-regular fa-user user"></i>
@@ -23,7 +23,7 @@
                 <input type="text" name="lastName" id="apellido" placeholder="Apellido" minlength="5">
     
                 <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
-                <input type="email" name="email" id="email" placeholder="email" maxlength="20">        
+                <input type="email" name="email" id="email" placeholder="email">        
         
                 <label for="password"></label><i class="fa-solid fa-lock user3"></i>
                 <input type="password" name="password" id="password" placeholder="Password"  required>
@@ -47,6 +47,7 @@
             </form>
             
         </div>
+        <p><%= locals.error && error %></p>
 
     </main>
 
