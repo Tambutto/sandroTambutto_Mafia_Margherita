@@ -50,7 +50,7 @@
         <!-- <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="< product.size %>"> -->
 
         <label for="tamano">Tamaños:</label>
-            <select name="tamanos[]" id="tamano" multiple>
+            <select name="sizes" id="tamano" multiple>
                 <% allSizes.forEach(size => { %>
                     <option value="<%= size.id %>" <%= product.sizes.some(s => s.id === size.id) ? 'selected' : '' %>>
                         <%= size.name %>

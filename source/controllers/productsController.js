@@ -301,7 +301,7 @@ let productsController = {
 
     update: async (req, res) => {
         try {
-            const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
+            const { nombre, descripcion, ingredientes, sizes, precio, categoria } = req.body;
 
             // Buscar el producto por su ID
             const product = await Product.findByPk(req.params.id, {
@@ -322,7 +322,6 @@ let productsController = {
             await product.update({
                 name: nombre,
                 description: descripcion,
-                size: tamaño,
                 price: precio,
                 categoryId: categoria,
                 image: imagen || product.image // Mantener la imagen existente
@@ -335,10 +334,18 @@ let productsController = {
                 : ingredientes;
 
             await product.setIngredients(ingredientIds); // Actualiza la relación en la tabla intermedia setIngredients. Este método se encarga de gestionar la tabla intermedia (productingredient) para eliminar las relaciones previas y agregar las nuevas.
+
+            if (sizes) {
+                const sizesIds = typeof sizes === 'string'
+                   ? sizes.split(',').map(id => parseInt(id.trim())) // Convierte los IDs
+                   : sizes;
+   
+               await product.setSizes(sizesIds);
+            }
         }
             
             console.log(`Producto actualizado: ${product.id} - ${product.name}`);
-            res.redirect(`/products/${req.params.id}`);
+            res.redirect(`/admin`);
         } catch (error) {
             console.error('Error al actualizar un producto:', error);
             res.status(500).send('Error del servidor');
