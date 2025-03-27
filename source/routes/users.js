@@ -5,7 +5,7 @@ var router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-const { Sequelize } = require('../../database/models');
+const { Sequelize } = require('../database/models');
 
 // Configuración de almacenamiento
 const storage = multer.diskStorage({
