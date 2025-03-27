@@ -371,19 +371,34 @@ let productsController = {
 
     remove: async (req, res) => {
         try {
-        const product = await Product.findByPk(req.params.id); // busca producto por id 
+        const product = await Product.findByPk(req.params.id,{
+            include : ['images']
+        }); // busca producto por id 
         if (!product) {
             return res.status(404).send('Producto no encontrado');
         }
 
         // Eliminar la imagen asociada al producto si existe
-        const imagePath = path.join(__dirname, '..', '..', 'public', product.imagen);
-        if (fs.existsSync(imagePath)) {
-            fs.unlinkSync(imagePath);
-        }
+        product.images.forEach(async (image) => {
+            const imagePath = path.join(__dirname, '..', '..', 'public', image.imageUrl);
+            if (fs.existsSync(imagePath)) {
+                fs.unlinkSync(imagePath);
+            }
+            await ImageProducts.destroy({
+                where : {
+                    id : image.id
+                }
+            })
+        });
 
-        await product.destroy(); // eliminar el producto de la base de datos
-        res.redirect('/products');
+        // TODO: ELIMINAR TODAS LAS REFERENCIAS EN LAS TABLAS INTERMEDIAS 
+
+        await product.destroy({
+            where : {
+                id : req.params.id
+            }
+        }); // eliminar el producto de la base de datos
+        res.redirect('/admin');
         } catch (error) {
         console.error('Error al eliminar un producto:', error);
         res.status(500).send('Error del servidor');
