@@ -141,9 +141,7 @@ const usersController = {
         try {
             const { email, password, recordarme } = req.body; // Extraer email y password del cuerpo de la solicitud
             // Buscar el usuario en la base de datos
-            const user = await User.findOne({ where: { email }, 
-            include: { model: Role, as: 'role' } })// Incluye el modelo Role
-
+            const user = await User.findOne({ where: { email } });
             if (!user || !bcrypt.compareSync(password, user.password)) {
                 // Si no se encuentra el usuario o la contraseña no coincide, redirigir al login con un error
                 return res.render('users/login', {
@@ -156,7 +154,7 @@ const usersController = {
                 id: user.id,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                role: user.role || 'user', //Asegura establecer un rol por defect como user 
+                role: user.role, //Asegura establecer un rol por defect como user 
                 // roll: user.roll,
                 image: user.image,
             };
