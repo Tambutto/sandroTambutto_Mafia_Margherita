@@ -35,10 +35,10 @@
         <tbody> <!-- cuerpo de la--> 
             <% products.forEach(product => { %> <!-- Aquí, se itera sobre cada producto en el menú de la primera variedad de la pizzería.-->
              <tr> <!-- Para cada producto, se genera una fila en la tabla:-->
-                <td><%= product.nombre %></td> 
-                <td><%= product.categoria %></td> 
-                <td><%= product.ingredientes ? product.ingredientes.join(', ') : 'Sin ingredientes' %></td> 
-                <td><%= product.tamano %></td>
+                <td><%= product.name %></td> 
+                <td><%= product.category.name %></td> 
+                <td><%= product.ingredients.length ? product.ingredients.map(i => i.name).join(', ') : 'Sin ingredientes' %></td> 
+                <td><%= product.sizes.length ? product.sizes.map(s => s.name).join(', ') : 'Tamaño único' %></td> 
                 <td> $ <%= product.precio %></td> 
                 <td> 
                     <a href="/products/productEdit/<%= product.id %>" class="edit">Editar</a>

@@ -4,7 +4,7 @@ const path = require('path');
 // const { cleatitle } = require('process');
 
 // Con sequelize
-const { Product, ImageProducts, Ingredient, Category, Size} = require('../database/models'); // Importa el modelo Product
+const { Product, ImageProducts, Ingredient, Category, Size, ProductIngredient, ProductSize} = require('../database/models'); // Importa el modelo Product
 
 
 
@@ -38,6 +38,8 @@ let productsController = {
     lista: async (req, res) => {
         try {
             const products = await Product.findAll(); // obtiene todos los productos
+            console.log(products);
+            
             res.render('products/listaProductos', {
                 title: 'Lista de productos', products });
             } catch (error) {
@@ -55,29 +57,26 @@ let productsController = {
 
     // 2 - Utilizando sequelize (GET)
     createForm: async (req, res) => {
+
         try {
-            const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
-            const imagen = req.file ? 'images/${req.file.filename}' : null; //Manejo de imagenes
-
-            await Product.create({
-                name: nombre,
-                description: descripcion,
-                ingredients: Array.isArray(ingredientes) ? ingredientes : [ingredientes],
-                size: tamaño,
-                price: precio,
-                categoryId: categoria, // Clave foránea
-                image: imagen
-            });
+            const [ingredients, categories, sizes] = await Promise.all([
+                Ingredient.findAll(),
+                Category.findAll(),
+                Size.findAll()
+            ]);
             
-            res.redirect('/products');
+            return res.render('products/productAdd', {
+                title: "Agregar producto",
+                ingredients,
+                categories,
+                sizes
+            });
         } catch (error) {
-            console.log('Error al crear un producto:', error);
+            console.log(error);
             res.status(500).send('Error del servidor');
-
         }
-    },    
 
-    
+    },
     // 3 Detalle de un producto particular (GET)
     
         // detail: (req, res) => {
@@ -143,20 +142,36 @@ let productsController = {
 
     create: async (req, res) => {
         try {
-            const { nombre, descripcion, ingredientes, tamaño, precio, categoria } = req.body;
-            const imagen = req.file ? `images/${req.file.filename}` : null; // Manejo de imagenes
+            const { name, description, ingredients, sizes, price, categoryId } = req.body;
+            const image = req.file ? `images/${req.file.filename}` : null; // Manejo de imagenes
 
             // Crear el producto en la base de datos usando Sequelize
-            await Product.create({
-                name: nombre,
-                description: descripcion,
-                ingredients: Array.isArray(ingredientes) ? ingredientes :
-                [ingredientes],
-                size: tamaño,
-                price: precio,
-                categoryId: categoria,//clave foranea para categoria
-                image: imagen 
+            const product = await Product.create({
+                name: name.trim(),
+                description: description.trim(),
+                price,
+                categoryId,//clave foranea para categoria
+                image : image || 'images/default-image.png' 
             });
+
+            if(product) {
+
+                const ingredientsArray = Array.isArray(ingredients) ? ingredients : [ingredients];
+                ingredientsArray.forEach(async (i) => {
+                    await ProductIngredient.create({
+                        productId : product.id,
+                        ingredientId : +i
+                    })
+                });
+
+                const sizesArray = Array.isArray(sizes) ? sizes : [sizes];
+                sizesArray.forEach(async (s) => {
+                    await ProductSize.create({
+                        productId : product.id,
+                        sizeId : +s
+                    })
+                });
+            }
 
             res.redirect('/products');
         } catch (error) {
