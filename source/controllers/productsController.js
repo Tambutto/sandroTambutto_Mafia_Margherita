@@ -2,11 +2,9 @@
 const fs = require('fs');
 const path = require('path');
 // const { cleatitle } = require('process');
-const { v4: uuidv4 } = require('uuid');
-const { Sequelize } = require('../../database/models');
 
 // Con sequelize
-const { Product, ImageProducts, Ingredient, Category, Size} = require('../../database/models'); // Importa el modelo Product
+const { Product, ImageProducts, Ingredient, Category, Size} = require('../database/models'); // Importa el modelo Product
 
 
 
