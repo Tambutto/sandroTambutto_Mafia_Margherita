@@ -47,4 +47,24 @@
     border-radius: 5vw;
 }
 
+.btn-profile {
+    background: var(--ingredientesFrescos);
+    color: var(--fondo);
+    border: none;
+    border-radius: 2vw;
+    cursor: pointer;
+    font-family: 'Italianno';
+    font-size: 1.5rem;
+    margin-right: 1vw;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 10vh;
+}
+
+.btn-profile:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
 }

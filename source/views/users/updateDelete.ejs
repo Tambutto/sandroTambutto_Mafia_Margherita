@@ -37,12 +37,13 @@
                 <input type="file" name="image" id="image">
                 
                 <button type="submit" class="form_div_button">Actualizar</button>
+
+                <!-- Botón para eliminar -->
+                <form action="/delete/<%= user.id %>?_method=DELETE" method="POST" >
+                    <button type="submit" class="boton_eliminar">Eliminar</button>
+                </form>
             </form>
 
-            <!-- Botón para eliminar -->
-            <form action="/delete/<%= user.id %>?_method=DELETE" method="POST" class="registro">
-                <button type="submit" class="form_div_button delete-button">Eliminar</button>
-            </form>
         </div>
 
     </main>
