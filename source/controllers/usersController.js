@@ -1,9 +1,7 @@
-const {v4:uuidv4, validate } = require('uuid'); // este modulo me genera un id unico
 const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas con hash y compare
-const { route, lock } = require('../routes');
 const fs = require('fs');
 const path = require('path');
-const { Sequelize } = require('../../database/models');
+const { Sequelize } = require('../database/models');
 
 // Ruta al archivo JSON
 // const dataPath = path.join(__dirname, '..', 'data', 'users.json');
@@ -22,7 +20,7 @@ const { Sequelize } = require('../../database/models');
 
 // Usando sequelize:
 
-const { User, Role} = require('../../database/models'); // Importa el modelo User
+const { User, Role} = require('../database/models'); // Importa el modelo User
 
 
 const usersController = {
