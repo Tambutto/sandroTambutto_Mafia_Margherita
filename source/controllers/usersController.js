@@ -141,10 +141,7 @@ const usersController = {
         try {
             const { email, password, recordarme } = req.body; // Extraer email y password del cuerpo de la solicitud
             // Buscar el usuario en la base de datos
-            const user = await User.findOne({ 
-                where: { email },
-                include : ['role'] 
-            });
+            const user = await User.findOne({ where: { email } });
             if (!user || !bcrypt.compareSync(password, user.password)) {
                 // Si no se encuentra el usuario o la contraseña no coincide, redirigir al login con un error
                 return res.render('users/login', {
@@ -284,27 +281,41 @@ const usersController = {
             try {
                 const id = req.params.id; // ID del usuario a actualizar
                 const { firstName, lastName, email, password, roleId } = req.body;
+        
                 console.log('Datos recibidos para actualizar:', req.body);
-
+                console.log('ID de la sesión (usuario logueado):', req.session.userLogin.id);
+                console.log('ID del usuario objetivo:', id);
+                console.log('Rol del usuario logueado:', req.session.userLogin.role);
+        
+                // Validar permisos
+                // if (req.session.userLogin.role !== 'admin' && req.session.userLogin.id !== id) {
+                //     console.log('Intento de actualización no autorizado.');
+                //     return res.status(403).render('error', { 
+                //         message: 'No tienes permiso para realizar esta acción.', 
+                //         error: { status: 403 }
+                //     });
+                // }
+        
+                // Bloquear que un administrador se actualice a sí mismo
+                if (req.session.userLogin.id === id) {
+                    console.log('Un administrador no puede modificar su propia cuenta.');
+                    return res.status(403).render('error', { 
+                        message: 'No puedes modificar tu propia cuenta.', 
+                        error: { status: 403 }
+                    });
+                }
         
                 // Buscar al usuario en la base de datos
-                const user = await User.findByPk(id);
+                const user = await User.findByPk(id, {
+                    include: { model: Role, as: 'role' }
+                });
+        
                 if (!user) {
                     return res.status(404).render('error', { 
                         message: 'Usuario no encontrado.', 
                         error: { status: 404 }
                     });
                 }
-        
-                console.log('Valores actuales en la base de datos:', user);
-                console.log('Valores que se intentan guardar:', {
-                    firstName,
-                    lastName,
-                    email,
-                    password: password ? bcrypt.hashSync(password, 10) : user.password,
-                    image: req.file ? req.file.filename : user.image,
-                    roleId
-                });
         
                 // Validar email duplicado
                 const emailExists = email && email !== user.email ? await User.findOne({
@@ -336,7 +347,7 @@ const usersController = {
                 console.error('Error al actualizar usuario:', error);
                 return res.status(500).render('error', { 
                     message: 'Error interno al actualizar el usuario.', 
-                    error: { status: 500, stack: error.stack } 
+                    error: { status: 500, stack: error.stack || 'Información no disponible.' }
                 });
             }
         },
@@ -346,8 +357,16 @@ const usersController = {
             try {
                 const id = req.params.id; // Captura el ID desde el parámetro de la URL
                 console.log(`ID recibido para eliminación: ${id}`);
-        
-                const user = await User.findByPk(id); // Busca al usuario con el ID proporcionado
+
+                
+                // Validar permisos
+                if (req.session.userLogin.role !== 'admin') {
+                    console.log('Intento de eliminación no autorizado.');
+                }
+
+                const user = await User.findByPk(id, {
+                    include: { model: Role, as: 'role' }
+                }); // Busca al usuario con el ID proporcionado
                 if (!user) {
                     console.log(`Usuario con ID ${id} no encontrado.`);
                     return res.status(404).render('error', {

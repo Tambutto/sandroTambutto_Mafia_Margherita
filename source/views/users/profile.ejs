@@ -17,22 +17,23 @@
 
             <div class="foto__profile">
                 <!-- Mostrar la imagen del usuario -->
+
                 <% if (user.image) { %>
-                    <img src="/images/users/<%= user.image %>" alt="Foto de perfil de <%= user.firstName %>">
+                    <img src="/images/users/<%= user.image %>" alt="Foto de perfil de: <%= user.firstName %>">
                 <% } else { %>
                     <p>No hay imagen de perfil disponible.</p>
                 <% } %>
             </div>
 
             <!-- Enlace a la vista de admin solo si el usuario es Admin -->
+
             <% if (isAdmin) { %>
                 <a href="/admin" class="admin-link">Ir al Panel de Administración</a>
                 <ul>
-                    <li><a href="/updateDelete/<%= user.id %>" class="nuevo">Usuario <%= user.firstName %></a></li>
-                </ul>
-                  
-                  
+                    <li><a href="/updateDelete/<%= user.id %>" class="btn-profile">Usuario <%= user.firstName %></a></li>
+                </ul> 
             <% } %>
+
             <a href="/logout" class="logout">Cerrar Sesión</a>
         </main>
     
