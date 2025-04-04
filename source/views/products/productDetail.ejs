@@ -12,25 +12,37 @@
 </header>
 
     <h2 class="titulo__menu">Menu</h2>
-   
-
-    <!-- <h2>Nuestra Carta</h2> -->
 
     <main class="main-container">
 
         <section class="food">
-            <% products.forEach(({id, nombre, categoria, ingredientes, precio, descripcion, imagen}) => { %>
+            <% products.forEach(({id, name, categoria, ingredients, price, description, images}) => { %>
             <article>
                 <a href="/products/productEspecific/<%= id %>" style="color: black;">
-                    <h3><%= nombre %></h3>
-                
-                    <img src="/<%= imagen %>"" alt="<%= nombre %>" class="foto">
+                    <h3><%= name %></h3>
+
+                    <% if (images && images.length > 0) { %>
+
+                        <% images.forEach(({ imageUrl }, index) => { %>
+                            <img 
+                                src="/<%= imageUrl %>" 
+                                alt="<%= name %>" 
+                                class="foto <%= index === images.length - 1 ? 'ultima-imagen' : '' %>"
+                            >
+                        <% }) %>
+                        
+                        <!-- <% images.forEach(({ imageUrl }) => { %>
+                            <img src="/<%= imageUrl %>" alt="<%= name %>" class="foto">
+                        <% }) %> -->
+                    <% } else { %>
+                        <p>No hay imágenes disponibles.</p>
+                    <% } %>
                 
                 </a>
             
             
                 <p>
-                    <%= descripcion %>
+                    <%= description %>
                     <a href="/products/productEspecific/<%= id %>">Ver Mas</a>
                 </p>
                 

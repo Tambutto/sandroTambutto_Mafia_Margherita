@@ -239,7 +239,8 @@
     }
 
     .nombre__descripcion {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
     }
     
     
@@ -269,7 +270,7 @@
         font-size: 1.1vw;
         position: relative;
         left: 10vw;
-        bottom: 60vh;
+        top: -30vw;
         background: var(--CrujienteMasa);
         padding: 1vw;
         border-radius: 50%;

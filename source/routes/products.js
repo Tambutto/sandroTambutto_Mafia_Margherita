@@ -44,7 +44,7 @@ router.get('/productEspecific/:id', detail);
 
 // 4 Formulario de POST Acción de creación (a donde se envía el formulario)
 
-router.post('/productAdd',upload.single('imagen'), create);
+router.post('/productAdd',upload.single('image'), create);
 
 // 5 Formulario de edición de productos(GET)
 
@@ -53,7 +53,7 @@ router.get('/productEdit/:id', editForm);
 // 6 Acción de edición (a donde se envía el formulario - PUT o update):
 
 // router.put('/update/:id', edit )
-router.put('/update/:id', upload.single('imagen'), update);
+router.put('/update/:id', upload.single('image'), update);
 
 // 7 Acción de borrado (DELETE)
 

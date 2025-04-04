@@ -39,7 +39,7 @@
                 <td><%= product.category.name %></td> 
                 <td><%= product.ingredients.length ? product.ingredients.map(i => i.name).join(', ') : 'Sin ingredientes' %></td> 
                 <td><%= product.sizes.length ? product.sizes.map(s => s.name).join(', ') : 'Tamaño único' %></td> 
-                <td> $ <%= product.precio %></td> 
+                <td> $ <%= product.price %></td> 
                 <td> 
                     <a href="/products/productEdit/<%= product.id %>" class="edit">Editar</a>
                     <form action="/products/remove/<%= product.id %>?_method=DELETE" method="post" class="delete-form" onsubmit="return confirm('¿Estás seguro de eliminar este producto?')"> 
