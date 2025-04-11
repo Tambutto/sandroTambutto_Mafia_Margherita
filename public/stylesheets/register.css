@@ -4,7 +4,20 @@
 .titulo__registro{
         margin-top: 1vh;
         font-size: 2.5rem;
-        }  
+        } 
+        
+small {
+        color: var(--CrujienteMasa);
+        font-size: .9rem;
+        margin-left: 2vw;
+        display: none;
+     
+}        
+
+.was-validated small {
+        display: block;
+        color: var(--tomate);
+}
 
 form {
         display: flex;
@@ -81,13 +94,7 @@ input {
         top: 83vh;
 }    
 
-.user5 {
-        color:var(--quesoDerretido);  
-        font-size: .8rem;
-        position: absolute;
-        right: 16vw;
-        top: 91vh; 
-}
+
 
 .Recordarme {
         color: var(--limpieza);
@@ -186,12 +193,6 @@ input {
         top: 66vh;
     }
 
-    .user5 {
-        color:var(--quesoDerretido);  
-        font-size: 1rem;
-        right: 24vw;
-        top: 73vh; 
-}    
 
     .form_div_button {
         font-size: 1rem;
@@ -266,7 +267,7 @@ input {
         }
 
         .user {
-                color:var(--quesoDerretido);  
+                
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
@@ -274,7 +275,7 @@ input {
         }
 
         .user1 {
-                color:var(--quesoDerretido);  
+                 
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
@@ -283,36 +284,41 @@ input {
     
 
         .user2 {
-                color:var(--quesoDerretido);  
+               
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
                 top: 39vh;
+                
             }
 
-        .user3 {
-                color:var(--quesoDerretido);  
-                font-size: 1rem;
-                position: absolute;
-                right: 35vw;
-                top: 46vh;
-            }
+    
+    
+    /* Estilo del ícono del ojo */
+    .user3 {
+        position: absolute; /* Ubica el ícono dentro del contenedor relativo */
+        right: 35vw;
+        top: 46vh;
+        font-size: 1rem; /* Ajusta el tamaño del ícono */
+        cursor: pointer; /* Muestra un cursor de puntero */
+    }
+    
+    /* Cambia de color al interactuar con el ícono */
+    .user3:hover {
+        color: var(--tomate); /* Resalta el ícono cuando el usuario pasa el mouse */
+    }
+    
+            
 
         .user4 {
-                color:var(--quesoDerretido);  
+                 
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
                 top: 53vh;
         }  
 
-        .user5 {
-                color:var(--quesoDerretido);  
-                font-size: 1rem;
-                position: absolute;
-                right: 35vw;
-                top: 60vh; 
-        }
+       
 
         .form_div_button {
                 color: var(--limpieza);
@@ -326,5 +332,26 @@ input {
                 background: var(--quesoDerretido);
                 border-radius: 2vh;
         }
-   
+
+        .error-container{
+                background: var(--tomate);
+                color: var(--limpieza);
+                position: absolute;
+                left: 5vw;
+                width: 30vw;
+                top: 28vh;
+        }
+
+        .error-message {
+                color: var(--limpieza);
+                font-size: 1rem;
+                margin-top: 2px;
+                display: none; /* Ocultado por defecto */
+            }
+            
+            .invalid + .error-message {
+                display: block; /* Mostrar el mensaje si el input tiene la clase 'invalid' */
+            }
+            
+
 }

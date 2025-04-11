@@ -12,45 +12,59 @@
 
     <main>
         <h2 class="titulo__registro">Formulario de Registro</h2>
-        <div>
 
-            <form action="/processRegister" method="POST" class="registro" enctype="multipart/form-data">
-        
+            <!--Formulario de registro--> 
+
+            <form id="form-Validation" action="/processRegister" method="POST" class="registro" enctype="multipart/form-data">
+
                 <label for="name"></label><i class="fa-regular fa-user user"></i>
-                <input type="text" name="firstName" id="nombre" placeholder="Nombre" minlength="5">
-    
-                <label for="lastname"></label><i class="fa-regular fa-user user1"></i>
-                <input type="text" name="lastName" id="apellido" placeholder="Apellido" minlength="5">
-    
-                <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
-                <input type="email" name="email" id="email" placeholder="email">        
-        
-                <label for="password"></label><i class="fa-solid fa-lock user3"></i>
-                <input type="password" name="password" id="password" placeholder="Password"  required>
-                <div id="passwordError" class="error-message"></div>
-        
-                <label for="confirm_password"></label><i class="fa-solid fa-key user4"></i>
-                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar password" required>
-                <div id="confirmpasswordError" class="error-message"></div>
-
-                <label for="image"></label><i class="fa-regular fa-image user5"></i>
-                <input type="file" name="image" id="image">
-                
-               <!-- <label for="remember" class="Recordarme">Recordame</label>
-               <input type="checkbox" name="remember" id="recordarme" class="recordarme__btn"> -->
-
-
+                <input type="text" name="firstName" id="nombre" placeholder="Nombre" minlength="2" >
+                <small class="error-message"></small>
             
-             <button type="submit" class="form_div_button">Registrar</button>
+                <label for="lastname"></label><i class="fa-solid fa-user user1"></i>
+                <input type="text" name="lastName" id="apellido" placeholder="Apellido" minlength="2" >
+                <small class="error-message"></small>
+            
+                <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" >
+                <small class="error-message"></small>
+                      
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="Contraseña" minlength="8" autocomplete="new-password" >
+                <small class="error-message"></small>
+                <i class="fa-solid fa-eye-slash user3" id="togglePassword"></i>      
                 
-        
+                
+                <label for="confirm_password"></label>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar contraseña" autocomplete="new-password" >
+                <small class="error-message"></small>
+                <i class="fa-solid fa-eye-slash user4" id="togglePassword2"></i>
+            
+                <label for="image"></label>
+                <input type="file" name="image" id="image" accept=".jpg,.jpeg,.png,.gif" >
+                <small class="error-message"></small>
+            
+                <button type="submit" class="form_div_button">Registrar</button>
             </form>
             
-        </div>
-        <p><%= locals.error && error %></p>
+            
+                <p><%= locals.error && error %></p>
+
+                    <!-- Contenedor para los mensajes de error -->
+                    <div class="error-container">
+                        <% if (locals.errors && locals.errors.length > 0) { %>
+                            <h3>Errores</h3>
+            
+                            <ul>
+                                <% errors.forEach(error => { %>
+                                    <li><%= error.msg %></li>
+                                <% }); %>
+                            </ul>
+                        <% } %>
+                    </div>
 
     </main>
-
     
+    <script src="/javascripts/register.js" defer></script>
 </body>
 </html>

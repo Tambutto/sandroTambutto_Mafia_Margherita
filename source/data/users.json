@@ -4,7 +4,7 @@
     "firstName": "Juan",
     "lastName": "Pérez",
     "email": "juan.perez@example.com",
-    "password": "123456",
+    "password": "12345678",
     "image": "",
     "token": null,
     "validate": true,

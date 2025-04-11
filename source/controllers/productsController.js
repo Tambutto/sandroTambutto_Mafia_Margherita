@@ -1,13 +1,10 @@
 
 const fs = require('fs');
 const path = require('path');
-// const { cleatitle } = require('process');
+const { validationResult } = require('express-validator');
 
 // Con sequelize
 const { Product, ImageProducts, Ingredient, Category, Size, ProductIngredient, ProductSize } = require('../database/models'); // Importa el modelo Product
-
-
-
 
 // Ruta al archivo JSON
 const dataPath = path.join(__dirname, '..', 'data', 'products.json');
@@ -26,7 +23,7 @@ const saveData = (data) => {
 
 let productsController = {
     
-    // 1 Listado de productos (GET)
+    // 1 Listado de productos sin sequelize (GET) 
  
     // lista: function (req, res){
     //     const products = readData();
@@ -59,6 +56,9 @@ let productsController = {
     createForm: async (req, res) => {
 
         try {
+            // Obtén los posibles errores de validación
+            const errors = validationResult(req);
+
             const [ingredients, categories, sizes] = await Promise.all([
                 Ingredient.findAll(),
                 Category.findAll(),
@@ -69,7 +69,8 @@ let productsController = {
                 title: "Agregar producto",
                 ingredients,
                 categories,
-                sizes
+                sizes,
+                errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen
             });
         } catch (error) {
             console.log(error);
@@ -140,8 +141,50 @@ let productsController = {
 
     // 4 - Utilizando sequelize (POST)
 
-    create: async (req, res) => {
+    create: async (req, res, next) => {
         try {
+
+            const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            const ingredients = await Ingredient.findAll(); 
+            const sizes = await Size.findAll();
+            const categories = await Category.findAll();
+
+            return res.render('products/productAdd', {
+                title: 'Crear Producto',
+                errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen                oldData: req.body,
+                ingredients,
+                sizes,
+                categories,
+            });
+        }
+
+            // if (!errors.isEmpty()) {
+            //     // Obtén los datos necesarios para renderizar la vista
+            //     const ingredients = await Ingredient.findAll();
+            //     const sizes = await Size.findAll();
+            //     const categories = await Category.findAll();
+            
+            //     // Renderiza la vista con los datos necesarios
+            //     return res.render('products/productAdd', {
+            //         title: 'Crear Producto',
+            //         errors: errors.array(),
+            //         oldData: req.body, // Mantén los datos enviados por el usuario
+            //         ingredients,       // Envía la lista de ingredientes
+            //         sizes,             // Envía la lista de tamaños
+            //         categories,        // Envía la lista de categorías
+            //     });
+            // }
+
+            // if (!errors.isEmpty()) {
+            //     return res.render('products/productAdd', {
+            //         title: 'Crear Producto',
+            //         errors: errors.array(),
+            //         oldData: req.body,
+            //     });
+            // }
+
             console.log('Archivo recibido por Multer:', req.file); // Verifica si el archivo fue recibido
             const { name, description, ingredients, sizes, price, categoryId } = req.body;
             const image = req.file ? `images/${req.file.filename}` : null; // Manejo de imagenes
@@ -314,7 +357,7 @@ let productsController = {
 
     // 6 - Utilizando sequelize (PUT)
 
-    update: async (req, res) => {
+    update: async (req, res, next) => {
         try {
             const { nombre, descripcion, ingredientes, sizes, precio, categoria } = req.body;
 

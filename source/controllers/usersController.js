@@ -15,9 +15,15 @@ const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas c
 //     fs.writeFileSync(dataPath, jsonData, 'utf-8');
 // }
 
+// Usandro Express-validator
+
+const { validationResult } = require('express-validator'); // Este metodo me permite obtener el resultado de todas las validaciones previas
+
+
 // Usando sequelize:
 
 const { User, Role} = require('../database/models'); // Importa el modelo User
+
 
 
 const usersController = {
@@ -25,16 +31,27 @@ const usersController = {
     login: (req, res) => {
         res.render('users/login',{title: 'Pagina de logueo'});
     },
+
     register: (req, res) => {
-        res.render('users/register',{title: 'Pagina de registro'});
+        res.render('users/register',{title: 'Pagina de registro', errors: []});
     },
-    processRegister: async (req, res) => {
+
+    processRegister: async (req, res, next) => {
         try {
             // const users = readData();
             const {firstName, lastName, email, password, roleId} = req.body;
-            
-        // Validación de usuario único
-            const userExists = await User.findOne({ where: { email } })
+
+            const errors = validationResult(req); // Obtiene los errores de validación
+            console.log(errors.array()); // Verifica si los errores son generados
+            if (!errors.isEmpty()) {
+                return res.render('users/register', {
+                    title: 'Pagina de registro',
+                    errors: errors.array(), // Pasa los errores a la vista
+                    
+                });
+        }
+            // Validación de usuario único
+            const userExists = await User.findOne({ where: { email } }) // Verifica si el usuario ya existe ne la base de datos, pero ya lo tengo declarado en el middleware de registerValidator
             
             if (userExists) {
                 return res.render('users/register', {
@@ -85,6 +102,7 @@ const usersController = {
 
         return res.redirect('/login');
 
+         
 
         } catch (error) {
             console.error("Error en el proceso de registro:", error);
@@ -139,7 +157,19 @@ const usersController = {
 
         processLogin: async (req, res) => {
         try {
+
+         
             const { email, password, recordarme } = req.body; // Extraer email y password del cuerpo de la solicitud
+
+            // Capturar los errores de validación
+            const errors = validationResult(req);
+                if (!errors.isEmpty()) {
+                    return res.render('users/login', {
+                        title: 'Página de Login',
+                        errors: errors.array(),
+                    });
+        }
+
             // Buscar el usuario en la base de datos
             const user = await User.findOne({ where: { email } });
             if (!user || !bcrypt.compareSync(password, user.password)) {

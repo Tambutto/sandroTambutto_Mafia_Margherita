@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path'); 
+const productValidator  = require('../validations/productValidator');
 // var productsController = require('../controllers/productsController');
 
 // Configuración de almacenamiento de multer
@@ -16,8 +17,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
-
 const { lista, 
         createForm, 
         detail, 
@@ -28,7 +27,7 @@ const { lista,
         showCart, 
         show 
     } = require('../controllers/productsController');
-
+    console.log({ lista, createForm, detail, create, editForm, update, remove, showCart, show });
 
 // 1 Ruta para mostrar todos los productos
 
@@ -44,7 +43,7 @@ router.get('/productEspecific/:id', detail);
 
 // 4 Formulario de POST Acción de creación (a donde se envía el formulario)
 
-router.post('/productAdd',upload.single('image'), create);
+router.post('/productAdd', upload.single('image'), productValidator, create);
 
 // 5 Formulario de edición de productos(GET)
 
@@ -53,7 +52,7 @@ router.get('/productEdit/:id', editForm);
 // 6 Acción de edición (a donde se envía el formulario - PUT o update):
 
 // router.put('/update/:id', edit )
-router.put('/update/:id', upload.single('image'), update);
+router.put('/update/:id', upload.single('image'), productValidator, update);
 
 // 7 Acción de borrado (DELETE)
 
