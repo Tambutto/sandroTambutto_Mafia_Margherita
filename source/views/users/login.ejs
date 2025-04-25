@@ -18,13 +18,14 @@
     
 
         <form action="/processLogin" method="POST" novalidate class="login">
+
             <label for="email"></label><i class="fa-regular fa-envelope ico1"></i>
             <input type="email" name="email" id="email" placeholder="Email" required autocomplete="off">
-            <div id="emailError" class="error-message"></div>
+            <div id="emailError" class="error-message-login"></div>
     
             <label for="password"></label><i class="fa-solid fa-lock ico2"></i>
             <input type="password" name="password" id="password" minlength="10" placeholder="Password">
-            <div id="passwordError" class="error-message"></div>
+            <div id="passwordError" class="error-message-login"></div>
 
             <% if (locals.error) { %>
                 <div class="alert">
@@ -33,14 +34,25 @@
             <% } %>
 
                 <!-- Checkbox para recordar al usuario -->
+
             <label for="recordarme"  class="remember">Recordarme</label>
-            <input type="checkbox" name="recordarme" id="recordarme">
+            <input type="checkbox" name="recordarme" id="recordarme" class="remember">
     
            <button type="submit" class="login__btn">Enviar</button>
 
         </form>
         
-    
+        <div class="error__container-login">
+            <% if (locals.errors && locals.errors.length > 0) { %>
+            <!-- Verifica que la variable "errors" existe y contiene errores -->
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg %></li> <!-- Muestra el mensaje de error -->
+                    <% }); %>
+                </ul>
+            <% } %>
+        </div>
 
+        <script src="/javascripts/login.js" defer></script>
 </body>
 </html>

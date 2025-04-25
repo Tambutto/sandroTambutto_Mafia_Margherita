@@ -2,32 +2,90 @@
 
 .titulo__productAdd {
   color: var(--fondo);
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   margin-top: 0.5vh;
   padding: 1vh;
 }
 
 .form__productAdd {
-  /* height: 77vh; */
-  width: 80vw;
+  width: 75vw;
   margin: 0 auto;
-  /* margin-top: 2vh; */
   background-color: var(--CrujienteMasa);
   align-items: center;
   border-radius: 1rem;
   padding: 1.5rem;
 }
 
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.ingredients__box {
+  width: 50%;
+}
+
+.name__label {
+  font-size: 0.8rem;
+}
+
+.category__select {
+  margin: 20px 0;
+  text-align: center;
+  width: 50%;
+}
+
+.category__label {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--limpieza);
+}
+
+.size__label {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--limpieza);
+}
+
 .input__add {
   font-size: 0.8rem;
-  width: 80vw;
+  width: 70vw;
   cursor: pointer;
   margin: 0 auto;
 }
 
-input[type="file"].input__add {
-  position: absolute;
-  top: 40vh;
+
+.containerAdd__ingredients-label {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--limpieza);
+}
+
+.file__label {
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--limpieza);
+}
+
+.file__input {
+  font-size: 0.8rem;
+  width: 80%;
+}
+
+.input__add2 {
+  width: 5vw;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.container__checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.container__checkbox-input {
+  width: 50px;
+  margin: 0;
 }
 
 .form__inside {
@@ -38,19 +96,13 @@ input[type="file"].input__add {
   padding: 2px;
 }
 
-.container__add {
-  position: relative;
-  padding-left: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  top: 3vh;
+.containerAdd {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
-.container__add label {
-  position: relative;
-  font-size: 0.9rem;
-  bottom: 2.5vh;
-}
+
 
 .tamaño {
   position: absolute;
@@ -65,9 +117,61 @@ input[type="file"].input__add {
   color: var(--limpieza);
   font-size: 0.8rem;
   position: relative;
-  top: 20vh;
+  top: 2vh;
+  left: 16vw;
   width: 40vw;
   height: 5vh;
+}
+
+.btn__back {
+  background: var(--ingredientesFrescos);
+  color: var(--fondo);
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  /* margin-right: 1vw; */
+  border-radius: 1vw;
+  font-family: "Italianno";
+  font-size: 1.3rem;
+  position: absolute;
+  top: 42vh;
+  left: 7vw;
+}
+
+.btn__back:hover {
+  transition: ease-in-out 0.2s;
+  background: var(--fondo);
+  color: var(--limpieza);
+}
+
+.errors {
+  background: var(--tomate);
+  color: var(--limpieza);
+  font-size: 0.8rem;
+  width: 85vw;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+}
+
+.errors {
+  background: var(--tomate);
+  color: var(--limpieza);
+  position: absolute;
+  left: 2vw;
+  width: 15vw;
+  top: 28vh;
+}
+
+.error-message {
+  color: var(--tomate);
+  font-size: .9rem;
+  margin-top: 5px;
+  display: none; /* Oculto por defecto */
+}
+
+.invalid {
+  border: none; /* Elimina cualquier borde existente */
+  border-bottom: 1px solid var(--tomate); /* Solo aplica el borde inferior */
 }
 
 /* VERSION TABLET */
@@ -75,8 +179,7 @@ input[type="file"].input__add {
 @media (min-width: 768px) {
   .form__productAdd {
     width: 75vw;
-/*     height: 70vh;
- */    padding: 1rem;
+    padding: 1rem;
   }
 
   .input__add {
@@ -107,59 +210,181 @@ input[type="file"].input__add {
   }
 
   .btn_productAdd {
-    top: 14vh;
+    top: 2vh;
     width: 30vw;
     text-align: center;
   }
-}
-/* VERSION DESCKTOP */
 
-@media (min-width: 1024px) {
-  .titulo__productAdd {
-    font-size: 2.5rem;
-    margin-top: 18vh;
-    padding: 1vh;
+  .btn__back {
+    padding: 2.5px 12.5px;
+    font-size: 1.5rem;
+    border-radius: 2vw;
+    top: 32vh;
+    left: 10vw;
+  }
+  .errors {
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    width: 78vw;
+    font-size: 0.9rem;
   }
 
-  .form__productAdd {
-    width: 58vw;
-/*     height: 60vh;
- */    padding: 1rem;
-  }
+  /* VERSION DESCKTOP */
 
-  .input__add {
-    font-size: 0.8rem;
-    width: 57vw;
-    padding: 1.5vh;
-  }
+  @media (min-width: 1024px) {
+    .titulo__productAdd {
+      font-size: 2.5rem;
+      margin-top: 18vh;
+      padding: 1vh;
+    }
 
-  .container__add label {
-    left: 3vw;
-  }
+    .containerAdd {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
 
-  input[type="file"].input__add {
-    position: absolute;
-    top: 26vh;
-    width: 41vw;
-  }
+    .form__productAdd {
+      width: 60vw;
+      padding: 1rem;
+    }
 
-  .form__inside {
-    left: 30vw;
-    bottom: 22vh;
-  }
+    .containerAdd__ingredients {
+      width: 60%;
+      height: 400px;
+    }
 
-  .tamaño {
-    position: absolute;
-    left: 50vw;
-    top: -0.8vh;
-    padding: 2px;
-  }
+    .containerAdd__ingredients-label {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--limpieza);
+    }
 
-  .btn_productAdd {
-    top: 14vh;
-    width: 25vw;
-    font-size: 1rem;
-    text-align: center;
-  }
+    .name__label {
+      font-size: 1rem;
+    }
 
+    .ingredients {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .ingredients__box {
+      width: 50%;
+      display: flex;
+      align-items: center;
+    }
+
+    .categ {
+      width: 40%;
+    }
+
+    .category__label {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .category__select {
+      margin: 20px 0;
+      width: 90%;
+    }
+
+    .size__label {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .size__label-div {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .container__checkbox {
+      display: flex;
+      align-items: center;
+    }
+
+    .container__checkbox-input {
+      width: 50px;
+      margin: 0;
+    }
+
+    .file__label {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--limpieza);
+    }
+
+    .file__input {
+      width: 90%;
+    }
+
+    .input__add {
+      font-size: 0.8rem;
+      width: 58vw;
+      padding: 1.5vh;
+    }
+
+    .container__add label {
+      left: 3vw;
+    }
+
+    input[type="file"].input__add {
+      position: absolute;
+      top: 26vh;
+      width: 41vw;
+    }
+
+    .form__inside {
+      left: 30vw;
+      bottom: 22vh;
+    }
+
+    .tamaño {
+      position: absolute;
+      left: 50vw;
+      top: -0.8vh;
+      padding: 2px;
+    }
+
+    .btn_productAdd {
+      top: 14vh;
+      left: 2vw;
+      width: 15vw;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .btn__back {
+      padding: 5px 15px;
+      font-size: 1.5rem;
+      border-radius: 2vw;
+      top: 20vh;
+      left: 3vw;
+    }
+
+    .errors {
+      background: var(--tomate);
+      color: var(--limpieza);
+      position: absolute;
+      left: 2vw;
+      width: 15vw;
+      top: 28vh;
+    }
+
+    .error-message {
+      color: var(--tomate);
+      font-size: 1rem;
+      margin-top: 5px;
+      display: none; /* Oculto por defecto */
+    }
+
+    .invalid {
+      border: none; /* Elimina cualquier borde existente */
+      border-bottom: 1px solid red; /* Solo aplica el borde inferior */
+  }
+  
+  }
 }

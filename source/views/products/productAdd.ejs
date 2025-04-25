@@ -11,32 +11,45 @@
 
 <h1 class="titulo__productAdd">Agregar Nuevo Producto</h1>
 
+    <!-- Mostrar mensajes de error aquí -->
+
+    <% if (errors && errors.length > 0) { %>
+        <div class="errors">
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } %>
+    
+
+    
+
 <body>
 
     <form action="/products/productAdd" class="form__productAdd" method="post" enctype="multipart/form-data">
 
         <!-- <label for="name">Nombre del Producto:</label>  -->
         <input type="text" id="nombre" name="name" required placeholder="Nombre del producto" class="input__add">
-
-
+        <div id="nameError" class="error-message"></div>
 
         <!-- <label for="description">Descripcion:</label>  -->
         <input type="text" id="descripcion" name="description" required placeholder="Descripcion" class="input__add">
+        <div id="descriptionError" class="error-message"></div>
 
         <!-- <label for="price">Precio:</label>  -->
         <input type="number" id="precio" name="price" required placeholder="Precio" class="input__add">
 
-        <div style="display: flex; flex-wrap: wrap; margin: 20px 0;">
-
-
-            <div id="ingredientes" style=" width: 60%; height: 400px; ">
-                <label for="ingredientes" style="font-weight: 800; color: white; ">Seleccione los ingredientes:</label>
-                <div id="ingredientes" style="display: flex; flex-wrap: wrap;margin: 20px 0;">
+        <div class="containerAdd">
+            
+            <div class="containerAdd__ingredients">
+                <label for="ingredientes" class="containerAdd__ingredients-label">Seleccione los ingredientes:</label>
+                <div class="ingredients">
                     <% ingredients.forEach((i)=> { %>
-                        <div style="width: 50%; display: flex; align-items: center;">
-                            <input type="checkbox" id="i<%= i.name %>" style="width: 50px; margin: 0;"
-                                name="ingredients" value="<%= i.id %>">
-                            <label for="i<%= i.name %>">
+                        <div class="ingredients__box">
+                            <input type="checkbox" id="i<%= i.name %>" name="ingredients" class="input__add2"  value="<%= i.id %>">
+                            <label for="i<%= i.name %>" class="name__label">
                                 <%= i.name %>
                             </label>
                         </div>
@@ -44,10 +57,10 @@
                 </div>
             </div>
 
-            <div style="width: 40%;">
+            <div class="categ">
                 <div>
-                    <label for="categoria" style="font-weight: 800; color: white; ">Categoría:</label>
-                    <select name="categoryId" id="categoria" style="margin: 20px 0; width: 90%;">
+                    <label for="categoria" class="category__label">Categoría:</label>
+                    <select name="categoryId" id="categoria" class="category__select">
                         <option value="" disabled selected>Elija un categoria</option>
                         <% categories.forEach(c=> { %>
                             <option value="<%= c.id %>">
@@ -56,34 +69,35 @@
                             <% }) %>
                     </select>
                 </div>
+
                 <div>
-                    <label for="tamaños" style="font-weight: 800; color: white; ">Seleccione los tamaños:</label>
-                    <div id="tamaños" style="display: flex; flex-wrap: wrap;margin: 20px 0;">
+                    <label for="tamaños" class="size__label">Seleccione los tamaños:</label>
+                    <div id="tamaños" class="size__label-div">
                         <% sizes.forEach(s=> { %>
-                            <div style="display: flex; align-items: center;">
-                                <input type="checkbox" id="i<%= s.name %>" style="width: 50px; margin: 0;"
-                                    name="sizes" value="<%= s.id %>">
-                                <label for="i<%= s.name %>">
+                            <div class="container__checkbox">
+                                <input type="checkbox" id="i<%= s.name %>" name="sizes" value="<%= s.id %>" class="container__checkbox-input">
+                                <label for="i<%= s.name %>" class="name__label">
                                     <%= s.name %>
                                 </label>
                             </div>
                             <% }) %>
                     </div>
                 </div>
-                <div>
-                    <label for="file" style="font-weight: 800; color: white; ">Imagen:</label>
-
-                    <input type="file" id="imagen" name="imagen" style="width: 90%;">
-
-                </div>
-                <button type="submit" class="btn_productAdd" style="width: 90%;">Agregar Producto</button>
+                
+                    
+                    <input type="file" id="imagen" name="image" class="file__input">
+                    <label for="file" class="file__label">Imagen:</label>
+                    <div id="imageError" class="error-message"></div>
+               
+                <button type="submit" class="btn_productAdd">Agregar Producto</button>
 
             </div>
 
         </div>
-        <!-- <label for="image"></label> -->
-
-
 
     </form>
+
+    <a href="/admin" class="btn__back">Volver</a>
+
+    <script src="/javascripts/productAdd.js"></script>
 </body>

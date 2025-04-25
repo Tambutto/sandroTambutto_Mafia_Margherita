@@ -1,13 +1,10 @@
 
 const fs = require('fs');
 const path = require('path');
-// const { cleatitle } = require('process');
+const { validationResult } = require('express-validator');
 
 // Con sequelize
-const { Product, ImageProducts, Ingredient, Category, Size, ProductIngredient, ProductSize} = require('../database/models'); // Importa el modelo Product
-
-
-
+const { Product, ImageProducts, Ingredient, Category, Size, ProductIngredient, ProductSize } = require('../database/models'); // Importa el modelo Product
 
 // Ruta al archivo JSON
 const dataPath = path.join(__dirname, '..', 'data', 'products.json');
@@ -26,7 +23,7 @@ const saveData = (data) => {
 
 let productsController = {
     
-    // 1 Listado de productos (GET)
+    // 1 Listado de productos sin sequelize (GET) 
  
     // lista: function (req, res){
     //     const products = readData();
@@ -59,6 +56,9 @@ let productsController = {
     createForm: async (req, res) => {
 
         try {
+            // Obtén los posibles errores de validación
+            const errors = validationResult(req);
+
             const [ingredients, categories, sizes] = await Promise.all([
                 Ingredient.findAll(),
                 Category.findAll(),
@@ -69,7 +69,8 @@ let productsController = {
                 title: "Agregar producto",
                 ingredients,
                 categories,
-                sizes
+                sizes,
+                errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen
             });
         } catch (error) {
             console.log(error);
@@ -140,8 +141,51 @@ let productsController = {
 
     // 4 - Utilizando sequelize (POST)
 
-    create: async (req, res) => {
+    create: async (req, res, next) => {
         try {
+
+            const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            const ingredients = await Ingredient.findAll(); 
+            const sizes = await Size.findAll();
+            const categories = await Category.findAll();
+
+            return res.render('products/productAdd', {
+                title: 'Crear Producto',
+                errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen                oldData: req.body,
+                ingredients,
+                sizes,
+                categories,
+            });
+        }
+
+            // if (!errors.isEmpty()) {
+            //     // Obtén los datos necesarios para renderizar la vista
+            //     const ingredients = await Ingredient.findAll();
+            //     const sizes = await Size.findAll();
+            //     const categories = await Category.findAll();
+            
+            //     // Renderiza la vista con los datos necesarios
+            //     return res.render('products/productAdd', {
+            //         title: 'Crear Producto',
+            //         errors: errors.array(),
+            //         oldData: req.body, // Mantén los datos enviados por el usuario
+            //         ingredients,       // Envía la lista de ingredientes
+            //         sizes,             // Envía la lista de tamaños
+            //         categories,        // Envía la lista de categorías
+            //     });
+            // }
+
+            // if (!errors.isEmpty()) {
+            //     return res.render('products/productAdd', {
+            //         title: 'Crear Producto',
+            //         errors: errors.array(),
+            //         oldData: req.body,
+            //     });
+            // }
+
+            console.log('Archivo recibido por Multer:', req.file); // Verifica si el archivo fue recibido
             const { name, description, ingredients, sizes, price, categoryId } = req.body;
             const image = req.file ? `images/${req.file.filename}` : null; // Manejo de imagenes
 
@@ -154,6 +198,20 @@ let productsController = {
                 image : image || 'images/default-image.png' 
             });
 
+            console.log('Producto creado:', product);
+
+             // Guardar la imagen en la tabla ImageProducts
+                if (req.file) {
+                    console.log('Imagen recibida para guardar:', `images/${req.file.filename}`);
+                    await ImageProducts.create({
+                        productId: product.id, // Relaciona la imagen con el producto
+                        imageUrl: `images/${req.file.filename}` // Ruta de la imagen
+                    });
+                    console.log('Imagen guardada en la tabla ImageProducts');
+
+             }
+             
+            // Relacionar ingredientes con el producto
             if(product) {
 
                 const ingredientsArray = Array.isArray(ingredients) ? ingredients : [ingredients];
@@ -299,7 +357,7 @@ let productsController = {
 
     // 6 - Utilizando sequelize (PUT)
 
-    update: async (req, res) => {
+    update: async (req, res, next) => {
         try {
             const { nombre, descripcion, ingredientes, sizes, precio, categoria } = req.body;
 
@@ -369,41 +427,76 @@ let productsController = {
 
     // 7 Utilizando sequelize (DELETE)
 
-    remove: async (req, res) => {
-        try {
-        const product = await Product.findByPk(req.params.id,{
-            include : ['images']
-        }); // busca producto por id 
+    
+remove: async (req, res) => {
+    try {
+        const product = await Product.findByPk(req.params.id, {
+            include: {
+                model: ImageProducts,
+                as: 'images', // Incluye las imágenes relacionadas
+            },
+        });
+
         if (!product) {
+            console.log('Producto no encontrado');
             return res.status(404).send('Producto no encontrado');
         }
 
-        // Eliminar la imagen asociada al producto si existe
-        product.images.forEach(async (image) => {
-            const imagePath = path.join(__dirname, '..', '..', 'public', image.imageUrl);
-            if (fs.existsSync(imagePath)) {
-                fs.unlinkSync(imagePath);
-            }
-            await ImageProducts.destroy({
-                where : {
-                    id : image.id
+        // Eliminar las imágenes asociadas al producto
+        if (product.images && product.images.length > 0) {
+            product.images.forEach(async (image) => {
+                const imagePath = path.join(__dirname, '..', '..', 'public', image.imageUrl);
+                console.log('Ruta de la imagen:', imagePath);
+
+                // Elimina el archivo de imagen del sistema si existe
+                if (fs.existsSync(imagePath)) {
+                    fs.unlinkSync(imagePath);
                 }
-            })
-        });
 
-        // TODO: ELIMINAR TODAS LAS REFERENCIAS EN LAS TABLAS INTERMEDIAS 
+                // Elimina el registro de la imagen de la base de datos
+                await ImageProducts.destroy({ where: { id: image.id } });
+            });
+        }
 
-        await product.destroy({
-            where : {
-                id : req.params.id
-            }
-        }); // eliminar el producto de la base de datos
-        res.redirect('/admin');
-        } catch (error) {
-        console.error('Error al eliminar un producto:', error);
-        res.status(500).send('Error del servidor');
+        // Ahora elimina el producto
+        await product.destroy();
+        console.log('Producto eliminado correctamente');
+        res.redirect('/products');
+    } catch (error) {
+        console.error('Error al eliminar el producto:', error.message);
+        console.error('Detalles del error:', error);
+        res.status(500).send('Error al eliminar el producto.');
     }
-    },
+},
+
+
+    // remove: async (req, res) => {
+    //     try {
+    //     const product = await Product.findByPk(req.params.id, {
+    //         include: {
+    //             model: ImageProducts,
+    //             as: 'images', // Incluye las imágenes relacionadas
+    //         },
+    //     }); // busca producto por id 
+    //     console.log('Producto encontrado:', product);
+    //     if (!product) {
+    //         return res.status(404).send('Producto no encontrado');
+    //     }
+
+    //     // Eliminar la imagen asociada al producto si existe
+    //     const imagePath = path.join(__dirname, '..', '..', 'public', product.imagen);
+    //     console.log('Ruta de la imagen:', imagePath);
+    //     if (fs.existsSync(imagePath)) {
+    //         fs.unlinkSync(imagePath);
+    //     }
+
+    //     await product.destroy(); // eliminar el producto de la base de datos
+    //     res.redirect('/products');
+    //     } catch (error) {
+    //     console.error('Error al eliminar un producto:', error);
+    //     res.status(500).send('Error del servidor');
+    // }
+    
 
     // 8 Búsqueda de productos (GET)
 
@@ -459,24 +552,27 @@ let productsController = {
         console.error('Error al buscar el producto:', error);
         res.status(500).send('Error del servidor');
     }
-    },
-    
+    },  
 
-    // 
-    
+    // show: (req, res) => {
+    //     const products = readData(); // Leer los productos existentes
+    //    return res.render('products/productDetail', {title: 'Detalle de productos', products})
+    // }
 
+    // Con sequelize
 
     show: async (req, res) => {
         try {
             const products = await Product.findAll({
-                include : ['images']
-            })            
-
-            return res.render('products/productDetail', {title: 'Detalle de productos', products})
-            
+                include: {
+                    model: ImageProducts,
+                    as: 'images', // Nombre del alias que configuraste en la relación
+                },
+            }); // Fetch all products using Sequelize
+            return res.render('products/productDetail', { title: 'Detalle de productos', products });
         } catch (error) {
-            console.error('Error al cargar los productos:', error);
-            res.status(500).send('Error del servidor');
+            console.error('Error fetching products:', error);
+            return res.status(500).send('Error fetching products');
         }
     }
 }

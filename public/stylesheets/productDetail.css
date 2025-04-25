@@ -32,11 +32,11 @@
     margin: 5vh 0;    
     width: 100vw;
     height: 55vh; 
-    transition: transform 0.3s ease;  
+    transition: transform 0.5s ease;  
 }
 
 .foto:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .titulo__menu {
@@ -277,13 +277,13 @@ p {
 @media (min-width: 1024px) {
 
     .titulo__menu {
-        font-size: 4rem;
+        font-size: 3.5rem;
         margin-top: 20vh;
         
     }
 
     h3 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     h2 {
@@ -416,6 +416,14 @@ p {
     padding: 1vw;
     border-radius: 50%;
   }
+
+  .ultima-imagen {
+    transform: none; /* Deshabilita el efecto de hover */
+    max-width: 22vw;
+    height: 27vh;
+    box-shadow: none; /* Opcional */
+}
+
 
 html { 
     scroll-behavior: smooth; 

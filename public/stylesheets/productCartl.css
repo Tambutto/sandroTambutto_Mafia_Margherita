@@ -205,26 +205,40 @@ span {
         font-size: 1.3rem;
         font-weight: bold;
         position: absolute;
-        left: 70vw;
+        left: 72vw;
         bottom: 15vh;
     }
 
     
-    .back {
+    .b-back {
         color: var(--limpieza);
         font-size: 1.1vw;
         position: relative;
         left: 10vw;
-        bottom: 50vh;
+        bottom: 71vh;
         background: var(--CrujienteMasa);
         padding: 1vw;
         border-radius: 50%;
     }
 
-   
-
     .precio__total{
         position: absolute;
+    
     } 
     
+    .cantidad {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 65vw;
+        bottom:24.1vh;
+        background: var(--CrujienteMasa);
+    }
+    
+    .costo{
+        font-size: 1.5rem;
+        position: absolute;
+        left: 65vw;
+        bottom:6vh;
+        background: var(--CrujienteMasa)
+    }
 }

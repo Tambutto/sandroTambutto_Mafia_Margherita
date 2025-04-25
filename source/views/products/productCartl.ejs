@@ -44,15 +44,15 @@
             <button class="boton">5%</button>
         </div>
         <div class="contador_total">
-            <p>Cantidad: <span id="valor" class="contador__valor">0</span></p> <!-- Valor inicial -->
-            <p class="precio__total">
-                Precio total: <span id="precio-total">$<%= product.price %></span>
-            </p>
+            <h4 class="cantidad">Cantidad:</h4>
+            <span id="precio-total">$<%= product.price %></span>
+            <div class="precio__total">
+            <h4 class="costo">Precio:</h4>
+                <span id="valor" class="contador__valor">0</span> <!-- Valor inicial -->
+            </div>
         </div>
         
-        
-        
-        <a href="/products" class="back">Volver al listado</a>
+        <a href="/products" class="b-back">Volver al listado</a>
     </main>
 
     <script src="/javascripts/productCartl.js"></script>
