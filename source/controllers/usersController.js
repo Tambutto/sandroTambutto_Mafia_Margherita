@@ -1,5 +1,5 @@
-const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas con hash y compare
-
+// const bcrypt = require('bcrypt'); // libreria util para encriptar contraseñas con hash y compare
+const bcrypt = require('bcryptjs');
 // Ruta al archivo JSON
 // const dataPath = path.join(__dirname, '..', 'data', 'users.json');
 

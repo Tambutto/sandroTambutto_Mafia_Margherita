@@ -1,0 +1,6 @@
+/* style={{ display: 'flex', justifyContent: 'space-around' }} */
+
+.container-resumen{
+    display: flex;
+    justify-content: space-around;
+}

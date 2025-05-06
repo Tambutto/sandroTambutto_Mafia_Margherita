@@ -1,0 +1,19 @@
+.navbar{
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+    background:#E67E22;
+    
+}
+
+.navbar-list {
+    font-size: 1.3rem;
+    color:#040404;
+    
+}
+
+
+li .navbar-list{
+    text-decoration: none;
+    
+}

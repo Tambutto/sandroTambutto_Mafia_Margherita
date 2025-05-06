@@ -10,14 +10,20 @@ const session = require('express-session');
 const userCookie = require('./middlewares/usersCookie');
 const userLoginMiddleware = require('./middlewares/userLogin');
 
+const cors = require('cors');
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productRouter = require('./routes/products')
-// const productCartlRouter = require('./routes/productCartl')
-// const loginRouter = require('./routes/login');
-// const registerRouter = require('./routes/register');
 const adminRouter = require('./routes/admin');
+
+// Rutas de la API
+const apiProductsRouter = require('./routes/api/products')
+const apiUsersRouter = require('./routes/api/users')
+const apiCategoriesRouter = require('./routes/api/categories')
+
 
 
 var app = express();
@@ -35,6 +41,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/images', express.static(path.join(__dirname, '../public/images'))); // Servir el directorio 'public/images'
 
 app.use(methodOverride('_method'));
+app.use('/api', cors()); // Solo afecta rutas que comienzan con /api
+
 
 // Configuración del middleware de sesiones
 app.use(session({
@@ -55,10 +63,16 @@ app.use((req, res, next) => {
 app.use(userCookie); // middleware de cookie
 app.use(userLoginMiddleware);
 
+// Rutas
+
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/products', productRouter);
 app.use('/admin', adminRouter);
+
+app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
+app.use('/api/categories', apiCategoriesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

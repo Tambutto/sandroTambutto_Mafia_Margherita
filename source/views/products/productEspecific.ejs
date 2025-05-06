@@ -30,7 +30,7 @@
                         <% product.ingredients.forEach(ingredient => { %>
                             <p class="p__ingredientes"><%= ingredient.name %></p>
                             <% }) %>
-                            <p>$<%= product.price %></p>
+                            <p class="p__precio">$<%= product.price %></p>
                     </ul>
                         <% } else { %>
                             <p>No hay ingredientes disponibles.</p>
@@ -48,8 +48,8 @@
                 <p>$<product.precio %></p>
             </div> -->
         </div>
-    
-        <a href="/products/productCartl/<%= product.id %>"><i class="fa-solid fa-cart-shopping car"></i></a>
+        
+        <a href="/products/productCartl/<%= product.id %>"><i class="fa-solid fa-cart-shopping car">Agregar al carrito</i></a>
     
         <a href="/products" class="Back">Volver al listado</a>
     </main>
