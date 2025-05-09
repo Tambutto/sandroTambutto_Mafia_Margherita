@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // Un rol tiene muchos usuarios y un usuario solo un rol
       Role.hasMany(models.User, {
-        foreignKey: 'roleId', as: 'users' 
+        foreignKey: 'roleId', as: 'users', onDelete: "CASCADE" 
       })
     }
   }

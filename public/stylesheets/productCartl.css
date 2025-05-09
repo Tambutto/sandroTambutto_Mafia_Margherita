@@ -1,4 +1,4 @@
-
+/* VERSION MOVIL */
 
 .img-producto {
     /* border-radius: 45%; */
@@ -32,8 +32,16 @@
 .description {
     font-size: .8rem;
     margin: 0 auto;
-    width: 40vw;
+    width: 80vw;
     font-weight: bold;
+}
+
+.nombre__descripcion {
+    font-size: 1rem;
+    font-weight: 600;
+    position: absolute;
+    left: 34vw;
+    top: 60vh;
 }
 
 .precio:hover{
@@ -53,29 +61,64 @@
     position: relative;
     left: 23vw;
     transition: transform 0.3s ease;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 5px;
 
 }
 
-.contador { 
+.cantidad {
+    font-size: .8rem;
+    position: absolute;
+    left: 70vw;
+    bottom: 50vh;
+    background: var(--CrujienteMasa);
+    padding: .2rem;
+}
+
+.contador_cart { 
     display: flex;
     gap: 5vw;
     margin: 0 10px;
+    margin-top: 3vh;
+    margin-left: 4vh;
 } 
 
+.costo{
+    font-size: .8rem;
+    position: absolute;
+    left: 70vw;
+    bottom: 45vh;
+    background: var(--CrujienteMasa)
+}
+
 span {
-    font-size: 1.2rem;
+    font-size: .8rem;
     font-weight: bold;
     position: absolute;
-    left: 52vw;
-    bottom: 9vh;
+    left: 83vw;
+    bottom: 45vh;
 }
 
 .precio__total{
     background: var(--quesoDerretido);
 }
 
+.contador__valor{
+    position: absolute;
+    left: 87vw;
+    margin-bottom: 5.5vh;
+}
+
+.b-back {
+    color: var(--limpieza);
+    font-size: .8rem;
+    position: relative;
+    left: 5vw;
+    bottom: 45vh;
+    background: var(--CrujienteMasa);
+    padding: 1vw;
+    border-radius: 2vw;
+}
 
 
 /* -----VERSION TABLET----- */
@@ -123,40 +166,78 @@ span {
 
     .description {
         font-size: 1rem;
-        width: 35vw;
+        width: 45vw;
+        margin-top: 6vh;
     }
 
-    .contador { 
+    .costo{
+        font-size: 1.1rem;
+        left: 65vw;
+        bottom: 55vh;
+    }
+
+    .contador_cart { 
         display: flex;
         gap: 3vw;
         margin: 0 10px;
+        margin-top: 5vh;
+        margin-left: 5vw;
     } 
 
+    .contador__valor {
+        font-size: 1rem;
+        left: 77vw;
+        margin-bottom: 5.5vh;
+    }
+
+    .contador_total{
+        margin-top: 5vh;
+    }
+
     span {
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-weight: bold;
         position: absolute;
-        left: 50vw;
-        bottom: 16vh;
+        left: 75vw;
+        bottom: 55vh;
+    }
+
+    .nombre__descripcion{
+        font-size: 1rem;
+        position: absolute;
+        left: 41vw;
+        top: 51vh;
+    }
+
+    .b-back {
+        font-size: .9rem;
+        position: relative;
+        left: 5vw;
+        bottom: 60vh;
+        padding: 1vw;
+        border-radius: 2vw;
+    }
+
+    .cantidad {
+        font-size: 1.1rem;
+        left: 65vw;
+        bottom: 60vh;
     }
 
 }
-
-
 /* -----VERSION DESKTOP----- */
 
 @media (min-width: 1024px) {
 
 
-    .precio {
+    /* .precio {
         top: 20vh;
-    }
+    } */
 
     .precio p {
         font-size: 2.6rem;
         text-align: center;
         font-weight: bold;
-
     }
 
     .img-producto {
@@ -172,6 +253,7 @@ span {
         width: 25vw;
         margin: auto;
         font-size: 1rem;
+        margin-top: 7vh;
     }
     
     .boton {
@@ -195,50 +277,65 @@ span {
         cursor: pointer;
     }
 
-    .contador { 
+    .contador_cart { 
         display: flex;
-        gap: 3vw;
-        margin: 0 10px;
+        gap: 2.5vw;
+        /* margin: 0 10px; */
+        margin-left: 5vw;
     } 
+
+    .contador__valor{
+        font-size: 1.5rem;
+        position: absolute;
+        left: 73vw;
+        margin-bottom: 4.5vh;
+    }
 
     span {
         font-size: 1.3rem;
         font-weight: bold;
         position: absolute;
-        left: 72vw;
-        bottom: 15vh;
+        left: 71vw;
+        bottom: 56.5vh;
     }
 
     
     .b-back {
         color: var(--limpieza);
-        font-size: 1.1vw;
+        font-size: 1.3vw;
         position: relative;
         left: 10vw;
-        bottom: 71vh;
+        bottom: 67vh;
         background: var(--CrujienteMasa);
-        padding: 1vw;
-        border-radius: 50%;
+        padding: .8vw;
+        border-radius: 1.5vw;
     }
 
     .precio__total{
         position: absolute;
-    
+        
     } 
     
     .cantidad {
         font-size: 1.5rem;
         position: absolute;
         left: 65vw;
-        bottom:24.1vh;
-        background: var(--CrujienteMasa);
+        bottom: 65vh;
     }
     
     .costo{
         font-size: 1.5rem;
         position: absolute;
         left: 65vw;
-        bottom:6vh;
+        bottom: 52vh;
         background: var(--CrujienteMasa)
+    }
+
+    .nombre__descripcion{
+        
+        font-size: 1.5rem;
+        position: absolute;
+        left: 44vw;
+        top: 55vh;
     }
 }

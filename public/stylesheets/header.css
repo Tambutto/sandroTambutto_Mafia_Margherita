@@ -4,7 +4,7 @@
 
 canvas{
     position: absolute;
-    right: -3vw;
+    right: 0vw;
     width: 50vw;
     height: 40vh;
     background: var(--fondo);
@@ -20,7 +20,7 @@ canvas{
 }
 
 .img-logo {
-    width: 70vw;
+    width: 60vw;
     height: 40vh;
 }
 
@@ -78,7 +78,7 @@ li {
 .navbar div {
     cursor: pointer;
     position: relative;
-    left: 50%;
+    left: 100%;
     top: 17%;
     
         
@@ -103,8 +103,8 @@ li {
 
     .navbar ul.visible {
        
-        top: 3%;
-        right: 28%;
+        top: 6%;
+        right: 30%;
     }
 
     .navbar div {
@@ -121,7 +121,7 @@ li {
     canvas {
         position: absolute;
         right: -3vw;
-        width: 70vw;
+        /* width: 70vw; */
         height: 30vh;
         /* background: var(--fondo); */
 

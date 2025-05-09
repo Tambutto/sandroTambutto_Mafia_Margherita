@@ -9,13 +9,71 @@
     font-size: 0.8rem;
     margin: 0 auto;
     margin-top: 1.5vh;
-
 }
 
-.user5 {
-                 
+.user-1 {
+    color:var(--quesoDerretido);  
     font-size: 1rem;
     position: absolute;
     right: 35vw;
-    top: 53vh;
+    top: 28vh;
 }  
+
+.user-2 {
+    color:var(--quesoDerretido);  
+    font-size: 1rem;
+    position: absolute;
+    right: 35vw;
+    top: 35vh;
+}  
+
+.user-3 {
+    color:var(--quesoDerretido);      
+    font-size: 1rem;
+    position: absolute;
+    right: 35vw;
+    top: 42vh;
+}  
+
+.user-4 {
+    color:var(--quesoDerretido);   
+    font-size: 1rem;
+    position: absolute;
+    right: 35vw;
+    top: 49vh;
+}  
+
+.user-5 {
+    color:var(--quesoDerretido);  
+    font-size: 1rem;
+    position: absolute;
+    right: 35vw;
+    top: 56vh;
+}  
+
+.user-6 {
+    color:var(--quesoDerretido);  
+    font-size: 1rem;
+    position: absolute;
+    right: 35vw;
+    top: 62vh;
+}  
+
+.volver {
+    background: var(--ingredientesFrescos);
+    color: var(--fondo);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 3vw;
+    border-radius: 1vw;
+    font-family: 'Italianno';
+    font-size: 1.5rem;
+}
+
+.volver:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+

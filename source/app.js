@@ -47,7 +47,7 @@ app.use('/api', cors()); // Solo afecta rutas que comienzan con /api
 // Configuración del middleware de sesiones
 app.use(session({
   secret: process.env.SECRET, // Clave secreta para firmar la cookie de la sesión
-  resave: false,        // No guardar la sesión si no ha sido modificada
+  resave: true,        // No guardar la sesión si no ha sido modificada
   saveUninitialized: true, // Guardar la sesión aunque no esté inicializada
   cookie: { secure: false } // Solo enviar la cookie en conexiones HTTPS (debería ser true en producción con HTTPS)
 }));

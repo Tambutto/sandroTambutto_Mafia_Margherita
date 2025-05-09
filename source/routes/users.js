@@ -66,7 +66,9 @@ router.get('/logout',logout);  // Cierra sesión
 // router.put('/update', upload.single('image'), update); // Actualiza el perfil del usuario
 
 router.get('/updateDelete/:id', usersCheck, editForm); // Muestra el formulario
+
 router.put('/update/:id', upload.single('image'), update); // Procesa la edición
+
 router.delete('/delete/:id', deleteUser);
 
 module.exports = router;

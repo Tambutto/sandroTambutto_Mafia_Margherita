@@ -14,7 +14,7 @@
   margin: 0 auto;
   margin-bottom: 2vh;
   opacity: 0.9;
-  padding-top: 2vh;
+  padding-top: 3vh;
   width: 65vw;
 }
 
@@ -34,7 +34,7 @@
   color: var(--limpieza);
   background: transparent;
   border: none;
-  margin: 5vw 0 0 0vw;
+  margin: 3vw 0 0 0vw;
   border-bottom: 0.1vw solid var(--quesoDerretido);
 }
 
@@ -51,7 +51,7 @@
   width: 55vw;
   font-size: 0.9rem;
   border: none;
-  margin: 10vw 0 0 0vw;
+  margin: 15vw 0 0 0vw;
 }
 
 .login__btn {
@@ -102,6 +102,14 @@ button:hover {
   display: none;
   margin: 1vh 0;
   text-align: center;
+}
+
+.error-message-login {
+  color: var(--limpieza);
+  font-size: .8rem;
+  margin-top: 1px;
+  text-align: center;
+  display: none; /* Oculto por defecto */
 }
 
 /* VERSION TABLET */
@@ -263,9 +271,9 @@ button:hover {
 }
 
 input[type="checkbox"].remerber {
-  width: 10px;
-  height: 10px;
-  transform: scale(0.8);
+  /* width: 50px; */
+  /* height: 50px; */
+  /* transform: scale(2); */
   margin: 0.5vw;
   cursor: pointer;
 }

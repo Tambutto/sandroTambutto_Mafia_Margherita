@@ -1,5 +1,7 @@
 /* VERSION MOVIL */
 
+/* }} */
+
 .img_productEspecific {
     /* border-radius: 45%; */
     height: 30vh;
@@ -25,7 +27,7 @@
     font-size: 3.5vw;
     position: absolute;
     left: 22vw;
-    top: 80vh;
+    top: 82vh;
     transition: transform 0.3s ease;
 }
 
@@ -55,11 +57,12 @@
 
 .description_productEspecific p{
     text-align: center;
-    margin-bottom: -1vh;
+    margin-bottom: -2vh;
 } 
 
 .h3__descripcion{
-    margin-top: -1vh;
+    margin-top: 1vh;
+    font-size: 1.5rem;
 }
 
 
@@ -67,8 +70,9 @@
     opacity: 1; /* Mostrar descripción al pasar el cursor sobre la imagen */
 }
 
-.nombre__descripcion {
-    font-size: .8rem;
+.nombre__descripcionp {
+    margin: -2vh;
+    font-size: 1rem;
     text-align: center;
     font-weight: 600;
 }
@@ -84,17 +88,19 @@
 
 
 .p__ingredientes{
-    font-size: 1.1rem;
+    font-size: .7rem;
     position: relative;
-    bottom: 5vh;
+    bottom: 2vh;
     right: 5vw;
+    line-height: 1.2;
 }
 
 .p__precio{
     color: var(--CrujienteMasa);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     position: relative;
-    right: 1vw;
+    right: 5vw;
+    bottom: 2vh;
 }
 
 .boton {
@@ -104,28 +110,22 @@
     position: relative;
     left: 23vw;
     transition: transform 0.3s ease;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 5px;
 
 }
 
 .Back {
     color: var(--limpieza);
-    font-size: 3.5vw;
+    font-size: .7rem;
     position: relative;
-    left: 38vw;
-    top: 10vh;
+    left: -3vw;
+    top: -45vh;
     background: var(--CrujienteMasa);
     padding: 2vw;
-    border-radius: 50%;
+    border-radius: 5vw;
+
 }
-
-.contador { 
-    display: flex;
-    gap: 5vw;
-    margin: 0 10px;
-} 
-
 
 
 /* -----VERSION TABLET----- */
@@ -143,8 +143,8 @@
         height: 35vh;
     }
 
-    .nombre__descripcion {
-        font-size: 1.5rem;
+    .nombre__descripcionp {
+        font-size: 1.3rem;
         text-align: center;
     }
 
@@ -174,15 +174,36 @@
 
     } 
 
+    .h3__descripcion{
+        margin-top: 2vh;
+        font-size: 2rem;
+    }
+
+    .p__ingredientes{
+        font-size: .9rem;
+        bottom: 3vh;
+        right: 3vw;
+        line-height: 1.4;
+    }
+
+    .p__precio{
+        font-size: 1.3rem;
+        position: relative;
+        right: 3vw;
+        bottom: 2vh;
+    }
+
     .car {
-        font-size: 4vw;
-        top: 55vh;
+        font-size: 3.2vw;
+        top: 45vh;
         left: 66vw;
     }
 
     .Back {
+        font-size: .7rem;
         padding: 1.5vw;
-        top: 7vh;
+        top: -50vh;
+        left: -1vw;
     }
 
     .contador { 
@@ -190,6 +211,10 @@
         gap: 3vw;
         margin: 0 10px;
     } 
+
+    .notingredient{
+        font-size: 1.3rem;
+    }
 
 
 }
@@ -213,16 +238,17 @@
 
     .img_productEspecific {
         cursor: pointer;
-        width: 25vw;
         height: 45vh;
         margin: auto;
         margin-bottom: 6vh;
         margin-top: 35vh;
         position: relative;
         transition: opacity 0.5s ease;
+        width: 25vw;
     }
     
     .img_productEspecific__img {
+        border-radius: 1vw;
         width: 100%;
         height: 100%;
         transition: opacity 0.2s ease;
@@ -253,25 +279,31 @@
         opacity: 1; /* Mostrar descripción al pasar el cursor sobre la imagen */
     }
 
-    .nombre__descripcion {
+    /* .nombre__descripcion {
         font-size: 1.8rem;
         font-weight: 600;
+    } */
+
+    .nombre__descripcionp {
+        margin-top: 1vh;
+        font-size: 1.3rem;
+        text-align: center;
     }
 
     .p__ingredientes{
         font-size: 1.1rem;
         position: relative;
-        bottom: 2vh;
+        bottom: 0vh;
         right: 1vw;
     }
 
     .p__precio{
         color: var(--CrujienteMasa);
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         position: relative;
         right: 1vw;
+        top: 8vh;
     }
-    
     
     .boton {
         width: 4vw;
@@ -302,8 +334,9 @@
         top: -30vw;
         background: var(--CrujienteMasa);
         padding: 1vw;
-        border-radius: 50%;
+        border-radius: 5vw;
     }
+
 
     
 }

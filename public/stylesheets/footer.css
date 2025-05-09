@@ -141,4 +141,8 @@ i:hover {
     scroll-behavior: smooth; 
   }
 
+.footer-copy {
+    text-align: center;
+  }
+
 }

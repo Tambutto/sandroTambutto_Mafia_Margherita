@@ -27,22 +27,22 @@ module.exports = [
       }),
     
     // Validación de tamaños (sizes)
-    body('sizes').custom(async (value) => {
-      if (!value || !Array.isArray(value)) {
-          throw new Error('Debe proporcionar al menos un tamaño válido');
-      }
+    // body('sizes').custom(async (value) => {
+    //   if (!value || !Array.isArray(value)) {
+    //       throw new Error('Debe proporcionar al menos un tamaño válido');
+    //   }
 
-      // Validar que cada tamaño existe en la tabla `sizes`
-      const sizePromises = value.map(async (sizeId) => {
-          const sizeExists = await Size.findOne({ where: { id: sizeId } });
-          if (!sizeExists) {
-              throw new Error(`El tamaño con ID ${sizeId} no es válido`);
-          }
-      });
+    //   // Validar que cada tamaño existe en la tabla `sizes`
+    //   const sizePromises = value.map(async (sizeId) => {
+    //       const sizeExists = await Size.findOne({ where: { id: sizeId } });
+    //       if (!sizeExists) {
+    //           throw new Error(`El tamaño con ID ${sizeId} no es válido`);
+    //       }
+    //   });
 
-      await Promise.all(sizePromises); // Resolver todas las validaciones
-      return true;
-    }),
+    //   await Promise.all(sizePromises); // Resolver todas las validaciones
+    //   return true;
+    // }),
      // Validación de ingredientes (ingredients)
      body('ingredients').custom(async (value) => {
       if (!value || !Array.isArray(value)) {

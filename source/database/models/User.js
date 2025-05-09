@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       // Un usuario tiene un rol
-      User.belongsTo(models.Role, { foreignKey: 'roleId', as: 'role' });
+      User.belongsTo(models.Role, { foreignKey: 'roleId', as: 'role', onDelete: "CASCADE" });
     }
   }
   User.init(

@@ -12,8 +12,8 @@
         <main class="profile__main">
             
             <h2 class="titulo__profile">Bienvenido, <%= user.firstName + " " + user.lastName %></h2>
-            <p>Correo: <%= user.email %></p>
-            <p>Rol: <%= user.role ? user.role.tipo : 'Sin rol asignado' %></p>
+            <p class="role">Correo: <%= user.email %><i class="fa-solid fa-envelope email"></i></p>
+            <p class="role">Rol: <%= user.role ? user.role.tipo : 'Sin rol asignado' %><i class="fa-solid fa-user userloged"></i></p>
 
             <div class="foto__profile">
                 <!-- Mostrar la imagen del usuario -->
@@ -30,9 +30,18 @@
             <% if (isAdmin) { %>
                 <a href="/admin" class="admin-link">Ir al Panel de Administración</a>
                 <ul>
-                    <li><a href="/updateDelete/<%= user.id %>" class="btn-profile">Usuario <%= user.firstName %></a></li>
+                    <li><a href="/updateDelete/<%= user.id %>" class="btn-profile">Actualizar cuenta de: <%= user.firstName %></a></li>
                 </ul> 
+               
             <% } %>
+
+            <!-- Botón para eliminar (SEPARADO) -->
+
+            
+                <form action="/delete/<%= user.id %>?_method=DELETE" method="POST" class="delete-form">
+                    <button type="submit" class="btn-delete">Eliminar Cuenta</button>
+                </form>
+            
 
             <a href="/logout" class="logout">Cerrar Sesión</a>
         </main>

@@ -22,6 +22,8 @@ const { validationResult } = require('express-validator'); // Este metodo me per
 
 // Usando sequelize:
 
+// const { Sequelize } = require("../database/models");
+
 const { User, Role} = require('../database/models'); // Importa el modelo User
 
 
@@ -425,4 +427,3 @@ const usersController = {
 
 
 module.exports = usersController;
-

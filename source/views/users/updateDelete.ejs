@@ -11,42 +11,40 @@
     </header>
 
     <main>
-        <h2 class="titulo__registro">Actualizar o Eliminar Registro</h2>
+        <h2 class="titulo__registro">Actualizar Registro</h2>
 
-        <a href="/login" class="nuevo">Volver</a>
+        <a href="/profile/<%= user.id %>" class="volver">Volver</a> 
     
         <div>
             <!-- Formulario para actualizar -->
             <form action="/update/<%= user.id %>?_method=PUT" method="POST" class="registro" enctype="multipart/form-data">
-                <label for="name"></label><i class="fa-regular fa-user user"></i>
-                <input type="text" name="firstName" id="nombre" value="<%= user.firstName %>" placeholder="Nombre" minlength="5" required>
-    
-                <label for="lastname"></label><i class="fa-regular fa-user user1"></i>
-                <input type="text" name="lastName" id="apellido" value="<%= user.lastName %>" placeholder="Apellido" minlength="5" required>
-    
-                <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
-                <input type="email" name="email" id="email" value="<%= user.email %>" placeholder="Email" maxlength="20" required>        
+                <label for="name"></label><i class="fa-regular fa-user user-1"></i>
+                <input type="text" name="firstName" id="nombre" value="<%= user.firstName %>" placeholder="Nombre" minlength="2" required>
         
-                <label for="password"></label><i class="fa-solid fa-lock user3"></i>
+                <label for="lastname"></label><i class="fa-regular fa-user user-2"></i>
+                <input type="text" name="lastName" id="apellido" value="<%= user.lastName %>" placeholder="Apellido" minlength="5" required>
+        
+                <label for="email"></label><i class="fa-regular fa-envelope user-3"></i>
+                <input type="email" name="email" id="email" value="<%= user.email %>" placeholder="Email" maxlength="30" required>        
+        
+                <label for="password"></label><i class="fa-solid fa-lock user-4"></i>
                 <input type="password" name="password" id="password" placeholder="Password">
                 <div id="passwordError" class="error-message"></div>
         
-                <label for="confirm_password"></label><i class="fa-solid fa-key user4"></i>
+                <label for="confirm_password"></label><i class="fa-solid fa-key user-5"></i>
                 <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar password">
                 <div id="confirmpasswordError" class="error-message"></div>
-
-                <label for="image"></label><i class="fa-regular fa-image user5"></i>
+        
+                <label for="image"></label><i class="fa-regular fa-image user-6"></i>
                 <input type="file" name="image" id="image">
                 
                 <button type="submit" class="form_div_button">Actualizar</button>
-
-                <!-- Botón para eliminar -->
-                <form action="/delete/<%= user.id %>?_method=DELETE" method="POST" >
-                    <button type="submit" class="boton_eliminar">Eliminar</button>
-                </form>
             </form>
-
+        
+            
+            
         </div>
+        
 
     </main>
 

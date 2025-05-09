@@ -125,6 +125,15 @@ button:hover {
         font-size: 1.1rem;
     }
 
+    .edit{
+        background: var(--ingredientesFrescos);
+        color: var(--limpieza);
+        font-size: 1rem;
+        padding: 5px;
+        width: 10vw;
+
+    }
+
     .delete {
         font-size: 1rem;
         width: 6vw;

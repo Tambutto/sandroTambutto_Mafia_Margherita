@@ -1,4 +1,7 @@
 
+.img-banner {
+    max-width: 100%;
+}
 
 
 img {
@@ -32,26 +35,9 @@ h1 {
     font-size: 3rem;
     font-weight: lighter;
     text-align: center;   
-    padding: 3vh 0;
+    padding: 2vh 0;
     
   }
-/* 
-h1 {
-    opacity: 0;
-    transform: translateX(100%);
-    animation: slide-in 3s forwards 0.5s;
-    
-}   */
-
-/* @keyframes slide-in {
-     0% {
-         opacity: 0; 
-         transform: translateX(100%); 
-        } 
-     100% { 
-         opacity: 1; 
-         transform: translateX(0); } 
-    } */
 
 p {
     font-family: "italiana", sans-serif;

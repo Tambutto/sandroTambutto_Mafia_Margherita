@@ -1,11 +1,273 @@
 
-
+/* VERSION MOVIL */
 
 .profile__main {
-    margin-top: 20vh;
+    margin-top: 2vh;
 }
 
+/* .profile__main {
+    margin-top: 20vh;
+} */
+
+.titulo__profile {
+    font-family: "italianno";
+    /* font-size: 3.5rem; */
+    font-weight: lighter;
+    text-align: center;
+}    
+
+.profile__main p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.email{
+    margin: 0;
+    font-size: .8rem;
+    position: relative;
+    right: 40vw;
+}
+
+.userloged{
+    margin: 0;
+    font-size: .8rem;
+    position: relative;
+    right: 29vw;
+}
+
+.role{
+    font-size: .8rem; 
+}
+
+.foto__profile img{
+    border-radius: 3vw;
+    height: 27vh;
+    margin: 0 auto;
+    width: 38vw;
+    position: relative;
+    left: 20vw;
+   
+}
+
+.logout{
+    font-family: "italianno";
+    font-size: 1rem;
+    position: absolute;
+    top:80vh;
+    left: 5vw;
+    background: var(--quesoDerretido);
+    color: var(--fondo);
+    padding: 10px 20px;
+    border-radius: 1vw;
+}
+
+.logout:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
+.admin-link{
+    font-family: "italianno";
+    font-size: 1.2rem;
+    position: absolute;
+    top:34vh;
+    left: 5vw;
+    background: var(--quesoDerretido);
+    color: var(--limpieza);
+    padding: 5px 10px;
+    border-radius: 1vw;
+}
+
+.admin-link:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
+.btn-profile {
+    background: var(--ingredientesFrescos);
+    color: var(--fondo);
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-family: 'Italianno';
+    font-size: 1rem;
+    margin-right: 1vw;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 32vh;
+    left: 5vw;
+}
+
+.btn-profile:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
+.btn-delete {
+    background: var(--tomate);
+    color: var(--fondo);
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-family: 'Italianno';
+    font-size: 1rem;
+    margin-left: -5vw;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 23vh;
+}
+
+.btn-delete:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
+.text {
+    font-family: "italianno";
+    font-size: 1.5rem;
+    position: absolute;
+    top:30vh;
+    left: 5vw;
+    background: var(--quesoDerretido);
+    color: var(--fondo);
+    padding: 10px 20px;
+    border-radius: 1vw;
+}
+
+
+/* VERSION TABLET */
+
+@media (min-width: 768px) {
+
+   
+
+    .titulo__profile {
+        font-family: "italianno";
+        font-size: 2.5rem;
+        font-weight: lighter;
+        text-align: center;
+    }    
+    
+    .profile__main p{
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .email{
+        margin: 0;
+        font-size: 1rem;
+        position: relative;
+        right: 32vw;
+    }
+    
+    .userloged{
+        margin: 0;
+        font-size: 1rem;
+        position: relative;
+        right: 24.5vw;
+    }
+    
+    .role{
+        font-size: 1rem; 
+    }
+    
+    .foto__profile img{
+        border-radius: 3vw;
+        height: 35vh;
+        margin: 0 auto;
+        width: 30vw;
+       
+    }
+    
+    .logout{
+        font-family: "italianno";
+        border-radius: 1vw;
+        font-size: 1.5rem;
+        position: absolute;
+        left: 5vw;
+        background: var(--quesoDerretido);
+        color: var(--fondo);
+        padding: 10px 20px;
+        top: 81vh;
+    }
+    
+    .logout:hover {
+        transition: ease-in-out 0.2s;
+        background: var(--fondo);
+        color: var(--limpieza);
+    }
+    
+    .admin-link{
+        font-family: "italianno";
+        font-size: 1.3rem;
+        position: absolute;
+        top:24vh;
+        left: 5vw;
+        background: var(--quesoDerretido);
+        color: var(--limpieza);
+        padding: 4px 5px;
+        border-radius: 1vw;
+    }
+    
+    .admin-link:hover {
+        transition: ease-in-out 0.2s;
+        background: var(--fondo);
+        color: var(--limpieza);
+    }
+    
+    .btn-profile {
+        background: var(--ingredientesFrescos);
+        color: var(--fondo);
+        border: none;
+        border-radius: 1vw;
+        cursor: pointer;
+        font-family: 'Italianno';
+        font-size: 1.5rem;
+        margin-right: 1vw;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: 38vh;
+    }
+    
+    .btn-profile:hover {
+        transition: ease-in-out 0.2s;
+        background: var(--fondo);
+        color: var(--limpieza);
+    }
+    
+    .btn-delete {
+        background: var(--tomate);
+        color: var(--fondo);
+        border: none;
+        border-radius: 1vw;
+        cursor: pointer;
+        font-family: 'Italianno';
+        font-size: 1.5rem;
+        margin-left: -5vw;
+        padding: 10px 20px;
+        position: absolute;
+        bottom: 25vh;
+    }
+    
+    .btn-delete:hover {
+        transition: ease-in-out 0.2s;
+        background: var(--fondo);
+        color: var(--limpieza);
+    }
+    
+}
+
+/* VERSION DESKTOP */
+
 @media (min-width: 1024px) {
+
+ .profile__main {
+        margin-top: 20vh;
+    }
 
 .titulo__profile {
     font-family: "italianno";
@@ -19,46 +281,82 @@
     font-weight: bold;
 }
 
+.email{
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+    right: 22vw;
+}
+
+.userloged{
+    margin: 0;
+    font-size: 1rem;
+    position: relative;
+    right: 16.5vw;
+}
+
+.role{
+    font-size: 1.5rem; 
+}
+
 .foto__profile img{
     border-radius: 3vw;
     height: 45vh;
     margin: 0 auto;
     width: 25vw;
+    left: 0vw;
    
 }
 
 .logout{
+    font-family: "italianno";
+    font-size: 1.5rem;
     position: absolute;
-    top:30vh;
-    left: 5vw;
+    top:64vh;
+    left: 10vw;
     background: var(--quesoDerretido);
+    color: var(--fondo);
+    padding: 10px 20px;
+    border-radius: 1vw;
+}
+
+.logout:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
     color: var(--limpieza);
-    padding: 1vw;
-    border-radius: 5vw;
 }
 
 .admin-link{
+    font-family: "italianno";
+    font-size: 1.5rem;
     position: absolute;
     top:20vh;
     left: 5vw;
     background: var(--quesoDerretido);
     color: var(--limpieza);
-    padding: 1vw;
-    border-radius: 5vw;
+    padding: 10px 20px;
+    border-radius: 1vw;
+}
+
+.admin-link:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
 }
 
 .btn-profile {
     background: var(--ingredientesFrescos);
     color: var(--fondo);
     border: none;
-    border-radius: 2vw;
+    border-radius: 1vw;
     cursor: pointer;
     font-family: 'Italianno';
     font-size: 1.5rem;
     margin-right: 1vw;
     padding: 10px 20px;
     position: absolute;
-    bottom: 10vh;
+    bottom: 50vh;
+    left: 10vw;
 }
 
 .btn-profile:hover {
@@ -66,5 +364,26 @@
     background: var(--fondo);
     color: var(--limpieza);
 }
+
+.btn-delete {
+    background: var(--tomate);
+    color: var(--fondo);
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    font-family: 'Italianno';
+    font-size: 1.5rem;
+    left: 15vw;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 40vh;
+}
+
+.btn-delete:hover {
+    transition: ease-in-out 0.2s;
+    background: var(--fondo);
+    color: var(--limpieza);
+}
+
 
 }
