@@ -48,7 +48,7 @@
                 <div class="ingredients">
                     <% ingredients.forEach((i)=> { %>
                         <div class="ingredients__box">
-                            <input type="checkbox" id="i<%= i.name %>" name="ingredients" class="input__add2"  value="<%= i.id %>">
+                            <input type="checkbox" id="i<%= i.name %>" name="ingredients[]" class="input__add2"  value="<%= i.id %>">
                             <label for="i<%= i.name %>" class="name__label">
                                 <%= i.name %>
                             </label>

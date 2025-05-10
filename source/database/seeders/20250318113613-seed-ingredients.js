@@ -78,6 +78,9 @@ module.exports = {
         updatedAt: new Date() },
       { name: 'Agua con poco gas', 
         createdAt: new Date(), 
+        updatedAt: new Date() },
+        { name: 'Otro', 
+        createdAt: new Date(), 
         updatedAt: new Date() }
     ], {});
   },

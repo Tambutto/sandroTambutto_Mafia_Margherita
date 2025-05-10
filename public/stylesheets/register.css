@@ -126,6 +126,17 @@ input {
         border-radius: 2vh;
 }
 
+.error-menssage {
+                color: var(--limpieza);
+                font-size: .7rem;
+                margin-top: 2px;
+                display: none; /* Ocultado por defecto */
+            }
+            
+            .invalid + .error-menssage {
+                display: block; /* Mostrar el mensaje si el input tiene la clase 'invalid' */
+            }
+
 
 /* VERSION TABLET */
 
@@ -342,14 +353,14 @@ input {
                 top: 28vh;
         }
 
-        .error-message {
+        .error-menssage {
                 color: var(--limpieza);
-                font-size: 1rem;
+                font-size: .8rem;
                 margin-top: 2px;
                 display: none; /* Ocultado por defecto */
             }
             
-            .invalid + .error-message {
+            .invalid + .error-menssage {
                 display: block; /* Mostrar el mensaje si el input tiene la clase 'invalid' */
             }
             

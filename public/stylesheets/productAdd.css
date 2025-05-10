@@ -103,7 +103,6 @@
 }
 
 
-
 .tamaño {
   position: absolute;
   left: 46vw;
@@ -154,8 +153,6 @@
 }
 
 .errors {
-  background: var(--tomate);
-  color: var(--limpieza);
   position: absolute;
   left: 2vw;
   width: 15vw;

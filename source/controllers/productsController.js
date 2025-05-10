@@ -143,7 +143,7 @@ let productsController = {
 
     create: async (req, res, next) => {
         try {
-
+            console.log("Datos recibidos:", req.body); // 📌 Verifica los datos que llegan desde el formulario
             const errors = validationResult(req);
 
 
@@ -154,7 +154,7 @@ let productsController = {
 
                 return res.render('products/productAdd', {
                     title: 'Crear Producto',
-                    errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen                oldData: req.body,
+                    errors: errors.isEmpty() ? null : errors.array(), // Envía los errores si existen              
                     ingredients,
                     sizes,
                     categories,
@@ -192,7 +192,7 @@ let productsController = {
 
             // Crear el producto en la base de datos usando Sequelize
 
-            try {
+            
                 const product = await Product.create({
                     name: name.trim(),
                     description: description.trim(),
@@ -234,10 +234,8 @@ let productsController = {
                     });
                 }
                 console.log("✅ Producto creado en la base de datos:", product);
-            } catch (error) {
-                console.log("❌ Error al guardar el producto:", error);
-                return res.status(500).send("Error al crear el producto.");
-            }
+            
+            
 
             res.redirect('/products');
         } catch (error) {
