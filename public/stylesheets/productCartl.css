@@ -111,6 +111,20 @@ span {
     margin-bottom: 5.5vh;
 }
 
+
+ .carrito{
+        padding: .5vw;
+        background: var(--ingredientesFrescos);
+        font-size: 1rem;
+        font-family: 'Italianno';
+        border-radius: 1vw;
+        position: absolute;
+        left: 70vw;
+        bottom: 35vh;
+        width: 25vw;
+        height: 5vh;
+    }
+
 .b-back {
     color: var(--limpieza);
     font-size: .8rem;
@@ -212,6 +226,15 @@ span {
         position: absolute;
         left: 42vw;
         top: 54vh;
+    }
+
+     .carrito{
+        padding: .5vw;
+        font-size: 1.2rem;
+        left: 70vw;
+        bottom: 40vh;
+        width: 15vw;
+        height: 5vh;
     }
 
     .b-back {
@@ -359,12 +382,12 @@ span {
 
     .carrito{
         padding: 1vw;
-        background: var(--ingredientesFrescos);
         font-size: 1.5rem;
-        font-family: 'Italianno';
         border-radius: 1vw;
         position: absolute;
-        left: 70vw;
-        bottom: 10vh;
+        width: 12vw;
+        height: 7vh;
+        left: 65vw;
+        bottom: 40vh;
     }
 }
