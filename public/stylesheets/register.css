@@ -1,18 +1,17 @@
-
 /* REGISTER MOVIL */
 
-.titulo__registro{
+.titulo__registro {
         margin-top: 1vh;
         font-size: 2.5rem;
-        } 
-        
+}
+
 small {
         color: var(--CrujienteMasa);
         font-size: .9rem;
         margin-left: 2vw;
         display: none;
-     
-}        
+
+}
 
 .was-validated small {
         display: block;
@@ -25,10 +24,10 @@ form {
         margin: 10vw;
         padding-top: 5vh;
         font-family: "italiana";
-        }
+}
 
 .registro {
-        background-image: url('../images/fondoregister2.jpg'); 
+        background-image: url('../images/fondoregister2.jpg');
         background-size: contain;
         background-size: 47vh;
         box-shadow: 1px 1px 10px var(--quesoDerretido);
@@ -40,11 +39,11 @@ form {
         margin-bottom: 2vh;
 }
 
-input {
+.inmput-register {
         margin: 1.1vh 0 0 2.5vw;
         font-size: .8rem;
         width: 65vw;
-        border: none; 
+        border: none;
         border-bottom: .1vw solid var(--quesoDerretido);
         background: transparent;
         box-sizing: border-box;
@@ -54,7 +53,7 @@ input {
 
 
 .user {
-        color:var(--quesoDerretido);  
+        color: var(--quesoDerretido);
         font-size: .8rem;
         position: absolute;
         right: 16vw;
@@ -62,16 +61,16 @@ input {
 }
 
 .user1 {
-        color:var(--quesoDerretido);  
+        color: var(--quesoDerretido);
         font-size: .8rem;
         position: absolute;
         right: 16vw;
         top: 61vh;
-    }
+}
 
 
 .user2 {
-        color:var(--quesoDerretido);  
+        color: var(--quesoDerretido);
         font-size: .8rem;
         position: absolute;
         right: 16vw;
@@ -79,7 +78,7 @@ input {
 }
 
 .user3 {
-        color:var(--quesoDerretido);  
+        color: var(--quesoDerretido);
         font-size: .8rem;
         position: absolute;
         right: 16vw;
@@ -87,12 +86,12 @@ input {
 }
 
 .user4 {
-        color:var(--quesoDerretido);  
+        color: var(--quesoDerretido);
         font-size: .8rem;
         position: absolute;
         right: 16vw;
         top: 83vh;
-}    
+}
 
 
 
@@ -106,114 +105,116 @@ input {
         margin: -1.9vh 0 0 10vh;
 }
 
-.registro input::placeholder { 
-        color: var(--limpieza);    
+.registro input::placeholder {
+        color: var(--limpieza);
 }
 
-.registro input:focus { 
-        outline: none;    
+.registro input:focus {
+        outline: none;
 }
 
-.form_div_button{
+.form_div_button {
         color: var(--limpieza);
         font-size: 1rem;
         width: 40vw;
         height: 5vh;
-        border: none; 
-        margin-left: 15vw;  
+        border: none;
+        margin-left: 15vw;
         margin-top: 4vh;
         background: var(--quesoDerretido);
         border-radius: 2vh;
 }
 
 .error-menssage {
-                color: var(--limpieza);
-                font-size: .7rem;
-                margin-top: 2px;
-                display: none; /* Ocultado por defecto */
-            }
-            
-            .invalid + .error-menssage {
-                display: block; /* Mostrar el mensaje si el input tiene la clase 'invalid' */
-            }
+        color: var(--limpieza);
+        font-size: .7rem;
+        margin-top: 2px;
+        display: none;
+        /* Ocultado por defecto */
+}
+
+.invalid+.error-menssage {
+        display: block;
+        /* Mostrar el mensaje si el input tiene la clase 'invalid' */
+}
 
 
 /* VERSION TABLET */
 
 @media (min-width: 768px) {
 
-.titulo__registro{
-        margin-top: 2vh;
-        font-size: 2.5rem;
-        }        
-
-.registro {
- 
-        background-size: contain;
-        background-size: 77vh ;
-        width: 50vw;
-        height: 52vh;
-        margin: 0 auto;
-        border-radius: 2vw;
-        opacity: 0.9;
-        margin-bottom: 2vh;
+        .titulo__registro {
+                margin-top: 2vh;
+                font-size: 2.5rem;
         }
 
-form {
-        display: flex;
-        flex-direction: column;
-        margin: 10vw;
-        padding-top: 7vh;
-        font-family: "italiana";
+        .registro {
+
+                background-size: contain;
+                background-size: 77vh;
+                width: 50vw;
+                height: 52vh;
+                margin: 0 auto;
+                border-radius: 2vw;
+                opacity: 0.9;
+                margin-bottom: 2vh;
         }
 
-input {
-        margin: 1vh 0 0 2.5vw; 
-        padding: 2%;
-        width: 45vw;
-   
-}
+        form {
+                display: flex;
+                flex-direction: column;
+                margin: 10vw;
+                padding-top: 7vh;
+                font-family: "italiana";
+        }
 
-.user { 
-        font-size: 1rem;
-        right: 24vw;
-        top: 43.5vh;
-    }
+        .inmput-register {
+                margin: 1vh 0 0 2.5vw;
+                padding: 2%;
+                width: 45vw;
 
-.user1 { 
-        font-size: 1rem;
-        right: 24vw;
-        top: 49vh;
-    }
-   
-.user2 { 
-        font-size: 1rem;
-        right: 24vw;
-        top: 55vh;
-    }
+        }
 
-.user3 { 
-        font-size: 1rem;
-        right: 24vw;
-        top: 60.5vh;
-    }
+        .user {
+                font-size: 1rem;
+                right: 24vw;
+                top: 43.5vh;
+        }
 
-.user4 { 
-        font-size: 1rem;
-        right: 24vw;
-        top: 66vh;
-    }
+        .user1 {
+                font-size: 1rem;
+                right: 24vw;
+                top: 49vh;
+        }
+
+        .user2 {
+                font-size: 1rem;
+                right: 24vw;
+                top: 55vh;
+        }
+
+        .user3 {
+                font-size: 1rem;
+                right: 24vw;
+                top: 60.5vh;
+        }
+
+        .user4 {
+                font-size: 1rem;
+                right: 24vw;
+                top: 66vh;
+        }
 
 
-    .form_div_button {
-        font-size: 1rem;
-        width: 22vw;
-        height: 5vh;
-        border: none; 
-        margin-left: 13vw;  
-        margin-top: 4vh;
-        border-radius: 1vh;
-    }
+        .form_div_button {
+                font-size: 1rem;
+                width: 22vw;
+                height: 5vh;
+                border: none;
+                margin-left: 13vw;
+                margin-top: 4vh;
+                border-radius: 1vh;
+        }
 
 }
 
@@ -221,7 +222,7 @@ input {
 
 @media (min-width: 1024px) {
 
-        .titulo__registro{
+        .titulo__registro {
                 margin-top: 18vh;
                 font-size: 4rem;
         }
@@ -237,7 +238,7 @@ input {
         .registro {
                 background-size: contain;
                 background-repeat: no-repeat;
-                background-size: 50vh ;
+                background-size: 50vh;
                 width: 25vw;
                 height: 58vh;
                 margin: 0 auto;
@@ -247,11 +248,11 @@ input {
                 padding-top: 3vh;
         }
 
-        input {
+        .inmput-register {
                 margin: 1.2vh 0 0 1.6vw;
                 font-size: .9rem;
                 width: 22vw;
-                border: none; 
+                border: none;
                 border-bottom: .1vw solid var(--quesoDerretido);
                 background: transparent;
                 box-sizing: border-box;
@@ -269,16 +270,16 @@ input {
                 margin: -1.9vh 0 0 3vh;
         }
 
-        .registro input::placeholder { 
-                color: var(--limpieza);    
+        .registro input::placeholder {
+                color: var(--limpieza);
         }
 
-        .registro input:focus { 
-                outline: none;    
+        .registro input:focus {
+                outline: none;
         }
 
         .user {
-                
+
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
@@ -286,65 +287,69 @@ input {
         }
 
         .user1 {
-                 
+
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
                 top: 32vh;
         }
-    
+
 
         .user2 {
-               
+
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
                 top: 39vh;
-                
-            }
 
-    
-    
-    /* Estilo del ícono del ojo */
-    .user3 {
-        position: absolute; /* Ubica el ícono dentro del contenedor relativo */
-        right: 35vw;
-        top: 46vh;
-        font-size: 1rem; /* Ajusta el tamaño del ícono */
-        cursor: pointer; /* Muestra un cursor de puntero */
-    }
-    
-    /* Cambia de color al interactuar con el ícono */
-    .user3:hover {
-        color: var(--tomate); /* Resalta el ícono cuando el usuario pasa el mouse */
-    }
-    
-            
+        }
+
+
+
+        /* Estilo del ícono del ojo */
+        .user3 {
+                position: absolute;
+                /* Ubica el ícono dentro del contenedor relativo */
+                right: 35vw;
+                top: 46vh;
+                font-size: 1rem;
+                /* Ajusta el tamaño del ícono */
+                cursor: pointer;
+                /* Muestra un cursor de puntero */
+        }
+
+        /* Cambia de color al interactuar con el ícono */
+        .user3:hover {
+                color: var(--tomate);
+                /* Resalta el ícono cuando el usuario pasa el mouse */
+        }
+
+
 
         .user4 {
-                 
+
                 font-size: 1rem;
                 position: absolute;
                 right: 35vw;
                 top: 53vh;
-        }  
+        }
 
-       
+
 
         .form_div_button {
                 color: var(--limpieza);
                 font-size: 1rem;
                 width: 10vw;
                 height: 5vh;
-                border: none; 
-               /* margin: 1.8vw 0 0; */
-                margin-left: 7.5vw;  
+                border: none;
+                /* margin: 1.8vw 0 0; */
+                margin-left: 7.5vw;
                 margin-top: 3vh;
                 background: var(--quesoDerretido);
                 border-radius: 2vh;
         }
 
-        .error-container{
+        .error-container {
                 background: var(--tomate);
                 color: var(--limpieza);
                 position: absolute;
@@ -357,12 +362,14 @@ input {
                 color: var(--limpieza);
                 font-size: .8rem;
                 margin-top: 2px;
-                display: none; /* Ocultado por defecto */
-            }
-            
-            .invalid + .error-menssage {
-                display: block; /* Mostrar el mensaje si el input tiene la clase 'invalid' */
-            }
-            
+                display: none;
+                /* Ocultado por defecto */
+        }
+
+        .invalid+.error-menssage {
+                display: block;
+                /* Mostrar el mensaje si el input tiene la clase 'invalid' */
+        }
+
 
 }

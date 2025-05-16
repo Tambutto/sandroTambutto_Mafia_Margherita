@@ -10,6 +10,16 @@ canvas{
     background: var(--fondo);
   }
 
+.audio {
+    position: relative;
+    right: 0vw;
+    width: 10vw;
+    height: 9vh;
+    bottom: 2vh;
+   
+  }
+ 
+
 .container {
     background-color: var(--fondo);
     width: 100vw;

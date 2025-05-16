@@ -30,19 +30,21 @@
   }
 
 .description {
-    font-size: .8rem;
+    font-size: 1.1rem;
     margin: 0 auto;
     width: 80vw;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Italianno';
 }
 
-.nombre__descripcion {
-    font-size: 1rem;
-    font-weight: 600;
+/* .nombre__descripcion {
+    font-size: 1.4rem;
+    font-weight: lighter;
     position: absolute;
-    left: 34vw;
-    top: 60vh;
-}
+    font-family: 'Italianno';
+    left: 38vw;
+    top: 63vh;
+}  */
 
 .precio:hover{
     transform: scale(1.1);
@@ -114,7 +116,7 @@ span {
     font-size: .8rem;
     position: relative;
     left: 5vw;
-    bottom: 45vh;
+    bottom: 33vh;
     background: var(--CrujienteMasa);
     padding: 1vw;
     border-radius: 2vw;
@@ -164,10 +166,13 @@ span {
         left: 66vw;
     }
 
-    .description {
-        font-size: 1rem;
-        width: 45vw;
-        margin-top: 6vh;
+     .description {
+        width: 44vw;
+        margin: auto;
+        font-size: 1.4rem;
+        margin-top: 2vh;
+        font-family: 'Italianno';
+        /* margin-right: 32vw; */
     }
 
     .costo{
@@ -203,17 +208,17 @@ span {
     }
 
     .nombre__descripcion{
-        font-size: 1rem;
+        font-size: 1.7rem;
         position: absolute;
-        left: 41vw;
-        top: 51vh;
+        left: 42vw;
+        top: 54vh;
     }
 
     .b-back {
         font-size: .9rem;
         position: relative;
         left: 5vw;
-        bottom: 60vh;
+        bottom: 37vh;
         padding: 1vw;
         border-radius: 2vw;
     }
@@ -248,12 +253,19 @@ span {
         margin-top: 25vh;
         /* border-radius: 50%; */
     }
+
+    .container__cart{
+        margin: 0 auto;
+        width: 50vw;
+    }
     
     .description {
         width: 25vw;
         margin: auto;
-        font-size: 1rem;
-        margin-top: 7vh;
+        font-size: 1.5rem;
+        margin-top: 1vh;
+        font-family: 'Italianno';
+        /* margin-right: 32vw; */
     }
     
     .boton {
@@ -288,15 +300,15 @@ span {
         font-size: 1.5rem;
         position: absolute;
         left: 73vw;
-        margin-bottom: 4.5vh;
+        margin-bottom: -12.5vh;
     }
 
     span {
         font-size: 1.3rem;
         font-weight: bold;
         position: absolute;
-        left: 71vw;
-        bottom: 56.5vh;
+        left: 74vw;
+        bottom: 64.5vh;
     }
 
     
@@ -305,7 +317,7 @@ span {
         font-size: 1.3vw;
         position: relative;
         left: 10vw;
-        bottom: 67vh;
+        bottom: 55vh;
         background: var(--CrujienteMasa);
         padding: .8vw;
         border-radius: 1.5vw;
@@ -333,9 +345,26 @@ span {
 
     .nombre__descripcion{
         
-        font-size: 1.5rem;
+        font-size: 2.7rem;
+        font-family: 'Italianno';
         position: absolute;
         left: 44vw;
-        top: 55vh;
+        top: 57vh;
+    }
+
+    .contenedor__total{
+        position: absolute;
+        bottom: 2vh;
+    }
+
+    .carrito{
+        padding: 1vw;
+        background: var(--ingredientesFrescos);
+        font-size: 1.5rem;
+        font-family: 'Italianno';
+        border-radius: 1vw;
+        position: absolute;
+        left: 70vw;
+        bottom: 10vh;
     }
 }

@@ -13,24 +13,26 @@
     <main>
 
         <!-- CON SEQUELIZE -->
-        
-            <% if (product.images && product.images.length > 0) { %>
-                <% product.images.forEach(image => { %>
-                    <img src="/<%= image.imageUrl %>" alt="<%= product.name %>" class="img-producto"">
-                <% }) %>
-            <% } else { %>
-                <p>No hay imágenes disponibles para este producto.</p>
-            <% } %>
-        
+           
+                <% if (product.images && product.images.length > 0) { %>
+                    <% product.images.forEach(image => { %>
+                        <img src="/<%= image.imageUrl %>" alt="<%= product.name %>" class="img-producto"">
+                    <% }) %>
+                <% } else { %>
+                    <p>No hay imágenes disponibles para este producto.</p>
+                <% } %>
+            
+             <div container__cart>
+                <% if (product.description && product.description.length > 0) { %>
+                    <div>
+                      <h3><%= product.name %></h3>
+                      <p class="description"><%= product.description %></p>
+                    </div>
+                  <% } else { %>
+                    <p>No hay descripción disponible para este producto.</p>
+                  <% } %>
 
-            <% if (product.description && product.description.length > 0) { %>
-                <div>
-                  <p class="nombre__descripcion"><%= product.name %></p>
-                  <p class="description"><%= product.description %></p>
-                </div>
-              <% } else { %>
-                <p>No hay descripción disponible para este producto.</p>
-              <% } %>
+            </div>
               
 
           <!--SIN SEQUELIZE -->
@@ -43,18 +45,24 @@
             <button class="boton" onclick="incrementar()">+</button>
             <!-- <button class="boton">5%</button> -->
         </div>
-        <div class="contador_total">
-            <h4 class="cantidad">Cantidad:</h4>
-            <span id="precio-total">$<%= product.price %></span>
-            <div class="precio__total">
-            <h4 class="costo">Precio:</h4>
-                <span id="valor" class="contador__valor">0</span> <!-- Valor inicial -->
-            </div>
-        </div>
         
         <a href="/products" class="b-back">Volver al listado</a>
-    </main>
 
+        <div class="contenedor__total">
+
+            <div class="contador_total">
+                <h4 class="cantidad">Cantidad:</h4>
+                <span id="precio-total">$<%= product.price %></span>
+                <div class="precio__total">
+                <h4 class="costo">Precio:</h4>
+                    <span id="valor" class="contador__valor">0</span> <!-- Valor inicial -->
+                </div>
+            </div>
+        </div>
+        <button class="carrito">Agregar al carrito</button>
+
+    </main>
+    
     <script src="/javascripts/productCartl.js"></script>
 
 </body>

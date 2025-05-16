@@ -18,30 +18,30 @@
             <form id="form-Validation" action="/processRegister" method="POST" class="registro" enctype="multipart/form-data">
 
                 <label for="name"></label><i class="fa-regular fa-user user"></i>
-                <input type="text" name="firstName" id="nombre" placeholder="Nombre" minlength="2" >
+                <input type="text" name="firstName" id="nombre" placeholder="Nombre" minlength="2" class="inmput-register">
                 <small class="error-menssage"></small>
             
                 <label for="lastname"></label><i class="fa-solid fa-user user1"></i>
-                <input type="text" name="lastName" id="apellido" placeholder="Apellido" minlength="2" >
+                <input type="text" name="lastName" id="apellido" placeholder="Apellido" minlength="2" class="inmput-register">
                 <small class="error-menssage"></small>
             
                 <label for="email"></label><i class="fa-regular fa-envelope user2"></i>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" >
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" class="inmput-register">
                 <small class="error-menssage"></small>
                       
                 <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Contraseña" minlength="8" autocomplete="new-password" >
+                <input type="password" name="password" id="password" placeholder="Contraseña" minlength="8" autocomplete="new-password" class="inmput-register">
                 <small class="error-menssage"></small>
                 <i class="fa-solid fa-eye-slash user3" id="togglePassword"></i>      
                 
                 
                 <label for="confirm_password"></label>
-                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar contraseña" autocomplete="new-password" >
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirmar contraseña" autocomplete="new-password" class="inmput-register">
                 <small class="error-menssage"></small>
                 <i class="fa-solid fa-eye-slash user4" id="togglePassword2"></i>
             
                 <label for="image"></label>
-                <input type="file" name="image" id="image" accept=".jpg,.jpeg,.png,.gif" >
+                <input type="file" name="image" id="image" accept=".jpg,.jpeg,.png,.gif" class="inmput-register">
                 <small class="error-menssage"></small>
             
                 <button type="submit" class="form_div_button">Registrar</button>

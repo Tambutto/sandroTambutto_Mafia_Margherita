@@ -49,10 +49,14 @@
 }
 
 .input__add {
+  background: var(--CrujienteMasa);
+   border: none;
+  border-bottom: .1vw solid var(--quesoDerretido);
   font-size: 0.8rem;
   width: 70vw;
   cursor: pointer;
   margin: 0 auto;
+  margin-bottom: 1vh;
 }
 
 
@@ -194,6 +198,10 @@
     width: 41vw;
   }
 
+  .ingredients__box {
+  width: 14%;
+}
+
   .form__inside {
     left: 43vw;
     bottom: 29vh;
@@ -208,7 +216,7 @@
 
   .btn_productAdd {
     top: 2vh;
-    width: 30vw;
+    width: 20vw;
     text-align: center;
   }
 
@@ -243,6 +251,7 @@
 
     .form__productAdd {
       width: 60vw;
+      height: 60vh;
       padding: 1rem;
     }
 
@@ -258,7 +267,8 @@
     }
 
     .name__label {
-      font-size: 1rem;
+      font-size: .75rem;
+      margin-bottom: .5vh;
     }
 
     .ingredients {
@@ -269,8 +279,8 @@
 
     .ingredients__box {
       font-weight: 550;
-      width: 50%;
-      display: flex;
+      width: 24%;
+      /* display: flex; */
       align-items: center;
     }
 
@@ -320,7 +330,7 @@
     }
 
     .input__add {
-      font-size: 0.8rem;
+      font-size: 0.5rem;
       width: 58vw;
       padding: 1.5vh;
     }

@@ -57,7 +57,7 @@
 
 .description_productEspecific p{
     text-align: center;
-    margin-bottom: -2vh;
+    /* margin-bottom: -1vh; */
 } 
 
 .h3__descripcion{
@@ -105,8 +105,9 @@
 
 .boton {
     background: var(--ingredientesFrescos);
+    border-radius: 8px;
     height: 6vh;
-    width: 10vw;
+    width: 11vw;
     position: relative;
     left: 23vw;
     transition: transform 0.3s ease;
@@ -149,8 +150,9 @@
     }
 
     .boton {
+        border-radius: 10px;
         height: 6vh;
-        width: 7vw;
+        width: 8vw;
         left: 31vw;
         font-size: 1.1rem;
         padding: 5px;
@@ -286,14 +288,14 @@
 
     .nombre__descripcionp {
         margin-top: 1vh;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
     .p__ingredientes{
         font-size: 1.1rem;
         position: relative;
-        bottom: 0vh;
+        bottom: -2vh;
         right: 1vw;
     }
 
@@ -306,14 +308,11 @@
     }
     
     .boton {
-        width: 4vw;
+        width: 5vw;
         height: 6vh;
         font-weight:15px;
-        border-radius: 10px;
-        left: 37vw;
+        left: 35vw;
         font-size: 1.2rem;
-        padding: 5px;
-
     }
 
     .car {

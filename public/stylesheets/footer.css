@@ -1,3 +1,4 @@
+/* VERSION MOVIL */
 
 .titulo__footer {
   color: var(--limpieza);
@@ -18,7 +19,8 @@
 
 .icons p {
   color: var(--limpieza);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin-bottom: 1vh;
   text-align: center;
 }
 
@@ -37,21 +39,22 @@ i {
   cursor: pointer;
   margin: 5vw;
   transition: transform 0.3s ease;
-  
-
 }
-
 
 i:hover {
   transform: scale(1.3);
   color: var(--limpieza);
 }
 
+.enlaces{
+  color: aliceblue;
+}
+
 #scrollToTop {
   display: none;
 }
 
-.copy__footer{
+.copy__footer {
   color: var(--limpieza);
   text-align: center;
 }
@@ -62,24 +65,33 @@ i:hover {
 @media (min-width: 768px) {
 
   .titulo__footer {
-    font-size: 4.5rem;
-  } 
-
-  i {
-    font-size: 3vw;
+    font-size: 3rem;
   }
 
-  
+  i {
+    font-size: 2.5vw;
+  }
+
+  .redes {
+    position: relative;
+    left: 7vw;
+  }
+
+  .icons p {
+    margin-bottom: 1vh;
+  }
+
+
   #scrollToTop {
     display: inline-block;
   }
 
-  .arrow__footer{
-  
+  .arrow__footer {
+
     color: var(--limpieza);
     font-size: 1.1vw;
     position: relative;
-    left: 23vw;
+    left: 17vw;
     background: var(--CrujienteMasa);
     padding: 1vw;
     border-radius: 50%;
@@ -103,12 +115,18 @@ i:hover {
 
   .titulo__footer p {
     font-size: 1rem;
+
   }
 
   .icono {
     font-size: 1.5vw;
     position: relative;
     left: 7vw;
+  }
+
+  .icons p {
+    font-size: 1.3rem;
+    margin-bottom: 3vh;
   }
 
   .titulo__footer-1 {
@@ -120,29 +138,35 @@ i:hover {
     height: 26vh;
     background-color: var(--fondo);
   }
-  
+
   div .img__footer {
     width: 20vw;
     height: 25vh;
     margin: 0 auto;
   }
 
-  .arrow__footer{
+  .arrow__footer {
     color: var(--limpieza);
     font-size: 1.1vw;
     position: relative;
-    left: 25vw;
+    left: 23vw;
     background: var(--CrujienteMasa);
     padding: 1vw;
     border-radius: 50%;
   }
 
-  html { 
-    scroll-behavior: smooth; 
+  .redes {
+    position: relative;
+    left: -1vw;
+    
   }
 
-.footer-copy {
-    text-align: center;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-}
+    .footer-copy {
+      text-align: center;
+    }
+
+  }

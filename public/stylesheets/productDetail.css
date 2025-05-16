@@ -127,6 +127,14 @@ h3 {
     display: none;
 }
 
+ .texto__producto {
+        font-size: 1.4rem;
+        font-family: "italianno";
+        font-weight: lighter;
+        text-align: center;
+        margin-bottom: 1vh;
+    }
+
 
 
 /* Version Tablet */
@@ -184,17 +192,27 @@ h3 {
         font-size: 5rem;
     }
 
-    p {
+    .texto__producto {
         font-size: 1.2rem;
+        font-family: "italianno";
+        font-weight: lighter;
+        text-align: center;
     }
 
-    .main-container p::first-letter {
+    .main-container .texto__producto::first-letter {
         font-size: 2rem;
     }
 
     .main-container a {
         color: var(--quesoDerretido);
         font-weight: bold;
+    }
+
+    .ultima-imagen {
+        transform: none;
+        max-width: 22vw;
+        height: 27vh;
+        box-shadow: none;
     }
 
     /* SECCION COMENTARIOS */
@@ -293,6 +311,9 @@ h3 {
         font-size: 5rem;
     }
 
+    .texto__producto {
+        font-size: 5rem;
+    }
 
 
     /* Food Section */
@@ -329,7 +350,8 @@ h3 {
 
 
     .food p {
-        font-size: 1.2rem;
+        font-size: 1.7rem;
+      
 
     }
 

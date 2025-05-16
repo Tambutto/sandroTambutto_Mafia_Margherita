@@ -13,18 +13,18 @@
 
     <form action="/products/update/<%= product.id %>?_method=PUT" class="form__productEdit" method="post" enctype="multipart/form-data"> 
         <!-- <label for="nombre">Nombre del Producto:</label>  -->
-        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.name%>">        
+        <input type="text"  name="nombre" required placeholder="Nombre del producto" value="<%=product.name%>" class="input__productEdit">        
         
         <!-- <label for="description">Descripcion:</label>  -->
         <!-- <input type="text" id="ingredientes" name="ingredientes" required placeholder="ingredientes" value="< product.ingredients %>">  -->
 
-        <label>Selecciona los Ingredientes:</label>
-            <div class="checkbox-container">
+        <label class="checkbox-titulo">Selecciona los Ingredientes:</label>
+            <div class="checkbox-container-edit">
                 <% if (allIngredients && allIngredients.length > 0) { %>
                 <% allIngredients.forEach(ingredient => { %>
                     <label class="checkbox">
-                        <input type="checkbox" name="ingredientes[]" value="<%= ingredient.id %>" <%= product.ingredients.some(i => i.id === ingredient.id) ? 'checked' : '' %>>
-                        <p class="ingredientes__name"><%= ingredient.name %></p>
+                        <input type="checkbox" name="ingredientes[]" value="<%= ingredient.id %>" <%= product.ingredients.some(i => i.id === ingredient.id) ? 'checked' : '' %> class="checkbox__input">
+                        <p class="ingredientes__nombre"><%= ingredient.name %></p>
                     </label>
                 <% }); %>
                 <% } else { %>
@@ -36,36 +36,38 @@
 
         <!-- <label for="category">Categoría:</label>  -->
         <!-- <input type="text" id="categoria" name="categoria" required placeholder="Categoria" value="< product.category %>">  -->
+            <div class="container__select">
+                <label for="categoria" class="labels">Categoría:</label>
+                    <select name="categoria" id="categoria" required class="select__productEdit">
+                        <% allCategories.forEach(category => { %>
+                            <option value="<%= category.id %>" <%= category.id === product.categoryId ? 'selected' : '' %>>
+                                <%= category.name %>
+                            </option>
+                        <% }); %>
+                    </select>
+    
+    
+                <label for="tamano" class="labels">Tamaño:</label>
+                    <select name="sizes" id="tamano" class="select__productEdit">
+                        <% allSizes.forEach(size => { %>
+                            <option value="<%= size.id %>" <%= product.id === product.sizeId ? 'selected' : '' %>>
+                                <%= size.name %>
+                            </option>
+                        <% }); %>
+                    </select>
+            </div>
+    
 
-        <label for="categoria">Categoría:</label>
-            <select name="categoria" id="categoria" required>
-                <% allCategories.forEach(category => { %>
-                    <option value="<%= category.id %>" <%= category.id === product.categoryId ? 'selected' : '' %>>
-                        <%= category.name %>
-                    </option>
-                <% }); %>
-            </select>
-
-
-        <!-- <input type="text" id="tamano" name="tamano"  placeholder="Tamaño" value="< product.size %>"> -->
-
-        <label for="tamano">Tamaños:</label>
-            <select name="sizes" id="tamano" multiple>
-                <% allSizes.forEach(size => { %>
-                    <option value="<%= size.id %>" <%= product.sizes.some(s => s.id === size.id) ? 'selected' : '' %>>
-                        <%= size.name %>
-                    </option>
-                <% }); %>
-            </select>
-
-        
-        <!-- <label for="price">Precio:</label>  -->
-        <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.price %>"> 
-        
-        <!-- <label for="image"></label> -->
-        <input type="file" id="imagen" name="imagen" placeholder="Imagen" class="file"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
+        <div class="precio__imagen">
+            <label for="price" class="labels">Precio:</label> 
+            <input type="number" id="precio" name="precio"  placeholder="Precio" value="<%= product.price %>">
+            
+            <label for="image"></label>
+            <input type="file" id="imagen" name="imagen" placeholder="Imagen" class="file"> <!--no tiene value porque el input imagen no puede tener valor predeterminado -->
+            
+        </div>
 
         <button type="submit" class="btn_productEdit">Actualizar Producto</button>
     </form>
-    <a href="/admin" class="nuevo">Volver</a>
+    <a href="/admin" class="atras">Volver</a>
 </body>

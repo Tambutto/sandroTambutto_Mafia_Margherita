@@ -3,9 +3,7 @@
 
 .encabezado {
     color: var(--fondo);
-    font-size: 2.5rem;
-    margin-top: 20vh;
-    /* margin: 15px 0; */
+    font-size: 1.7rem;
 }
 
 .nuevo {
@@ -58,10 +56,6 @@ a {
     color: #3498db;
 }
 
-/* a:hover {
-    background: var(--fondo);
-    color: var(--limpieza);
-} */
 
 .delete {
     background: var(--tomate);
@@ -77,11 +71,20 @@ button:hover {
     background-color: #c0392b;
 }
 
+.edit{
+        background: var(--ingredientesFrescos);
+        color: var(--limpieza);
+        padding: 5px;
+        padding: 5px 10px;
+        width: 13vw;
+}
+
 /* VERSION TABLET */
 
 @media (min-width: 768px) {
+
     .encabezado {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     table {
         font-size: .9rem;
@@ -105,7 +108,7 @@ button:hover {
 
 @media (min-width: 1024px) {
     .encabezado {
-        
+        margin-top: 15vh;
         font-size: 4rem;
     }
     .nuevo {

@@ -217,7 +217,7 @@ let productsController = {
                 // Relacionar ingredientes con el producto
                 if (product) {
 
-                    const ingredientsArray = Array.isArray(ingredients) ? ingredients : [ingredients];
+                    const ingredientsArray = Array.isArray(req.body.ingredients) ? req.body.ingredients : [req.body.ingredients];
                     ingredientsArray.forEach(async (i) => {
                         await ProductIngredient.create({
                             productId: product.id,
@@ -225,7 +225,7 @@ let productsController = {
                         })
                     });
 
-                    const sizesArray = Array.isArray(sizes) ? sizes : [sizes];
+                    const sizesArray = Array.isArray(req.body.sizes) ? req.body.sizes : [req.body.sizes];
                     sizesArray.forEach(async (s) => {
                         await ProductSize.create({
                             productId: product.id,

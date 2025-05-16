@@ -14,7 +14,7 @@ img {
      
 }
 
-p::first-letter{
+.sangria::first-letter{
     text-indent: 5rem;
     /* font-size: 2rem; */
  }
@@ -39,7 +39,7 @@ h1 {
     
   }
 
-p {
+.sangria {
     font-family: "italiana", sans-serif;
     text-align: justify;
     margin: 1rem;
@@ -61,7 +61,7 @@ img {
         
     }
 
-    p {
+    .sangria {
         font-size: 1.2rem;
     }
 
@@ -87,7 +87,7 @@ img {
         padding: 3vh 0;
     }
 
-    .section p {
+    .sangria {
         font-size: 1.5rem;
         color: var(--limpieza);
         line-height: 2;
@@ -99,7 +99,7 @@ img {
     }
 
     .sangria::first-letter{
-        font-size: 5vw;
+        font-size: 3vw;
     }   
 
     }

@@ -24,6 +24,8 @@ function menuPizza() {
 
 
 
+
+
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
 
 onload = function (){
@@ -130,5 +132,7 @@ calculate = function(newTime){
     p.a *= 0.99
   }
 }
+
+
 
 
